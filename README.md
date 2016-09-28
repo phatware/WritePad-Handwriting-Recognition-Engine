@@ -38,25 +38,25 @@ Open Xcode; open `MACOSX/WritePadSDK-OSX/WritePadSDK-OSX.xcodeproj` project; bui
 
 Open Xcode; open `iOS/WritePadReco/WritePadReco.xcodeproj` project; build for a desired target. This project will build a static library for device or simulator depending on the chosen target.
 
-** 3. Android**
+**3. Android**
 
 **Development Environment**: Android NDK 9+ (optional: Android SDK, Android Studio)
 
 To build run `<ndk-path>/ndk-build` in the `Android/WritePadLib` folder. Android native dynamic (.so) libraries will be built for all supported CPUs.
 
-** 4. Linux**
+**4. Linux**
 
 **Development Environment**: Linux with C/C++ compiler 
 
 To build simply run `make` in the `Linux` folder.
 
-** 5. Windows (desktop)**
+**5. Windows (desktop)**
 
 **Development Environment**: Windows 10, Visual Studio 2015 Community Edition or better (older version(s) of Visual Studio can also be used, you may need to create a new solution workspace compatible with older version).
 
 Start Visual Studio and open  `libuniversalreco.sln` in the `/UniversalRecognizer/V300` folder. Select the desired build configuration and platform then choose Build/Build Solution.
 
-** 6. Windows Store/Windows Mobile**
+**6. Windows Store/Windows Mobile**
 
 **Development Environment**: Windows 10, Visual Studio 2015 Community Edition or better (older version(s) of Visual Studio can also be used, you may need to create a new solution workspace compatible with older version).
 
