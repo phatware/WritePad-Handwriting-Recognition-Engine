@@ -25,14 +25,14 @@ This repository contains the complete source code of WritePad Handwriting Recogn
 
 Building the handwriting recognition engine on different platforms
 
-** 1. MAC OS**
+**1. MAC OS**
 
 **Development Environment**: Xcode 8+
 
 Open Xcode; open `MACOSX/WritePadSDK-OSX/WritePadSDK-OSX.xcodeproj` project; build for a desired target. This project will build a static library for MAC OS X.
 
 
-** 2. iOS**
+**2. iOS**
 
 **Development Environment**: Xcode 8+
 
