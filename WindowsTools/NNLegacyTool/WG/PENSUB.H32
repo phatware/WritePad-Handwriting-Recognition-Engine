@@ -1,0 +1,34 @@
+/* ************************************************************************************* */
+/* *    PhatWare WritePad handwriting recognition engine configurator                  * */
+/* *    Copyright (c) 1997-2014 PhatWare(r) Corp. All rights reserved.                 * */
+/* ************************************************************************************* */
+
+/* ************************************************************************************* *
+*
+* File: pensub.h32
+*
+* Unauthorized distribution of this code is prohibited.
+* Contractor/manufacturer is PhatWare Corp.
+* 1314 S. Grand Blvd. Ste. 2-175 Spokane, WA 99202
+*
+* ************************************************************************************* */
+
+
+/* _lopen() flags */
+#define READ	    0
+#define WRITE       1
+#define READ_WRITE  2
+
+
+typedef struct tagGUIDE
+{
+   int    xOrigin;    
+   int    yOrigin;
+   int    cxBox;
+   int    cyBox;
+   int    cxBase;
+   int    cyBase;
+   int    cHorzBox;
+   int    cVertBox;
+   int    cyMid;
+} GUIDE, *LPGUIDE;

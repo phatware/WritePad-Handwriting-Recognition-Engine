@@ -1,0 +1,51 @@
+NAME RECLAB
+DESCRIPTION 'HandWriting Recognizer Laboratory (American) PhatWare Corp. 1997'
+EXETYPE WINDOWS
+CODE PRELOAD MOVEABLE DISCARDABLE
+DATA PRELOAD MOVEABLE MULTIPLE
+HEAPSIZE 70000
+STACKSIZE 70000
+EXPORTS
+        MainWndProc             @1
+        mdiTapWndProc           @2
+        mdiInkTextWndProc       @3
+        txtTextWndProc          @4
+        inkInkWndProc           @5
+        dboEnumOutputProc       @6
+        tlsToolWndProc          @7
+        tlsEditProc             @8
+        msgMatrixDlgBox         @9
+        flmOpenTapHook          @10
+        prfViewPrefDlgBox       @11 
+        tapEnumOutputProc       @12
+        xedDialogProc           @13
+        xedXrKeyboard           @14
+        xedXrEditString         @15
+        xedXrColorHeight        @16
+        xedXrAttributes         @17
+        xedXrPenalty            @18
+        ircDialogProc           @19
+        EnumWndRecName          @20      
+        VocDlgProc              @21
+        lrnWndProc              @22
+        alertWndProc            @23
+        ctlShowCharSetWndProc   @24
+        ctlShowTapWordWndProc   @25
+        ctlShowStatusWndProc    @26
+        pseEditPSIniDlgBox      @27
+        pseEditProc             @28
+        msgLayoutDlgBox         @29
+        txtFindWordDlgBox       @30
+      ; infWndProc              @31
+        hlvDlgBox               @32
+        batGetBatchNamesHook    @33
+        batShowWndProc          @34
+        hlvTrajProc             @37
+        hlvAnswersProc          @38
+        hlvAnswersDlgBox        @39
+        hlvCorToolsProc         @40
+      ; srlSettingsDlgProc      @41
+        ddeServerWndProc        @42
+        hlvCorResult            @43
+        hlvInputResult          @44
+        msgLowDbgCross_GDlgBox  @45

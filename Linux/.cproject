@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/WritePadLib"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/WritePadLib/Debug"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="WritePadLib" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270" name="Debug" parent="cdt.managedbuild.config.gnu.cross.lib.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.lib.debug.1248988363" name="Cross GCC" resourceTypeBasedDiscovery="true" superClass="cdt.managedbuild.toolchain.gnu.cross.lib.debug">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1797908773" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/WritePadLib/Debug}" id="cdt.managedbuild.builder.gnu.cross.193093142" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<tool command="gcc" commandLinePattern="${COMMAND}  ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cross.c.compiler.1821461975" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1130984887" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.106710351" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.144109067" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_OS_LINUX"/>
+									<listOptionValue builtIn="false" value="HWR_SYSTEM=HWR_LINUX"/>
+									<listOptionValue builtIn="false" value="_EMBEDDED_DEVICE"/>
+									<listOptionValue builtIn="false" value="RECODICT"/>
+									<listOptionValue builtIn="false" value="LANG_ENGLISH"/>
+									<listOptionValue builtIn="false" value="LANG_FRENCH"/>
+									<listOptionValue builtIn="false" value="LANG_DUTCH"/>
+									<listOptionValue builtIn="false" value="LANG_SPANISH"/>
+									<listOptionValue builtIn="false" value="LANG_ITALIAN"/>
+									<listOptionValue builtIn="false" value="LANG_GERMAN"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESE"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESEB"/>
+									<listOptionValue builtIn="false" value="LANG_FINNISH"/>
+									<listOptionValue builtIn="false" value="LANG_SWED"/>
+									<listOptionValue builtIn="false" value="LANG_DAN"/>
+									<listOptionValue builtIn="false" value="LANG_NORW"/>
+								</option>
+								<option id="gnu.c.compiler.option.include.paths.845947262" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/reco/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/reco/data}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/InkData}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RecognizerWrapper}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2116190553" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool command="g++" commandLinePattern="${COMMAND} -std=c++11 ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.2138192503" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.2106302573" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1540937958" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.2141083058" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_OS_LINUX"/>
+									<listOptionValue builtIn="false" value="HWR_SYSTEM=HWR_LINUX"/>
+									<listOptionValue builtIn="false" value="_EMBEDDED_DEVICE"/>
+									<listOptionValue builtIn="false" value="RECODICT"/>
+									<listOptionValue builtIn="false" value="LANG_ENGLISH"/>
+									<listOptionValue builtIn="false" value="LANG_FRENCH"/>
+									<listOptionValue builtIn="false" value="LANG_DUTCH"/>
+									<listOptionValue builtIn="false" value="LANG_SPANISH"/>
+									<listOptionValue builtIn="false" value="LANG_ITALIAN"/>
+									<listOptionValue builtIn="false" value="LANG_GERMAN"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESE"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESEB"/>
+									<listOptionValue builtIn="false" value="LANG_FINNISH"/>
+									<listOptionValue builtIn="false" value="LANG_SWED"/>
+									<listOptionValue builtIn="false" value="LANG_DAN"/>
+									<listOptionValue builtIn="false" value="LANG_NORW"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.paths.2009567573" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/reco/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/reco/data}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/InkData}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RecognizerWrapper}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.365441047" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1856641980" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1158692192" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.2105376447" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1547742292" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1677949114" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.1237720407" name="SNN_EF.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_EF.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.63588942" name="SNN_IF.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_IF.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.583959331" name="ENG01.DTL" rcbsApplicability="disable" resourcePath="reco/data/ENG01.DTL" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.729026583" name="GERMAN.DTL" rcbsApplicability="disable" resourcePath="reco/data/GERMAN.DTL" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.139776185" name="FRENCH.DTN" rcbsApplicability="disable" resourcePath="reco/data/FRENCH.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.620151909" name="GERMAN.DTN" rcbsApplicability="disable" resourcePath="reco/data/GERMAN.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.347365739" name="ENG01e.DTN" rcbsApplicability="disable" resourcePath="reco/data/ENG01e.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.3507356" name="FRENCH.DTL" rcbsApplicability="disable" resourcePath="reco/data/FRENCH.DTL" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.1045457016" name="LexDbG.ldb" rcbsApplicability="disable" resourcePath="reco/data/LexDbG.ldb" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.162248398" name="SNN_F.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_F.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.1342859880" name="FR_TRIAD.TRD" rcbsApplicability="disable" resourcePath="reco/data/FR_TRIAD.TRD" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.539006649" name="ENG01i.DTN" rcbsApplicability="disable" resourcePath="reco/data/ENG01i.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.692955138" name="LexDbE.ldb" rcbsApplicability="disable" resourcePath="reco/data/LexDbE.ldb" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.1795022523" name="SNN_E.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_E.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.820160886" name="LexDbF.ldb" rcbsApplicability="disable" resourcePath="reco/data/LexDbF.ldb" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.2118381132" name="SNN_I.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_I.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.1145257927" name="SNN_G.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_G.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.2068682720" name="TFN05.trd" rcbsApplicability="disable" resourcePath="reco/data/TFN05.trd" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.659166519" name="makefile" rcbsApplicability="disable" resourcePath="makefile" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry excluding="Lib|writepadreco|makefile|settings.mk|reco/data/ENG01.DTL|reco/data/ENG01e.DTN|reco/data/ENG01i.DTN|reco/data/FR_TRIAD.TRD|reco/data/FRENCH.DTL|reco/data/FRENCH.DTN|reco/data/GERMAN.DTL|reco/data/GERMAN.DTN|reco/data/LexDbE.ldb|reco/data/LexDbF.ldb|reco/data/LexDbG.ldb|reco/data/SNN_E.MLP|reco/data/SNN_F.MLP|reco/data/SNN_G.MLP|reco/data/SNN_I.MLP|reco/data/SNN_IF.MLP|reco/data/TFN05.trd|reco/data/SNN_EF.MLP|reco/data/vsufimgf.cpp|reco/data/vsufimge.cpp|reco/data/vprfimgf.cpp|reco/data/vprfimge.cpp|reco/data/vocimgfg.cpp|reco/data/vocimgff.cpp|reco/data/vocimgcg.cpp|reco/data/vocimgcf.cpp|reco/data/voc_imgf.cpp|reco/data/voc_imgc.cpp|reco/data/voc_img.cpp|reco/data/vcbsufff.cpp|reco/data/vcbsuffe.cpp|reco/data/vcbpreff.cpp|reco/data/vcbprefe.cpp|reco/data/trd_imgg.cpp|reco/data/trd_imgf.cpp|reco/data/trd_imge.cpp|reco/data/snnimgif.cpp|reco/data/snnimggf.cpp|reco/data/snnimgff.cpp|reco/data/snnimgef.cpp|reco/data/snn_imgi.cpp|reco/data/snn_imgg.cpp|reco/data/snn_imgf.cpp|reco/data/snn_imge.cpp|reco/data/ldb_Imgg.cpp|reco/data/ldb_Imgf.cpp|reco/data/ldb_imge.cpp|reco/data/dtiimgfg.cpp|reco/data/dtiimgff.cpp|reco/data/dtiimgci.cpp|reco/data/dtiimgcg.cpp|reco/data/dtiimgcf.cpp|reco/data/dti_imgf.cpp|reco/data/dti_imgdan.cpp|reco/data/dti_imgc.cpp|reco/data/vocabulary" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.lib.release.806459589">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.lib.release.806459589" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/WritePadLib"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/WritePadLib/Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="WritePadLib" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.lib.release.806459589" name="Release" parent="cdt.managedbuild.config.gnu.cross.lib.release">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.lib.release.874914551" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.lib.release">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1460826334" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/WritePadLib/Release}" id="cdt.managedbuild.builder.gnu.cross.1405649727" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<tool commandLinePattern="${COMMAND}  ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cross.c.compiler.636403509" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.1332118838" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1399642186" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.761195620" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_OS_LINUX"/>
+									<listOptionValue builtIn="false" value="HWR_SYSTEM=HWR_LINUX"/>
+									<listOptionValue builtIn="false" value="_EMBEDDED_DEVICE"/>
+									<listOptionValue builtIn="false" value="RECODICT"/>
+									<listOptionValue builtIn="false" value="LANG_ENGLISH"/>
+									<listOptionValue builtIn="false" value="LANG_FRENCH"/>
+									<listOptionValue builtIn="false" value="LANG_DUTCH"/>
+									<listOptionValue builtIn="false" value="LANG_SPANISH"/>
+									<listOptionValue builtIn="false" value="LANG_ITALIAN"/>
+									<listOptionValue builtIn="false" value="LANG_GERMAN"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESE"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESEB"/>
+									<listOptionValue builtIn="false" value="LANG_FINNISH"/>
+									<listOptionValue builtIn="false" value="LANG_SWED"/>
+									<listOptionValue builtIn="false" value="LANG_DAN"/>
+									<listOptionValue builtIn="false" value="LANG_NORW"/>
+								</option>
+								<option id="gnu.c.compiler.option.include.paths.1411672639" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/reco/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/InkData}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RecognizerWrapper}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1084681298" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool commandLinePattern="${COMMAND} -std=gnu++11 ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.591656491" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.753123592" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.992173551" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.287099077" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_OS_LINUX"/>
+									<listOptionValue builtIn="false" value="HWR_SYSTEM=HWR_LINUX"/>
+									<listOptionValue builtIn="false" value="_EMBEDDED_DEVICE"/>
+									<listOptionValue builtIn="false" value="RECODICT"/>
+									<listOptionValue builtIn="false" value="LANG_ENGLISH"/>
+									<listOptionValue builtIn="false" value="LANG_FRENCH"/>
+									<listOptionValue builtIn="false" value="LANG_DUTCH"/>
+									<listOptionValue builtIn="false" value="LANG_SPANISH"/>
+									<listOptionValue builtIn="false" value="LANG_ITALIAN"/>
+									<listOptionValue builtIn="false" value="LANG_GERMAN"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESE"/>
+									<listOptionValue builtIn="false" value="LANG_PORTUGUESEB"/>
+									<listOptionValue builtIn="false" value="LANG_FINNISH"/>
+									<listOptionValue builtIn="false" value="LANG_SWED"/>
+									<listOptionValue builtIn="false" value="LANG_DAN"/>
+									<listOptionValue builtIn="false" value="LANG_NORW"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.paths.1777568013" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/InkData}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/reco/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/reco/data}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RecognizerWrapper}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1708162645" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.983243788" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.501412630" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1524302156" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1773115310" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.268504710" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.460263996" name="SNN_EF.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_EF.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1426689916" name="SNN_IF.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_IF.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.559570105" name="ENG01.DTL" rcbsApplicability="disable" resourcePath="reco/data/ENG01.DTL" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1929270381" name="GERMAN.DTL" rcbsApplicability="disable" resourcePath="reco/data/GERMAN.DTL" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1753834703" name="FRENCH.DTN" rcbsApplicability="disable" resourcePath="reco/data/FRENCH.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1580942685" name="GERMAN.DTN" rcbsApplicability="disable" resourcePath="reco/data/GERMAN.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1423127698" name="ENG01e.DTN" rcbsApplicability="disable" resourcePath="reco/data/ENG01e.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1129685262" name="FRENCH.DTL" rcbsApplicability="disable" resourcePath="reco/data/FRENCH.DTL" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.2006151854" name="LexDbG.ldb" rcbsApplicability="disable" resourcePath="reco/data/LexDbG.ldb" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.319108558" name="SNN_F.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_F.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1622865082" name="FR_TRIAD.TRD" rcbsApplicability="disable" resourcePath="reco/data/FR_TRIAD.TRD" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1578386411" name="ENG01i.DTN" rcbsApplicability="disable" resourcePath="reco/data/ENG01i.DTN" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.989754030" name="LexDbE.ldb" rcbsApplicability="disable" resourcePath="reco/data/LexDbE.ldb" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1928663150" name="SNN_E.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_E.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1800789953" name="SNN_I.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_I.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1264104958" name="LexDbF.ldb" rcbsApplicability="disable" resourcePath="reco/data/LexDbF.ldb" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.1189723489" name="SNN_G.MLP" rcbsApplicability="disable" resourcePath="reco/data/SNN_G.MLP" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.800332849" name="TFN05.trd" rcbsApplicability="disable" resourcePath="reco/data/TFN05.trd" toolsToInvoke=""/>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.lib.release.806459589.374595983" name="makefile" rcbsApplicability="disable" resourcePath="makefile" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry excluding="Lib|writepadreco|makefile|settings.mk|reco/data/ENG01.DTL|reco/data/ENG01e.DTN|reco/data/ENG01i.DTN|reco/data/FR_TRIAD.TRD|reco/data/FRENCH.DTL|reco/data/FRENCH.DTN|reco/data/GERMAN.DTL|reco/data/GERMAN.DTN|reco/data/LexDbE.ldb|reco/data/LexDbF.ldb|reco/data/LexDbG.ldb|reco/data/SNN_E.MLP|reco/data/SNN_F.MLP|reco/data/SNN_G.MLP|reco/data/SNN_I.MLP|reco/data/SNN_IF.MLP|reco/data/TFN05.trd|reco/data/SNN_EF.MLP|reco/data/vsufimgf.cpp|reco/data/vsufimge.cpp|reco/data/vprfimgf.cpp|reco/data/vprfimge.cpp|reco/data/vocimgfg.cpp|reco/data/vocimgff.cpp|reco/data/vocimgcg.cpp|reco/data/vocimgcf.cpp|reco/data/voc_imgf.cpp|reco/data/voc_imgc.cpp|reco/data/voc_img.cpp|reco/data/vcbsufff.cpp|reco/data/vcbsuffe.cpp|reco/data/vcbpreff.cpp|reco/data/vcbprefe.cpp|reco/data/trd_imgg.cpp|reco/data/trd_imgf.cpp|reco/data/trd_imge.cpp|reco/data/snnimgif.cpp|reco/data/snnimggf.cpp|reco/data/snnimgff.cpp|reco/data/snnimgef.cpp|reco/data/snn_imgi.cpp|reco/data/snn_imgg.cpp|reco/data/snn_imgf.cpp|reco/data/snn_imge.cpp|reco/data/ldb_Imgg.cpp|reco/data/ldb_Imgf.cpp|reco/data/ldb_imge.cpp|reco/data/dtiimgfg.cpp|reco/data/dtiimgff.cpp|reco/data/dtiimgci.cpp|reco/data/dtiimgcg.cpp|reco/data/dtiimgcf.cpp|reco/data/dti_imgf.cpp|reco/data/dti_imgdan.cpp|reco/data/dti_imgc.cpp|reco/data/vocabulary" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="WritePadLib.cdt.managedbuild.target.gnu.cross.lib.97477007" name="Static Library" projectType="cdt.managedbuild.target.gnu.cross.lib"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/WritePadLib"/>
+		</configuration>
+		<configuration configurationName="Multiple configurations">
+			<resource resourceType="PROJECT" workspacePath="/WritePadLib"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/WritePadLib"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270;cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.2138192503;cdt.managedbuild.tool.gnu.cpp.compiler.input.365441047">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.806459589;cdt.managedbuild.config.gnu.cross.lib.release.806459589.;cdt.managedbuild.tool.gnu.cross.c.compiler.636403509;cdt.managedbuild.tool.gnu.c.compiler.input.1084681298">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.debug.1716843270;cdt.managedbuild.config.gnu.cross.lib.debug.1716843270.;cdt.managedbuild.tool.gnu.cross.c.compiler.1821461975;cdt.managedbuild.tool.gnu.c.compiler.input.2116190553">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.lib.release.806459589;cdt.managedbuild.config.gnu.cross.lib.release.806459589.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.591656491;cdt.managedbuild.tool.gnu.cpp.compiler.input.1708162645">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+</cproject>

@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\gestures.h" />
+    <ClInclude Include="..\..\include\InkWrapper.h" />
+    <ClInclude Include="..\..\include\recodefs.h" />
+    <ClInclude Include="..\..\include\RecognizerApi.h" />
+    <ClInclude Include="..\..\include\RecognizerWrapper.h" />
+    <ClInclude Include="..\..\include\recotypes.h" />
+    <ClInclude Include="..\..\InkData\CompressedStroke.h" />
+    <ClInclude Include="..\..\InkData\ImageObject.h" />
+    <ClInclude Include="..\..\InkData\InkData.h" />
+    <ClInclude Include="..\..\InkData\PHStream.h" />
+    <ClInclude Include="..\..\InkData\PHStroke.h" />
+    <ClInclude Include="..\..\InkData\ShapesRec.h" />
+    <ClInclude Include="..\..\InkData\TextObject.h" />
+    <ClInclude Include="..\..\InkData\UndoAction.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\PhatCalc.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\PHTemplArray.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\WordFile.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_dan.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_dut.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_enu.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_frn.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_ger.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_itl.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_pbr.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_prt.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_spn.h" />
+    <ClInclude Include="..\..\RecognizerWrapper\WordLrnFile.h" />
+    <ClInclude Include="..\..\reco\include\accents.h" />
+    <ClInclude Include="..\..\reco\include\ams_mg.h" />
+    <ClInclude Include="..\..\reco\include\arcs.h" />
+    <ClInclude Include="..\..\reco\include\bastypes.h" />
+    <ClInclude Include="..\..\reco\include\bitmapco.h" />
+    <ClInclude Include="..\..\reco\include\bit_mark.h" />
+    <ClInclude Include="..\..\reco\include\calcmacr.h" />
+    <ClInclude Include="..\..\reco\include\const.h" />
+    <ClInclude Include="..\..\reco\include\def.h" />
+    <ClInclude Include="..\..\reco\include\div_let.h" />
+    <ClInclude Include="..\..\reco\include\dscr.h" />
+    <ClInclude Include="..\..\reco\include\dti.h" />
+    <ClInclude Include="..\..\reco\include\dti_lrn.h" />
+    <ClInclude Include="..\..\reco\include\floats.h" />
+    <ClInclude Include="..\..\reco\include\forward_dbg.h" />
+    <ClInclude Include="..\..\reco\include\glob.h" />
+    <ClInclude Include="..\..\reco\include\hwr_dbg.h" />
+    <ClInclude Include="..\..\reco\include\hwr_swap.h" />
+    <ClInclude Include="..\..\reco\include\hwr_sys.h" />
+    <ClInclude Include="..\..\reco\include\langid.h" />
+    <ClInclude Include="..\..\reco\include\langutil.h" />
+    <ClInclude Include="..\..\reco\include\ldbtypes.h" />
+    <ClInclude Include="..\..\reco\include\ldbutil.h" />
+    <ClInclude Include="..\..\reco\include\learn.h" />
+    <ClInclude Include="..\..\reco\include\ligstate.h" />
+    <ClInclude Include="..\..\reco\include\lk_code.h" />
+    <ClInclude Include="..\..\reco\include\lowlevel.h" />
+    <ClInclude Include="..\..\reco\include\low_dbg.h" />
+    <ClInclude Include="..\..\reco\include\mlp.h" />
+    <ClInclude Include="..\..\reco\include\orto.h" />
+    <ClInclude Include="..\..\reco\include\ortow.h" />
+    <ClInclude Include="..\..\reco\include\param.h" />
+    <ClInclude Include="..\..\reco\include\polyco.h" />
+    <ClInclude Include="..\..\reco\include\post_capital.h" />
+    <ClInclude Include="..\..\reco\include\post_cap_tbl.h" />
+    <ClInclude Include="..\..\reco\include\precutil.h" />
+    <ClInclude Include="..\..\reco\include\pws.h" />
+    <ClInclude Include="..\..\reco\include\pydict.h" />
+    <ClInclude Include="..\..\reco\include\pzdict.h" />
+    <ClInclude Include="..\..\reco\include\reco.h" />
+    <ClInclude Include="..\..\reco\include\recodict.h" />
+    <ClInclude Include="..\..\reco\include\recokern.h" />
+    <ClInclude Include="..\..\reco\include\recoutil.h" />
+    <ClInclude Include="..\..\reco\include\reco_ver.h" />
+    <ClInclude Include="..\..\reco\include\sketch.h" />
+    <ClInclude Include="..\..\reco\include\snn.h" />
+    <ClInclude Include="..\..\reco\include\stderr.h" />
+    <ClInclude Include="..\..\reco\include\stroke1.h" />
+    <ClInclude Include="..\..\reco\include\triads.h" />
+    <ClInclude Include="..\..\reco\include\vocutilp.h" />
+    <ClInclude Include="..\..\reco\include\ws.h" />
+    <ClInclude Include="..\..\reco\include\ws_p.h" />
+    <ClInclude Include="..\..\reco\include\xrlv.h" />
+    <ClInclude Include="..\..\reco\include\xrlv_p.h" />
+    <ClInclude Include="..\..\reco\include\xrwdict.h" />
+    <ClInclude Include="..\..\reco\include\xrword.h" />
+    <ClInclude Include="..\..\reco\include\xrword_p.h" />
+    <ClInclude Include="..\..\reco\include\xr_attr.h" />
+    <ClInclude Include="..\..\reco\include\xr_names.h" />
+    <ClInclude Include="..\..\reco\include\zctype.h" />
+    <ClInclude Include="..\WritePadReco.WindowsPhone\targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\InkData\ImageObject.cpp" />
+    <ClCompile Include="..\..\InkData\InkData.cpp" />
+    <ClCompile Include="..\..\InkData\InkWrapper.cpp" />
+    <ClCompile Include="..\..\InkData\PHStream.cpp" />
+    <ClCompile Include="..\..\InkData\PHStroke.cpp" />
+    <ClCompile Include="..\..\InkData\ShapesRec.cpp" />
+    <ClCompile Include="..\..\InkData\TextObject.cpp" />
+    <ClCompile Include="..\..\InkData\UndoAction.cpp" />
+    <ClCompile Include="..\..\RecognizerWrapper\gestures.cpp" />
+    <ClCompile Include="..\..\RecognizerWrapper\PhatCalc.cpp" />
+    <ClCompile Include="..\..\RecognizerWrapper\RecognizerWrapper.cpp" />
+    <ClCompile Include="..\..\RecognizerWrapper\WordFile.cpp" />
+    <ClCompile Include="..\..\RecognizerWrapper\WordLrnFile.cpp" />
+    <ClCompile Include="..\..\reco\data\dti_img.cpp" />
+    <ClCompile Include="..\..\reco\data\ldb_img.cpp" />
+    <ClCompile Include="..\..\reco\data\snn_img.cpp" />
+    <ClCompile Include="..\..\reco\data\trd_img.cpp" />
+    <ClCompile Include="..\..\reco\data\vprf_img.cpp" />
+    <ClCompile Include="..\..\reco\data\vsuf_img.cpp" />
+    <ClCompile Include="..\..\reco\src\angle.cpp" />
+    <ClCompile Include="..\..\reco\src\apostroph.cpp" />
+    <ClCompile Include="..\..\reco\src\arcs.cpp" />
+    <ClCompile Include="..\..\reco\src\bitmaps.cpp" />
+    <ClCompile Include="..\..\reco\src\breaks.cpp" />
+    <ClCompile Include="..\..\reco\src\calccell.cpp" />
+    <ClCompile Include="..\..\reco\src\check.cpp" />
+    <ClCompile Include="..\..\reco\src\circle.cpp" />
+    <ClCompile Include="..\..\reco\src\connections.cpp" />
+    <ClCompile Include="..\..\reco\src\convert.cpp" />
+    <ClCompile Include="..\..\reco\src\cross.cpp" />
+    <ClCompile Include="..\..\reco\src\cross_geometry.cpp" />
+    <ClCompile Include="..\..\reco\src\dct_functions.cpp" />
+    <ClCompile Include="..\..\reco\src\dtiutil.cpp" />
+    <ClCompile Include="..\..\reco\src\filter.cpp" />
+    <ClCompile Include="..\..\reco\src\hwrctype.cpp" />
+    <ClCompile Include="..\..\reco\src\hwrmath.cpp" />
+    <ClCompile Include="..\..\reco\src\hwrmem.cpp" />
+    <ClCompile Include="..\..\reco\src\hwrstr.cpp" />
+    <ClCompile Include="..\..\reco\src\hwrswap.cpp" />
+    <ClCompile Include="..\..\reco\src\langutil.cpp" />
+    <ClCompile Include="..\..\reco\src\ldbutil.cpp" />
+    <ClCompile Include="..\..\reco\src\letimagestodte.cpp" />
+    <ClCompile Include="..\..\reco\src\ligstate.cpp" />
+    <ClCompile Include="..\..\reco\src\links.cpp" />
+    <ClCompile Include="..\..\reco\src\link_begin.cpp" />
+    <ClCompile Include="..\..\reco\src\link_next.cpp" />
+    <ClCompile Include="..\..\reco\src\low3.cpp" />
+    <ClCompile Include="..\..\reco\src\low_data.cpp" />
+    <ClCompile Include="..\..\reco\src\low_dbg.cpp" />
+    <ClCompile Include="..\..\reco\src\low_level.cpp" />
+    <ClCompile Include="..\..\reco\src\low_util.cpp" />
+    <ClCompile Include="..\..\reco\src\luspecl.cpp" />
+    <ClCompile Include="..\..\reco\src\mlp.cpp" />
+    <ClCompile Include="..\..\reco\src\newdict.cpp" />
+    <ClCompile Include="..\..\reco\src\param.cpp" />
+    <ClCompile Include="..\..\reco\src\pict.cpp" />
+    <ClCompile Include="..\..\reco\src\poly.cpp" />
+    <ClCompile Include="..\..\reco\src\post_capital.cpp" />
+    <ClCompile Include="..\..\reco\src\post_cap_tbl.cpp" />
+    <ClCompile Include="..\..\reco\src\precutil.cpp" />
+    <ClCompile Include="..\..\reco\src\prep.cpp" />
+    <ClCompile Include="..\..\reco\src\reco.cpp" />
+    <ClCompile Include="..\..\reco\src\recodict.cpp" />
+    <ClCompile Include="..\..\reco\src\recokern.cpp" />
+    <ClCompile Include="..\..\reco\src\recolibs.cpp" />
+    <ClCompile Include="..\..\reco\src\recoutil.cpp" />
+    <ClCompile Include="..\..\reco\src\sketch.cpp" />
+    <ClCompile Include="..\..\reco\src\spell.cpp" />
+    <ClCompile Include="..\..\reco\src\stroke.cpp" />
+    <ClCompile Include="..\..\reco\src\stroke1.cpp" />
+    <ClCompile Include="..\..\reco\src\tracedata.cpp" />
+    <ClCompile Include="..\..\reco\src\triadsutil.cpp" />
+    <ClCompile Include="..\..\reco\src\utils.cpp" />
+    <ClCompile Include="..\..\reco\src\wordbreaks.cpp" />
+    <ClCompile Include="..\..\reco\src\wordcorrector.cpp" />
+    <ClCompile Include="..\..\reco\src\worddict.cpp" />
+    <ClCompile Include="..\..\reco\src\wordsegment.cpp" />
+    <ClCompile Include="..\..\reco\src\xrattrib.cpp" />
+    <ClCompile Include="..\..\reco\src\xrdict.cpp" />
+    <ClCompile Include="..\..\reco\src\xrmatrix.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WritePadReco.def" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4bc7ade2-dc09-4005-8c84-3175530c1717}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>WritePadReco</ProjectName>
+    <RootNamespace>WritePadReco</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>true</AppContainerApplication>
+    <ApplicationType>Windows Store</ApplicationType>
+    <ApplicationTypeRevision>8.1</ApplicationTypeRevision>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="..\WritePadReco.Shared\WritePadReco.Shared.vcxitems" Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <GenerateManifest>false</GenerateManifest>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <GenerateManifest>false</GenerateManifest>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <GenerateManifest>false</GenerateManifest>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <GenerateManifest>false</GenerateManifest>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <GenerateManifest>false</GenerateManifest>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <GenerateManifest>false</GenerateManifest>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <OutDir>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\RecognizerWrapper;$(ProjectDir)\..\..\InkData;$(ProjectDir)\..\..\reco\include;$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;PTW32_STATIC_LIB;RECODICT;_EMBEDDED_DEVICE;_FLAT_32;HWR_SYSTEM=HWR_WINDOWS;LANG_DAN;LANG_DUTCH;LANG_ENGLISH;LANG_FRENCH;LANG_GERMAN;LANG_ITALIAN;LANG_NORW;LANG_PORTUGUESE;LANG_PORTUGUESEB;LANG_SPANISH;LANG_SWED;LANG_FINNISH;LANG_ENGLISHUK;LANG_INDONESIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <AdditionalDependencies>kernel32.lib;user32.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>WritePadReco.def</ModuleDefinitionFile>
+      <ImportLibrary>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\RecognizerWrapper;$(ProjectDir)\..\..\InkData;$(ProjectDir)\..\..\reco\include;$(ProjectDir)\..\..\pthread;$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;WIN32;_CRT_SECURE_NO_WARNINGS;PTW32_STATIC_LIB;RECODICT;_EMBEDDED_DEVICE;_FLAT_32;HWR_SYSTEM=HWR_WINDOWS;LANG_DAN;LANG_DUTCH;LANG_ENGLISH;LANG_FRENCH;LANG_GERMAN;LANG_ITALIAN;LANG_NORW;LANG_PORTUGUESE;LANG_PORTUGUESEB;LANG_SPANISH;LANG_SWED;LANG_FINNISH;LANG_ENGLISHUK;LANG_INDONESIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FunctionLevelLinking />
+      <Optimization>MaxSpeed</Optimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <AdditionalDependencies>kernel32.lib;user32.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>WritePadReco.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <OutputFile>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName).lib</ImportLibrary>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\pthread\W32;$(ProjectDir)\..\..\RecognizerWrapper;$(ProjectDir)\..\..\InkData;$(ProjectDir)\..\..\reco\include;$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;PTW32_STATIC_LIB;RECODICT;_EMBEDDED_DEVICE;_FLAT_32;HWR_SYSTEM=HWR_LINUX;_OS_LINUX;LANG_DAN;LANG_DUTCH;LANG_ENGLISH;LANG_FRENCH;LANG_GERMAN;LANG_ITALIAN;LANG_NORW;LANG_PORTUGUESE;LANG_PORTUGUESEB;LANG_SPANISH;LANG_SWED;LANG_FINNISH;LANG_ENGLISHUK;LANG_INDONESIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <ModuleDefinitionFile>WritePadReco.def</ModuleDefinitionFile>
+      <ImportLibrary>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\RecognizerWrapper;$(ProjectDir)\..\..\InkData;$(ProjectDir)\..\..\reco\include;$(ProjectDir)\..\..\pthread;$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <PreprocessorDefinitions>_WINDLL;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;PTW32_STATIC_LIB;RECODICT;_EMBEDDED_DEVICE;_FLAT_32;HWR_SYSTEM=HWR_WINDOWS;_OS_LINUX;LANG_DAN;LANG_DUTCH;LANG_ENGLISH;LANG_FRENCH;LANG_GERMAN;LANG_ITALIAN;LANG_NORW;LANG_PORTUGUESE;LANG_PORTUGUESEB;LANG_SPANISH;LANG_SWED;LANG_FINNISH;LANG_ENGLISHUK;LANG_INDONESIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <OutputFile>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName).lib</ImportLibrary>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ModuleDefinitionFile>WritePadReco.def</ModuleDefinitionFile>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\pthread\W32;$(ProjectDir)\..\..\RecognizerWrapper;$(ProjectDir)\..\..\InkData;$(ProjectDir)\..\..\reco\include;$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;_X64_;_WINDLL;WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;PTW32_STATIC_LIB;RECODICT;_EMBEDDED_DEVICE;_FLAT_32;HWR_SYSTEM=HWR_LINUX;_OS_LINUX;LANG_DAN;LANG_DUTCH;LANG_ENGLISH;LANG_FRENCH;LANG_GERMAN;LANG_ITALIAN;LANG_NORW;LANG_PORTUGUESE;LANG_PORTUGUESEB;LANG_SPANISH;LANG_SWED;LANG_FINNISH;LANG_ENGLISHUK;LANG_INDONESIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <ModuleDefinitionFile>WritePadReco.def</ModuleDefinitionFile>
+      <ImportLibrary>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\RecognizerWrapper;$(ProjectDir)\..\..\InkData;$(ProjectDir)\..\..\reco\include;$(ProjectDir)\..\..\pthread;$(ProjectDir)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <PreprocessorDefinitions>_WIN64;_X64_;_WINDLL;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;PTW32_STATIC_LIB;RECODICT;_EMBEDDED_DEVICE;_FLAT_32;HWR_SYSTEM=HWR_WINDOWS;_OS_LINUX;LANG_DAN;LANG_DUTCH;LANG_ENGLISH;LANG_FRENCH;LANG_GERMAN;LANG_ITALIAN;LANG_NORW;LANG_PORTUGUESE;LANG_PORTUGUESEB;LANG_SPANISH;LANG_SWED;LANG_FINNISH;LANG_ENGLISHUK;LANG_INDONESIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <OutputFile>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>$(SolutionDir)..\..\..\..\Windows\WindowsSDK\lib-windows-metro\$(Platform)\$(TargetName).lib</ImportLibrary>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ModuleDefinitionFile>WritePadReco.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,19 @@
+EDITPSINI DIALOG DISCARDABLE  0, 0, 348, 188
+STYLE WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Edit PS ini file"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         ID_TEXT,0,0,348,150,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    LTEXT           "&Value :",-1,3,157,27,7
+    EDITTEXT        ID_VALUE,36,152,98,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",ID_BROWSE,136,152,40,14
+    PUSHBUTTON      "&Restore",ID_RESTORE,178,152,40,14
+    PUSHBUTTON      "&Configure",ID_CONF,220,152,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,262,152,40,14
+    CONTROL         "Reload &DTE",ID_DTE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,3,168,60,10
+    RTEXT           "Attention !! >>>",-1,234,172,80,11
+    PUSHBUTTON      "&Save",ID_SAVE,317,169,28,14
+END
+

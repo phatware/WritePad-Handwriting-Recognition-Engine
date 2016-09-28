@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="..\..\InkData\ImageObject.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InkData\InkData.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InkData\InkWrapper.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InkData\PHStream.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InkData\PHStroke.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InkData\ShapesRec.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InkData\TextObject.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\InkData\UndoAction.cpp">
+      <Filter>InkData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\angle.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\apostroph.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\arcs.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\bitmaps.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\breaks.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\calccell.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\check.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\circle.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\connections.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\convert.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\cross.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\cross_geometry.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\dct_functions.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\dtiutil.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\filter.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\hwrmath.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\hwrmem.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\hwrstr.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\hwrswap.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\langutil.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\ldbutil.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\ligstate.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\links.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\link_begin.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\link_next.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\low3.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\low_data.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\low_dbg.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\low_level.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\low_util.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\luspecl.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\mlp.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\newdict.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\param.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\pict.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\poly.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\post_capital.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\post_cap_tbl.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\precutil.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\prep.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\reco.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\recodict.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\recokern.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\recolibs.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\recoutil.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\sketch.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\spell.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\stroke.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\stroke1.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\tracedata.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\triadsutil.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\utils.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\wordbreaks.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\wordcorrector.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\worddict.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\wordsegment.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\xrattrib.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\xrdict.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\xrmatrix.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\data\dti_img.cpp">
+      <Filter>Reco\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\data\ldb_img.cpp">
+      <Filter>Reco\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\data\snn_img.cpp">
+      <Filter>Reco\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\data\trd_img.cpp">
+      <Filter>Reco\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\data\vprf_img.cpp">
+      <Filter>Reco\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\data\vsuf_img.cpp">
+      <Filter>Reco\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\RecognizerWrapper\gestures.cpp">
+      <Filter>RecognizerWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\RecognizerWrapper\PhatCalc.cpp">
+      <Filter>RecognizerWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\RecognizerWrapper\RecognizerWrapper.cpp">
+      <Filter>RecognizerWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\RecognizerWrapper\WordFile.cpp">
+      <Filter>RecognizerWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\RecognizerWrapper\WordLrnFile.cpp">
+      <Filter>RecognizerWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\letimagestodte.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\reco\src\hwrctype.cpp">
+      <Filter>Reco\SRC</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\include\gestures.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\InkWrapper.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\recodefs.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RecognizerApi.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\RecognizerWrapper.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\recotypes.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\CompressedStroke.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\ImageObject.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\InkData.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\PHStream.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\PHStroke.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\ShapesRec.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\TextObject.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\InkData\UndoAction.h">
+      <Filter>InkData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\accents.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\ams_mg.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\arcs.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\bastypes.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\bitmapco.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\bit_mark.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\calcmacr.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\const.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\def.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\div_let.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\dscr.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\dti.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\dti_lrn.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\floats.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\forward_dbg.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\glob.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\hwr_dbg.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\hwr_swap.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\hwr_sys.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\langid.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\langutil.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\ldbtypes.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\ldbutil.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\learn.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\ligstate.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\lk_code.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\lowlevel.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\low_dbg.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\mlp.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\orto.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\ortow.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\param.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\polyco.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\post_capital.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\post_cap_tbl.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\precutil.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\pws.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\pydict.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\pzdict.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\reco.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\recodict.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\recokern.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\recoutil.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\reco_ver.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\sketch.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\snn.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\stderr.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\stroke1.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\triads.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\vocutilp.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\ws.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\ws_p.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\xrlv.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\xrlv_p.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\xrwdict.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\xrword.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\xrword_p.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\xr_attr.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\xr_names.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\reco\include\zctype.h">
+      <Filter>Reco\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\PhatCalc.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\PHTemplArray.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\WordFile.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_dan.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_dut.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_enu.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_frn.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_ger.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_itl.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_pbr.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_prt.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\wordlist_spn.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\RecognizerWrapper\WordLrnFile.h">
+      <Filter>RecognizerWrapper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\WindowsStoreReco\WritePadReco.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{507fecc3-0a91-4703-b91b-d57dccb82ea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InkData">
+      <UniqueIdentifier>{ca68d976-a837-469f-9a2f-9c997846ca16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reco">
+      <UniqueIdentifier>{35a930ba-8fdb-4234-867c-c87d0bc315b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reco\SRC">
+      <UniqueIdentifier>{ffabb65f-489f-459d-8912-00dda4d9d341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reco\Include">
+      <UniqueIdentifier>{407f42e4-1487-42e1-b4e8-2cb900e8d9aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Reco\Data">
+      <UniqueIdentifier>{47ecfcd3-0d28-4df8-ab45-074d5fadfd84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RecognizerWrapper">
+      <UniqueIdentifier>{40ec25cb-cc3d-4ad3-b6b0-c5fdb493c138}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

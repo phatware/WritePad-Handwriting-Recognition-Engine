@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CB1B1CAF-868D-46C5-9BD6-BAD14B003FA6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>NNTool</RootNamespace>
+    <ProjectName>NNTool</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_NON_CONFORMING_SWPRINTFS;WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;PG_DEBUG_ON;STATIC_LINKAGE;DUMP_DTI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>MAIN;HWR;LOW;LOW\STD;LOW\VRT;XRWS;UTIL;CUT;POST;CHUNKS;TAPLIB;WG;WG\LIB;ORTO;SNN;DLL\PEG;DATA;.;DWFLIB</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_NON_CONFORMING_SWPRINTFS;WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;PG_DEBUG_ON;STATIC_LINKAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>MAIN;HWR;LOW;LOW\STD;LOW\VRT;XRWS;UTIL;CUT;POST;CHUNKS;TAPLIB;WG;WG\LIB;ORTO;SNN;DLL\PEG;DATA;.</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CUT\FIX32.CPP" />
+    <ClCompile Include="CUT\NETREC.CPP" />
+    <ClCompile Include="CUT\NETRECFX.CPP" />
+    <ClCompile Include="CUT\NNET.CPP" />
+    <ClCompile Include="CUT\TABL.CPP" />
+    <ClCompile Include="CUT\WS.CPP" />
+    <ClCompile Include="DATA\DTI_IMG.CPP" />
+    <ClCompile Include="DATA\ldb_img.cpp" />
+    <ClCompile Include="DATA\SNN_IMG.CPP" />
+    <ClCompile Include="DATA\TRD_IMG.CPP" />
+    <ClCompile Include="DATA\Vprf_img.cpp" />
+    <ClCompile Include="DATA\VSUF_IMG.CPP" />
+    <ClCompile Include="DLL\PEG\PEGDICT.CPP" />
+    <ClCompile Include="DLL\PEG\PEGREC.CPP" />
+    <ClCompile Include="DLL\PEG\PEG_UTIL.CPP" />
+    <ClCompile Include="DWFLIB\dwf.cc" />
+    <ClCompile Include="HWR\HWR_FILE.CPP" />
+    <ClCompile Include="HWR\HWR_MATH.CPP" />
+    <ClCompile Include="HWR\HWR_MEM.CPP" />
+    <ClCompile Include="HWR\HWR_STD.CPP" />
+    <ClCompile Include="HWR\HWR_STR.CPP" />
+    <ClCompile Include="HWR\HWR_SWAP.CPP" />
+    <ClCompile Include="HWR\HWR_TEXT.CPP" />
+    <ClCompile Include="HWR\Zctabs.cpp" />
+    <ClCompile Include="HWR\Zctype.cpp" />
+    <ClCompile Include="LOW\CHECK.CPP" />
+    <ClCompile Include="LOW\FILTER.CPP" />
+    <ClCompile Include="LOW\FRM_WORD.CPP" />
+    <ClCompile Include="LOW\LOW_DBG.CPP" />
+    <ClCompile Include="LOW\LOW_UTIL.CPP" />
+    <ClCompile Include="LOW\PICT.CPP" />
+    <ClCompile Include="LOW\PreP.cpp" />
+    <ClCompile Include="LOW\SPECWIN.CPP" />
+    <ClCompile Include="LOW\STD\ANGLE.CPP" />
+    <ClCompile Include="LOW\STD\ARCS.CPP" />
+    <ClCompile Include="LOW\STD\BREAKS.CPP" />
+    <ClCompile Include="LOW\STD\CONVERT.CPP" />
+    <ClCompile Include="LOW\STD\CROSS.CPP" />
+    <ClCompile Include="LOW\STD\CROSS_G.CPP" />
+    <ClCompile Include="LOW\STD\EL_APS.CPP" />
+    <ClCompile Include="LOW\STD\LINKS.CPP" />
+    <ClCompile Include="LOW\STD\LK_BEGIN.CPP" />
+    <ClCompile Include="LOW\STD\LK_NEXT.CPP" />
+    <ClCompile Include="LOW\STD\LOW_3.CPP" />
+    <ClCompile Include="LOW\STD\LU_SPECL.CPP" />
+    <ClCompile Include="LOW\STD\SKETCH.CPP" />
+    <ClCompile Include="LOW\STD\XR_ATTR.CPP" />
+    <ClCompile Include="LOW\STROKA.CPP" />
+    <ClCompile Include="LOW\STROKA1.CPP" />
+    <ClCompile Include="LOW\VRT\VXMAIN.CPP" />
+    <ClCompile Include="LOW\VRT\VX_DBG.CPP" />
+    <ClCompile Include="LOW\VRT\VX_FNC.CPP" />
+    <ClCompile Include="LOW\VRT\VX_IMG.CPP" />
+    <ClCompile Include="LOW\VRT\VX_UTL.CPP" />
+    <ClCompile Include="LOW\VRT\WLINK.CPP" />
+    <ClCompile Include="LOW\VRT\WRITETAP.CPP" />
+    <ClCompile Include="LOW\VRT\XR_IMAGE.CPP" />
+    <ClCompile Include="MAIN\DES.CPP" />
+    <ClCompile Include="MAIN\MAIN_UTL.CPP" />
+    <ClCompile Include="MAIN\PARAKERN.CPP" />
+    <ClCompile Include="MAIN\PARALIBS.CPP" />
+    <ClCompile Include="MAIN\REC-MAIN.CPP" />
+    <ClCompile Include="MAIN\RECUTIL.CPP" />
+    <ClCompile Include="MAIN\WG_STUFF.CPP" />
+    <ClCompile Include="SNN\BitMapCo.cpp" />
+    <ClCompile Include="SNN\CALCCELL.CPP" />
+    <ClCompile Include="SNN\DCT.CPP" />
+    <ClCompile Include="SNN\DIV_LET.CPP" />
+    <ClCompile Include="SNN\DSCR.CPP" />
+    <ClCompile Include="SNN\MLP.CPP" />
+    <ClCompile Include="SNN\ORTCONST.CPP" />
+    <ClCompile Include="SNN\PARAM.CPP" />
+    <ClCompile Include="SNN\POLYCO.CPP" />
+    <ClCompile Include="TAPLIB\TAPOPEN.CPP" />
+    <ClCompile Include="TAPLIB\TAPREAD.CPP" />
+    <ClCompile Include="TAPLIB\TAPSEEK.CPP" />
+    <ClCompile Include="TAPLIB\TAPWRITE.CPP" />
+    <ClCompile Include="TAPLIB\TAPXLAT.CPP" />
+    <ClCompile Include="TAPLIB\XIO.CPP" />
+    <ClCompile Include="UTIL\DTI_LRN.CPP" />
+    <ClCompile Include="UTIL\DTI_UTIL.CPP" />
+    <ClCompile Include="UTIL\ELK.CPP" />
+    <ClCompile Include="UTIL\LDBUTIL.CPP" />
+    <ClCompile Include="UTIL\LIGSTATE.CPP" />
+    <ClCompile Include="UTIL\TR_UTIL.CPP" />
+    <ClCompile Include="UTIL\VOC_UTIL.CPP" />
+    <ClCompile Include="WG\LIB\DESLIB32.CPP" />
+    <ClCompile Include="WG\LIB\GRLIB.CPP" />
+    <ClCompile Include="WG\LIB\ZXLAT.CPP" />
+    <ClCompile Include="WG\MLP\VIEWCOEF.CPP" />
+    <ClCompile Include="WG\TOPINE.CPP" />
+    <ClCompile Include="WG\WG.CPP" />
+    <ClCompile Include="WG\WGBAT.CPP" />
+    <ClCompile Include="WG\WGCTL.CPP" />
+    <ClCompile Include="WG\WGDBG.CPP" />
+    <ClCompile Include="WG\WGDBO.CPP" />
+    <ClCompile Include="WG\WGDDE.CPP" />
+    <ClCompile Include="WG\WGDES.CPP" />
+    <ClCompile Include="WG\WGDRW.CPP" />
+    <ClCompile Include="WG\WGDTL.CPP" />
+    <ClCompile Include="WG\WGDWF.CPP" />
+    <ClCompile Include="WG\WGFAK.CPP" />
+    <ClCompile Include="WG\WGFLM.CPP" />
+    <ClCompile Include="WG\WGHLV.CPP" />
+    <ClCompile Include="WG\WGINK.CPP" />
+    <ClCompile Include="wg\WGInteractiveLrn.CPP" />
+    <ClCompile Include="WG\WGIRC.CPP" />
+    <ClCompile Include="WG\WGLRN.CPP" />
+    <ClCompile Include="WG\WGMDI.CPP" />
+    <ClCompile Include="WG\WGMSG.CPP" />
+    <ClCompile Include="WG\WGPRF.CPP" />
+    <ClCompile Include="WG\WGPSE.CPP" />
+    <ClCompile Include="WG\WGREC.CPP" />
+    <ClCompile Include="WG\WGSRL.CPP" />
+    <ClCompile Include="WG\WGSTA.CPP" />
+    <ClCompile Include="WG\WGTAP.CPP" />
+    <ClCompile Include="wg\WGTemplate.cpp" />
+    <ClCompile Include="WG\WGTLS.CPP" />
+    <ClCompile Include="WG\WGTRC.CPP" />
+    <ClCompile Include="WG\WGTTC.CPP" />
+    <ClCompile Include="WG\WGTXT.CPP" />
+    <ClCompile Include="WG\WGVOC.CPP" />
+    <ClCompile Include="WG\WGXED.CPP" />
+    <ClCompile Include="WG\WGXRD.CPP" />
+    <ClCompile Include="XRWS\XRLV.CPP" />
+    <ClCompile Include="XRWS\XRWDICT.CPP" />
+    <ClCompile Include="XRWS\XRWDICTP.CPP" />
+    <ClCompile Include="XRWS\XRWLEARN.CPP" />
+    <ClCompile Include="XRWS\XRW_MAIN.CPP" />
+    <ClCompile Include="XRWS\XRW_UTIL.CPP" />
+    <ClCompile Include="XRWS\XR_EXP.CPP" />
+    <ClCompile Include="XRWS\XR_MC.CPP" />
+    <ClCompile Include="XRWS\XR_RWG.CPP" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="wg\WgInteractiveLrn.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wgtls.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="configurator.ico" />
+    <Image Include="debug.ico" />
+    <Image Include="learnicon.ico" />
+    <Image Include="tap.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NNTool.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,144 @@
+EXPORTS
+
+	HWR_GetLanguageName
+	HWR_GetLanguageID
+	HWR_GetLanguageName
+	HWR_IsLanguageSupported
+	HWR_GetSupportedLanguages
+
+	HWR_InitRecognizer
+	HWR_InitRecognizerFromMemory
+	
+	HWR_FreeRecognizer
+	HWR_RecognizerAddStroke
+	HWR_Recognize
+	HWR_Reset
+	HWR_RecognizeInkData
+	HWR_RecognizeSymbol
+	HWR_PreRecognizeInkData
+	HWR_GetResult
+	HWR_GetResultWeight
+	HWR_GetResultWord
+	HWR_GetResultStrokesNumber
+	HWR_GetResultWordCount
+	HWR_GetResultAlternativeCount
+	HWR_SetRecognitionMode
+	HWR_GetRecognitionMode
+	HWR_GetStrokeIDs
+	HWR_SetRecognitionFlags
+	HWR_GetRecognitionFlags
+	HWR_StopAsyncReco
+	HWR_SetCustomCharset
+	
+	HWR_EnablePhatCalc
+	HWR_CalculateString
+
+	HWR_SaveWordList
+	HWR_EnumWordList
+	HWR_EmptyWordList
+	HWR_AddWordToWordList
+	HWR_ResetAutoCorrector
+	HWR_AutocorrectWord
+	HWR_ReloadAutoCorrector
+	HWR_ImportWordList
+	HWR_ExportWordList
+	HWR_GetAutocorrectorData
+	HWR_SetAutocorrectorData
+	HWR_CheckGesture
+	
+	HWR_ResetLearner
+	HWR_AnalyzeWordList
+	HWR_LearnNewWord
+	HWR_ReplaceWord
+	HWR_ReloadLearner
+	HWR_SaveLearner
+	HWR_GetLearnerData
+	HWR_SetLearnerData
+
+	HWR_WordFlipCase
+	HWR_EnumUserWords
+	HWR_NewUserDict
+	HWR_SaveUserDict
+	HWR_IsWordInDict
+	HWR_AddUserWordToDict
+	HWR_SpellCheckWord
+	HWR_SetDictionaryData
+	HWR_GetDictionaryData
+	HWR_HasDictionaryChanged
+	HWR_GetDictionaryLength
+	HWR_ResetUserDict
+	HWR_ExportUserDictionary
+	HWR_ImportUserDictionary
+	HWR_ReloadUserDict
+	HWR_LoadAlternativeDict
+	
+	HWR_SetDefaultShapes
+	HWR_SetLetterShapes
+	HWR_GetLetterShapes
+	
+	HWR_SetExternalResource
+
+	INK_InitData
+	INK_FreeData
+	INK_Erase 
+	INK_StrokeCount
+	INK_DeleteStroke
+	INK_RecognizeShape 
+	INK_AddStroke 
+	INK_GetStroke
+    INK_GetStrokeP
+	INK_GetStrokeRect
+	INK_GetDataRect
+	INK_AddEmptyStroke
+	INK_AddPixelToStroke
+	INK_CreateCopy
+	INK_SortInk
+	INK_Undo
+	INK_Redo 
+	INK_CanRedo 
+	INK_CanUndo 
+	INK_SelectAllStrokes
+	INK_DeleteSelectedStrokes
+	INK_SetStrokesRecognizable
+	INK_SetStrokeRecognizable
+	INK_SelectStroke
+	INK_IsStrokeRecognizable
+	INK_IsStrokeSelected
+	INK_SetUndoLevels
+	INK_Serialize 
+	INK_Paste 
+	INK_Copy 
+	INK_MoveStroke
+	INK_ChangeSelZOrder
+	INK_IsShapeRecognitionEnabled
+	INK_EnableShapeRecognition
+	INK_FindStrokeByPoint
+	INK_SelectStrokesInRect
+	INK_EmptyUndoBuffer
+	INK_CurveIntersectsStroke
+	INK_SetStrokeWidthAndColor
+	INK_DeleteIntersectedStrokes
+	INK_ResizeStroke
+	
+	INK_GetStrokeZOrder
+	INK_SetStrokeZOrder
+
+	INK_AddImage
+	INK_SetImage 
+	INK_SetImageUserData
+	INK_DeleteImage
+	INK_GetImage
+	INK_GetImageFromPoint
+	INK_DeleteAllImages
+	INK_CountImages
+	INK_SetImageFrame
+	
+	INK_AddText 
+	INK_SetText 
+	INK_SetTextUserData
+	INK_DeleteText
+	INK_GetText 
+	INK_GetTextFromPoint
+	INK_DeleteAllTexts
+	INK_CountTexts
+	INK_SetTextFrame

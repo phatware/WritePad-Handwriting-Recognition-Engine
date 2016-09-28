@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CUT">
+      <UniqueIdentifier>{972bd78a-b2d7-4ed9-a7a1-6e822ca09f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LOW">
+      <UniqueIdentifier>{f169a0df-f543-43f0-b87a-1edc9910ddd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA">
+      <UniqueIdentifier>{411e5c94-bb22-4b6f-b41e-4a72c6de881b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DLL">
+      <UniqueIdentifier>{9e6879e8-2366-4e30-b230-26c5e3816f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HWR">
+      <UniqueIdentifier>{a3ea2b17-ee9f-46ea-8880-a9e28e85a81c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MAIN">
+      <UniqueIdentifier>{a100b0b5-e8fa-43c7-85b7-c11849c9e0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SNN">
+      <UniqueIdentifier>{4310494e-f860-4591-bdd2-acea906a0a61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TAPLIB">
+      <UniqueIdentifier>{3f280959-5d79-4bbc-8b22-c06deefa992b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTIL">
+      <UniqueIdentifier>{60aac1bb-3b71-4a1f-94b2-290c6ae6277e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WG">
+      <UniqueIdentifier>{f0ae4a1b-cbd9-4b97-b599-2e4897ecc089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XRWS">
+      <UniqueIdentifier>{030e17d0-05b3-4543-81b2-9c989bc8e50c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LOW\STD">
+      <UniqueIdentifier>{472405ea-6c43-4ebe-934d-940962376d71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LOW\VRT">
+      <UniqueIdentifier>{2f492377-6528-4358-8275-c15358a5246f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WG\LIB">
+      <UniqueIdentifier>{acc2bcd7-8ed7-4dfa-8ab0-3d7b7bea302d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WG\MLP">
+      <UniqueIdentifier>{7dd3eaca-517f-4972-a1a3-6afb9234576a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DWFLIB">
+      <UniqueIdentifier>{273aa2f7-cd2a-4f2d-a7f8-d38ddbbcf708}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CUT\TABL.CPP">
+      <Filter>CUT</Filter>
+    </ClCompile>
+    <ClCompile Include="CUT\WS.CPP">
+      <Filter>CUT</Filter>
+    </ClCompile>
+    <ClCompile Include="CUT\FIX32.CPP">
+      <Filter>CUT</Filter>
+    </ClCompile>
+    <ClCompile Include="CUT\NETREC.CPP">
+      <Filter>CUT</Filter>
+    </ClCompile>
+    <ClCompile Include="CUT\NETRECFX.CPP">
+      <Filter>CUT</Filter>
+    </ClCompile>
+    <ClCompile Include="CUT\NNET.CPP">
+      <Filter>CUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DATA\VSUF_IMG.CPP">
+      <Filter>DATA</Filter>
+    </ClCompile>
+    <ClCompile Include="DATA\DTI_IMG.CPP">
+      <Filter>DATA</Filter>
+    </ClCompile>
+    <ClCompile Include="DATA\ldb_img.cpp">
+      <Filter>DATA</Filter>
+    </ClCompile>
+    <ClCompile Include="DATA\SNN_IMG.CPP">
+      <Filter>DATA</Filter>
+    </ClCompile>
+    <ClCompile Include="DATA\TRD_IMG.CPP">
+      <Filter>DATA</Filter>
+    </ClCompile>
+    <ClCompile Include="DATA\Vprf_img.cpp">
+      <Filter>DATA</Filter>
+    </ClCompile>
+    <ClCompile Include="DLL\PEG\PEG_UTIL.CPP">
+      <Filter>DLL</Filter>
+    </ClCompile>
+    <ClCompile Include="DLL\PEG\PEGDICT.CPP">
+      <Filter>DLL</Filter>
+    </ClCompile>
+    <ClCompile Include="DLL\PEG\PEGREC.CPP">
+      <Filter>DLL</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\Zctype.cpp">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\HWR_FILE.CPP">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\HWR_MATH.CPP">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\HWR_MEM.CPP">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\HWR_STD.CPP">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\HWR_STR.CPP">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\HWR_SWAP.CPP">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\HWR_TEXT.CPP">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="HWR\Zctabs.cpp">
+      <Filter>HWR</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\SPECWIN.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\CHECK.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\FILTER.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\FRM_WORD.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\LOW_DBG.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\LOW_UTIL.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\PICT.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\PreP.cpp">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\LK_NEXT.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\ANGLE.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\ARCS.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\BREAKS.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\CONVERT.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\CROSS.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\CROSS_G.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\EL_APS.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\LINKS.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\LK_BEGIN.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\XR_ATTR.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\LOW_3.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\LU_SPECL.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STD\SKETCH.CPP">
+      <Filter>LOW\STD</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STROKA1.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\STROKA.CPP">
+      <Filter>LOW</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\XR_IMAGE.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\VX_DBG.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\VX_FNC.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\VX_IMG.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\VX_UTL.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\VXMAIN.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\WLINK.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="LOW\VRT\WRITETAP.CPP">
+      <Filter>LOW\VRT</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN\WG_STUFF.CPP">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN\DES.CPP">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN\MAIN_UTL.CPP">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN\PARAKERN.CPP">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN\PARALIBS.CPP">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN\REC-MAIN.CPP">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="MAIN\RECUTIL.CPP">
+      <Filter>MAIN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\POLYCO.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\BitMapCo.cpp">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\CALCCELL.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\DCT.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\DIV_LET.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\DSCR.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\MLP.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\ORTCONST.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="SNN\PARAM.CPP">
+      <Filter>SNN</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\DTI_LRN.CPP">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\DTI_UTIL.CPP">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\ELK.CPP">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\LDBUTIL.CPP">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\LIGSTATE.CPP">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\TR_UTIL.CPP">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="UTIL\VOC_UTIL.CPP">
+      <Filter>UTIL</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\MLP\VIEWCOEF.CPP">
+      <Filter>WG\MLP</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XRWLEARN.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XR_EXP.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XR_MC.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XR_RWG.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XRLV.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XRW_MAIN.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XRW_UTIL.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XRWDICT.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="XRWS\XRWDICTP.CPP">
+      <Filter>XRWS</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WG.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGBAT.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGCTL.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGDBG.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGDBO.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGDDE.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGDES.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGDRW.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGFAK.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGFLM.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGHLV.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGINK.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGIRC.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGLRN.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGMDI.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGMSG.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGPRF.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGPSE.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGREC.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGSRL.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGSTA.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGTAP.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGTLS.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGTRC.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGTTC.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGTXT.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGVOC.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGXED.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGXRD.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\LIB\DESLIB32.CPP">
+      <Filter>WG\LIB</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\LIB\GRLIB.CPP">
+      <Filter>WG\LIB</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\LIB\ZXLAT.CPP">
+      <Filter>WG\LIB</Filter>
+    </ClCompile>
+    <ClCompile Include="TAPLIB\TAPOPEN.CPP">
+      <Filter>TAPLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="TAPLIB\TAPREAD.CPP">
+      <Filter>TAPLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="TAPLIB\TAPSEEK.CPP">
+      <Filter>TAPLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="TAPLIB\TAPWRITE.CPP">
+      <Filter>TAPLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="TAPLIB\TAPXLAT.CPP">
+      <Filter>TAPLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="TAPLIB\XIO.CPP">
+      <Filter>TAPLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGDTL.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="wg\WGTemplate.cpp">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="DWFLIB\dwf.cc">
+      <Filter>DWFLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\WGDWF.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="wg\WGInteractiveLrn.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+    <ClCompile Include="WG\TOPINE.CPP">
+      <Filter>WG</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="wg\WgInteractiveLrn.h">
+      <Filter>WG</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wgtls.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="configurator.ico" />
+    <Image Include="debug.ico" />
+    <Image Include="tap.ico" />
+    <Image Include="learnicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NNTool.rc" />
+  </ItemGroup>
+</Project>

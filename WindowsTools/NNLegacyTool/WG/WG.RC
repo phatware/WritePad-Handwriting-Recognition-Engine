@@ -1,0 +1,364 @@
+#include <windows.h>
+#include "wgidm.h"
+#include "wgflm.h"
+#include "wgmdi.h"
+#include "wgmsg.h"
+#include "wgerr.h"
+#include "wgprf.h"
+#include "wgxed.h"
+#include "wgtls.h"
+#include "wgirc.h"
+#include "wgvoc.h"
+#include "wgpse.h"
+#include "wgtxt.h"
+#include "wghlv.h"
+#include "wgbat.h"
+#include "wgsrl.h"
+
+//CHE: for STRIP_PENLAB:
+#include "wg_stuff.h"
+WGIcon          ICON    "wg.ico"
+WGDBGIcon       ICON    "wgdbo.ico"
+WGTAPIcon       ICON    "wgtap.ico"
+
+learnico        ICON    "wglrn.ico"
+TOOLBMP         BITMAP  "wgtls.bmp"
+
+//CHE:
+//rcinclude  protomix.rc
+
+// MAIN window menu
+WGMenu MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+#if  !STRIP_PENLAB
+    MENUITEM "&Install recognizer...",  IDM_INSTALL_REC
+    MENUITEM "Reload &DDE",             IDM_RELOAD_DDE
+    MENUITEM "&Open TAP File...",       IDM_OPEN_TAP
+    MENUITEM "Open o&utput...",         IDM_OPEN_INKOUTPUT
+    MENUITEM "Open Learning...",        IDM_OPEN_LRN
+    MENUITEM SEPARATOR
+#endif  /*!STRIP_PENLAB*/
+#if  PROTOMIXING
+    MENUITEM "Use&r problems ...",      IDM_PROTOMIX
+    MENUITEM SEPARATOR
+#endif /*PROTOMIXING*/
+    MENUITEM "&Exit",                   IDM_EXIT
+    MENUITEM SEPARATOR
+  END
+#if  !STRIP_PENLAB
+  POPUP "&Options"
+  BEGIN
+    MENUITEM "&Preferences",            IDM_PREFERNCES
+  END
+#endif  /*!STRIP_PENLAB*/
+END
+
+// TAP window menu
+// when new POPUP added, change TABWINDOW_POS const in wgmdi.h
+// to reflect new "&Window" submenu position
+TAPMenu MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+#if  !STRIP_PENLAB
+    MENUITEM "&Install recognizer...",  IDM_INSTALL_REC  
+    MENUITEM "Reload &DDE",             IDM_RELOAD_DDE
+    MENUITEM "&Open TAP File...",       IDM_OPEN_TAP
+    MENUITEM "Open o&utput...",         IDM_OPEN_INKOUTPUT
+    MENUITEM "Open Learning...",        IDM_OPEN_LRN
+    MENUITEM "&Close",                  IDM_CLOSE_DOC
+    MENUITEM SEPARATOR
+    MENUITEM "&Mail TAP file...",       IDM_MAIL_TAP
+    MENUITEM SEPARATOR
+#endif  /*!STRIP_PENLAB*/
+#if  PROTOMIXING
+    MENUITEM "Use&r problems ...",      IDM_PROTOMIX
+    MENUITEM SEPARATOR
+#endif /*PROTOMIXING*/
+    MENUITEM "&Exit",                   IDM_EXIT
+    MENUITEM SEPARATOR
+  END
+#if  !STRIP_PENLAB
+  POPUP "&Recognizer"
+  BEGIN
+    MENUITEM "&Recognize \tF5",         IDM_REC_RECOGNIZE
+    MENUITEM "&Upper level \tCtrl+F5",  IDM_REC_UPPER
+    MENUITEM "&Word cut",               IDM_REC_WORDCUT
+    MENUITEM "&Create descriptor file", IDM_REC_SAVEDESFILE
+    MENUITEM SEPARATOR
+    MENUITEM "&Config",                 IDM_REC_CONFIG
+    MENUITEM SEPARATOR
+    MENUITEM "&Batch...",               IDM_REC_BATCH
+//    MENUITEM "&View batch result...",   IDM_REC_RESULT
+  END
+  POPUP "&Options"
+  BEGIN
+    MENUITEM "&Preferences",            IDM_PREFERNCES
+    MENUITEM "&Debug",                  IDM_DEBUG
+    MENUITEM "&Set ports",              IDM_SET_PORTS
+  END
+  POPUP "&Window"
+  BEGIN
+    MENUITEM "&Cascade",                IDM_CASCADE_DOC
+    MENUITEM "Tile &vertically",        IDM_TILE_DOCV
+    MENUITEM "Tile &horizontally",      IDM_TILE_DOCH
+    MENUITEM "Arrange &Icons",          IDM_ARRANGE_DOC
+    MENUITEM "Close &All",              IDM_CLOSEALL_DOC
+  END
+#endif  /*!STRIP_PENLAB*/
+END
+
+// Formatted output and ink window menu
+// when new POPUP added, change INKOUTPUT_POS const in wgmdi.h
+// to reflect new "&Window" submenu position
+INKOUTPUTMenu MENU
+BEGIN
+  POPUP "&File"                                
+  BEGIN
+#if  !STRIP_PENLAB
+    MENUITEM "&Install recognizer...",  IDM_INSTALL_REC  
+    MENUITEM "Reload &DDE",             IDM_RELOAD_DDE
+    MENUITEM "&Open TAP File...\tF3",   IDM_OPEN_TAP
+#endif  /*!STRIP_PENLAB*/
+    MENUITEM "&Save ink...\tF2",        IDM_SAVE_TAP
+    MENUITEM "Begin &ink recording...", IDM_INK_RECORDING
+#if  !STRIP_PENLAB
+    MENUITEM "Open Learning...",        IDM_OPEN_LRN
+    MENUITEM "&Close",                  IDM_CLOSE_DOC
+    MENUITEM SEPARATOR
+    MENUITEM "&Mail ink...",            IDM_MAIL_SCREEN
+#endif  /*!STRIP_PENLAB*/
+    MENUITEM SEPARATOR
+#if  PROTOMIXING
+    MENUITEM "Use&r problems ...",      IDM_PROTOMIX
+    MENUITEM SEPARATOR
+#endif /*PROTOMIXING*/
+    MENUITEM "&Exit",                   IDM_EXIT
+    MENUITEM SEPARATOR
+  END
+#if  !STRIP_PENLAB
+  POPUP "&Recognizer"
+  BEGIN                                        
+    MENUITEM "&Recognize \tF5",         IDM_REC_RECOGNIZE
+    MENUITEM "&Upper level \tCtrl+F5",  IDM_REC_UPPER
+    MENUITEM "&Stop debugging \tEsc",   IDM_STOP_DEBUGGING
+    MENUITEM SEPARATOR
+    MENUITEM "&Config",                 IDM_REC_CONFIG
+    MENUITEM SEPARATOR
+    MENUITEM "&Edit ini file...",       IDM_EDIT_INIFILE
+    MENUITEM SEPARATOR
+    MENUITEM "&Previous word",          IDM_PREV_WORD           
+    MENUITEM "&Next word",              IDM_NEXT_WORD
+    MENUITEM SEPARATOR
+    MENUITEM "&Batch...",               IDM_REC_BATCH
+//    MENUITEM "&View batch result...",   IDM_REC_RESULT
+  END
+  POPUP "&View"
+  BEGIN
+    MENUITEM "Zoom &in \tNUMPAD +",     IDM_ZOOM_IN
+    MENUITEM "Zoom &out \tNUMPAD -",    IDM_ZOOM_OUT
+    MENUITEM "&Full image \tHome",      IDM_NO_ZOOM
+    MENUITEM "&Slow draw \tIns",        IDM_SLOW_DRAW
+    MENUITEM "&Clear text \tF10",       IDM_CLEAR_TEXT
+  END
+#endif  /*!STRIP_PENLAB*/
+  POPUP "&Utilities"
+  BEGIN
+#if  !STRIP_PENLAB
+    MENUITEM "&Correlation matrix...",  IDM_COR_MATRIX
+    MENUITEM "&V function...",           IDM_V_FUNCTION, GRAYED
+    MENUITEM "V &function two passes...",IDM_V2_FUNCTION, GRAYED
+    MENUITEM "Word &layout...",         IDM_WORD_LAYOUT
+    MENUITEM "&Edit xr line",           IDM_XREDIT
+#endif  /*!STRIP_PENLAB*/
+    MENUITEM "Vocabulary &service",     IDM_VOC
+#if  !STRIP_PENLAB
+    MENUITEM "Read &NEWTON",            IDM_READ_NEWTON
+    MENUITEM "Read &WACOM ",            IDM_READ_WACOM
+    POPUP "LowLevel &Debug"
+    BEGIN
+      MENUITEM "BREAKS",                IDM_LOWDBG_BREAKS
+      MENUITEM "CROSS_G",               IDM_LOWDBG_CROSS_G
+      MENUITEM "LK_BEGIN",              IDM_LOWDBG_LK_BEGIN
+      MENUITEM "LK_NEXT",               IDM_LOWDBG_LK_NEXT
+    END
+  END
+  POPUP "&Options"
+  BEGIN
+    MENUITEM "&Preferences",            IDM_PREFERNCES
+    MENUITEM "&Font...",                IDM_SELECT_FONT
+    MENUITEM "&Debug",                  IDM_DEBUG
+    MENUITEM "&Show graph...",          IDM_SHOWGRAPH
+    MENUITEM "&Set ports",              IDM_SET_PORTS
+  END
+  POPUP "&Window"
+  BEGIN
+    MENUITEM "&Cascade",                IDM_CASCADE_DOC
+    MENUITEM "Tile &vertically",        IDM_TILE_DOCV
+    MENUITEM "Tile &horizontally",      IDM_TILE_DOCH
+    MENUITEM "Arrange &Icons",          IDM_ARRANGE_DOC
+    MENUITEM "Close &All",              IDM_CLOSEALL_DOC
+  END
+#endif  /*!STRIP_PENLAB*/
+END
+
+/* ??IB */
+LearnMenu MENU
+BEGIN
+  POPUP "&File"                                
+  BEGIN
+#if  !STRIP_PENLAB
+    MENUITEM "Open &Learning...",        IDM_OPEN_LRN
+    MENUITEM "&Close",                  IDM_CLOSE_DOC
+    MENUITEM SEPARATOR
+#endif  /*!STRIP_PENLAB*/
+    MENUITEM "&Exit",                   IDM_EXIT
+    MENUITEM SEPARATOR
+  END
+#if  !STRIP_PENLAB
+  POPUP "&Recognizer"
+  BEGIN
+    MENUITEM "&Stop debugging \tEsc",   IDM_STOP_DEBUGGING
+    MENUITEM SEPARATOR
+    MENUITEM "&Config",                 IDM_REC_CONFIG
+    MENUITEM SEPARATOR
+    MENUITEM "&Edit ini file...",       IDM_EDIT_INIFILE
+  END
+  POPUP "&Utilities"
+  BEGIN
+    MENUITEM "&Edit xr line",           IDM_XREDIT
+  END
+  POPUP "&Options"
+  BEGIN
+    MENUITEM "&Preferences",            IDM_PREFERNCES
+    MENUITEM "&Font...",                IDM_SELECT_FONT
+  END
+  POPUP "&Window"
+  BEGIN
+    MENUITEM "&Cascade",                IDM_CASCADE_DOC
+    MENUITEM "Tile &vertically",        IDM_TILE_DOCV
+    MENUITEM "Tile &horizontally",      IDM_TILE_DOCH
+    MENUITEM "Arrange &Icons",          IDM_ARRANGE_DOC
+    MENUITEM "Close &All",              IDM_CLOSEALL_DOC
+  END
+#endif  /*!STRIP_PENLAB*/
+END
+WG ACCELERATORS
+BEGIN   
+#if  !STRIP_PENLAB
+    VK_F3,      IDM_OPEN_TAP,       VIRTKEY
+    VK_F3,      IDM_SEARCH,         VIRTKEY, ALT
+#endif  /*!STRIP_PENLAB*/
+    VK_F2,      IDM_SAVE_TAP,       VIRTKEY
+    VK_F2,      IDM_SAVE_TRAJECTORY,VIRTKEY, CONTROL
+#if  !STRIP_PENLAB
+    VK_F5,      IDM_REC_RECOGNIZE,  VIRTKEY
+    VK_F5,      IDM_REC_UPPER,      VIRTKEY, CONTROL
+    VK_ESCAPE,  IDM_STOP_DEBUGGING, VIRTKEY
+    VK_INSERT,  IDM_SLOW_DRAW,      VIRTKEY
+    VK_HOME,    IDM_NO_ZOOM,        VIRTKEY
+    VK_F10,     IDM_CLEAR_TEXT,     VIRTKEY
+    VK_ADD,     IDM_ZOOM_INCTL,     VIRTKEY, CONTROL
+    VK_SUBTRACT,IDM_ZOOM_OUTCTL,    VIRTKEY, CONTROL
+#endif  /*!STRIP_PENLAB*/
+END
+
+
+STRINGTABLE
+BEGIN
+  ERROR_UNDEFINED_VALUE,     "Undefined value"
+  ERROR_INVALID_VALUE,       "Invalid data"
+  ERROR_NO_MEMORY,           "No free memory"
+  ERROR_WRITE_FILE,          "Error while writing file"
+  ERROR_READ_FILE,           "Error while reading file"
+  ERROR_INVALID_FILE,        "Error invalid file format"
+  ERROR_INVALID_BITMAP,      "Invalid bitmap"
+  IDM_OPEN_TAP,              "Open - TAP file"
+  IDM_OPEN_INKOUTPUT,        "Open - Ink output"
+  IDM_ZOOM_OUT,              "View - Enlarge"
+  IDM_ZOOM_IN,               "View - Reduce"
+
+  WNDMAIN_VERSION,           " v10.05.19 "     
+
+  IDS_COMPREFIX     "COM"
+
+  IDS_BAUD110       "110"
+  IDS_BAUD300       "300"
+  IDS_BAUD600       "600"
+  IDS_BAUD1200      "1200"
+  IDS_BAUD2400      "2400"
+  IDS_BAUD4800      "4800"
+  IDS_BAUD9600      "9600"
+  IDS_BAUD14400     "14.4k"
+  IDS_BAUD19200     "19.2k"
+  IDS_BAUD38400     "38.4k"
+  IDS_BAUD56000     "56k"
+  IDS_BAUD128000    "128k"
+  IDS_BAUD256000    "256k"
+
+  IDS_PARITYNONE    "None"
+  IDS_PARITYEVEN    "Even"
+  IDS_PARITYODD     "Odd"
+
+  IDS_ONESTOPBIT    "1"
+  IDS_ONE5STOPBITS  "1.5"
+  IDS_TWOSTOPBITS   "2"
+END                                                   
+
+#if  !STRIP_PENLAB
+CUSTOMTOOLS RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+//   Command           Toggled            Released       Toggled released
+//     IDM               IDM               BITMAP           BITMAP
+  IDM_OPEN_INKOUTPUT,    0,               TOOLOPENINK,           0,
+  IDM_OPEN_TAP,          0,               TOOLOPENTAP,           0,
+  IDM_SAVE_TAP,          0,               TOOLSAVETAP,           0,
+  IDM_ZOOM_IN,           0,               TOOLZOOMIN,            0,
+  IDM_ZOOM_OUT,          0,               TOOLZOOMOUT,           0,
+  IDM_REC_RECOGNIZE,     0,               TOOLRECOGNIZE,         0,
+  IDM_PREV_WORD,         0,               TOOLPREVWORD,          0,
+  IDM_NEXT_WORD,         0,               TOOLNEXTWORD,          0,
+  IDM_REC_CONFIG,        0,               TOOLCONFIG,            0,
+  IDM_STOP_DEBUGGING,    0,               TOOLSTOPDEBBUG,        0,
+  IDM_EDIT_INIFILE,      0,               TOOLCHANGEINI,         0, 
+  0,                     0,                  0,                  0
+END
+
+//  Default tools - shown whenever no "Tools" section
+//  defined in INI file
+DEFAULTTOOLS RCDATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+// Command IDM
+  IDM_OPEN_INKOUTPUT,
+  IDM_OPEN_TAP,          
+  IDM_SAVE_TAP,          
+  IDM_ZOOM_IN,           
+  IDM_ZOOM_OUT,          
+  IDM_REC_RECOGNIZE,     
+  IDM_STOP_DEBUGGING,
+  IDM_PREV_WORD,
+  IDM_NEXT_WORD,
+  IDM_REC_CONFIG,
+  IDM_EDIT_INIFILE,
+  0
+END
+                          
+#endif  /*!STRIP_PENLAB*/
+rcinclude wgflm.dlg
+#if  !STRIP_PENLAB
+#define AAAAAA
+rcinclude wgmsg.dlg
+rcinclude wgprf.dlg
+rcinclude wgxed.dlg
+#endif  /*!STRIP_PENLAB*/
+rcinclude wgirc.dlg
+rcinclude wgvoc.dlg
+rcinclude wgpse.dlg
+rcinclude wgtxt.dlg
+rcinclude wghlv.dlg
+rcinclude wgbat.dlg
+rcinclude wgsrl.dlg
+
+

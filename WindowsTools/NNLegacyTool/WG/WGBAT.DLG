@@ -1,0 +1,45 @@
+BATCHFILE DIALOG DISCARDABLE  15, 24, 266, 256
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Run batch"
+FONT 8, "Helv"                        
+BEGIN
+    LISTBOX         IDC_LST1,7,84,90,49,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_TEMP,0,0,0,0,LBS_MULTIPLESEL | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Directory:",-1,6,6,40,9
+    LTEXT           "",IDC_STC1,50,6,153,9,SS_NOPREFIX
+    LISTBOX         IDC_LST2,106,85,90,48,LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "List Files of &Type:",IDC_STC2,6,137,90,9
+    COMBOBOX        IDC_CMB1,6,152,90,36,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | 
+                    WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dri&ves:",IDC_STC4,102,138,90,9
+    COMBOBOX        IDC_CMB2,106,152,92,68,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_SORT | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Select &all",IDC_SELECTALL,210,6,50,14,WS_GROUP
+    PUSHBUTTON      "Sho&w batch",ID_READBATCH,210,27,50,14,WS_GROUP
+    DEFPUSHBUTTON   "&Start batch",IDOK,210,48,50,14,WS_GROUP
+    PUSHBUTTON      "Stop &batch",IDCANCEL,210,67,50,14,WS_GROUP
+    PUSHBUTTON      "&Exit",IDC_QUIT,210,87,50,14,WS_GROUP
+    PUSHBUTTON      "&Help",IDC_PSHHELP,210,107,50,14,WS_GROUP
+    LTEXT           "SET file",-1,10,22,30,7
+    CTEXT           "",IDC_CURSETFILE,48,22,63,8
+    LTEXT           "INI file",-1,10,39,31,9
+    CTEXT           "",IDC_CURINIFILE,48,39,63,8
+    LTEXT           "TAP file",-1,10,54,31,9
+    CTEXT           "",IDC_CURTAPFILE,48,55,63,8
+    LTEXT           "in progress.",-1,120,54,40,11
+    RTEXT           "",IDC_COUNT,126,68,19,11
+    LTEXT           "file(s) selected.",-1,147,68,54,11
+    LTEXT           "",IDC_PROGRESS,9,68,115,12,WS_BORDER | NOT WS_GROUP
+    LTEXT           "&Start batch from ...",-1,7,170,92,12
+    LISTBOX         IDC_STARTPOS,7,184,245,66,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+

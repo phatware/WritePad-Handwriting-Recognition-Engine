@@ -1,0 +1,25 @@
+;LIBRARY         PEG_CALIF
+
+EXPORTS
+;                DllEntryPoint               @1
+                CgrGetRecID                  @100
+                CgrCreateContext             @101
+                CgrCloseContext              @102
+                CgrOpenSession               @103
+                CgrCloseSession              @104
+                CgrRecognize                 @105
+                CgrRecognizeSymbol           @106
+                CgrGetAnswers                @107
+
+                CgrLoadDict                  @108
+                CgrSaveDict                  @109
+                CgrFreeDict                  @110
+                CgrGetDictStatus             @111
+                CgrAddWordToDict             @112
+                CgrCheckWordInDicts          @113
+                CgrSpellCheckWord            @114
+
+                CgrGetSetPicturesWeights     @115
+
+
+

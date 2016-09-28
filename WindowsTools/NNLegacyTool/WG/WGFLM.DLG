@@ -1,0 +1,90 @@
+FILEOPENORD DIALOG 15, 24, 360, 134
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Open"
+FONT 8, "Helv"
+BEGIN
+    LTEXT           "File &Name:", IDC_STC3, 6, 6, 76, 9
+    EDITTEXT        IDC_EDT1, 6, 16, 90, 12, ES_AUTOHSCROLL | ES_OEMCONVERT
+    LISTBOX         IDC_LST1, 6, 32, 90, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "&Directories:", -1, 110, 6, 92, 9
+    LTEXT           "", IDC_STC1, 110, 18, 92, 9, SS_NOPREFIX
+    LISTBOX         IDC_LST2, 110, 32, 92, 68, LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "List Files of &Type:", IDC_STC2, 6, 104, 90, 9
+    COMBOBOX        IDC_CMB1, 6, 114, 90, 36, CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dri&ves:", IDC_STC4, 110, 104, 92, 9
+    COMBOBOX        IDC_CMB2, 110, 114, 92, 68, CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_SORT | 
+                    CBS_HASSTRINGS | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK", IDOK, 208, 6, 50, 14, WS_GROUP
+    PUSHBUTTON      "Cancel", IDCANCEL, 208, 24, 50, 14, WS_GROUP
+    PUSHBUTTON      "&NetWork", 0x40d, 208, 46, 50, 14, WS_GROUP
+//    PUSHBUTTON      "&Help", IDC_PSHHELP, 208, 46, 50, 14, WS_GROUP
+    CONTROL         "&Read Only", IDC_CHX1, "Button", BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP, 208, 68, 50, 12
+    CONTROL         "", IDC_PREVIEW, "Static", SS_BLACKFRAME, 264, 16, 90, 
+                    85
+    CTEXT           "Preview", -1, 264, 6, 90, 9
+    CTEXT           "99 of 99", IDC_PAGE, 291, 116, 36, 9
+    PUSHBUTTON      "<<", IDC_PGUP, 264, 114, 22, 12
+    PUSHBUTTON      ">>", IDC_PGDN, 332, 114, 22, 12
+END
+
+FILEOPENORD32 DIALOG LOADONCALL MOVEABLE DISCARDABLE
+15, 24, 360, 134
+CAPTION "Open"
+STYLE WS_CAPTION | WS_SYSMENU | WS_POPUP | DS_MODALFRAME
+FONT 8, "Helv"
+BEGIN
+    LTEXT "File &Name:", IDC_STC3,    6,    6,  76,  9
+    CONTROL "", IDC_EDT1, "edit", ES_LEFT | ES_AUTOHSCROLL | WS_BORDER |
+            WS_TABSTOP | WS_CHILD | ES_OEMCONVERT,
+            6,    16,  90,  12
+    CONTROL "", IDC_LST1, "listbox",
+            LBS_SORT | LBS_HASSTRINGS | LBS_NOTIFY | LBS_DISABLENOSCROLL
+            | WS_VSCROLL | WS_CHILD | WS_BORDER | WS_TABSTOP
+            | LBS_OWNERDRAWFIXED,
+            6,   32,  90,  68
+
+    LTEXT "&Directories:", -1, 110,   6,  92,   9
+    LTEXT "", IDC_STC1, 110,  18,  92,   9, SS_NOPREFIX
+    CONTROL "", IDC_LST2, "listbox",
+            LBS_SORT | LBS_HASSTRINGS | LBS_NOTIFY | LBS_DISABLENOSCROLL
+            | WS_VSCROLL | WS_CHILD | WS_BORDER | WS_TABSTOP
+            | LBS_OWNERDRAWFIXED,
+            110,  32,  92,  68
+
+    LTEXT "List Files of &Type:", IDC_STC2, 6,  104,  90,   9
+    CONTROL "", IDC_CMB1, "combobox", CBS_DROPDOWNLIST | CBS_AUTOHSCROLL |
+            WS_BORDER | WS_VSCROLL | WS_TABSTOP | WS_CHILD,
+            6,  114,  90,  36
+
+    LTEXT "Dri&ves:", IDC_STC4, 110, 104,  92,  9
+    CONTROL "", IDC_CMB2, "combobox",
+            CBS_SORT | CBS_HASSTRINGS | CBS_OWNERDRAWFIXED | CBS_DROPDOWNLIST
+            | WS_CHILD | CBS_AUTOHSCROLL | WS_BORDER | WS_VSCROLL
+            | WS_TABSTOP,
+            110, 114,  92, 68
+    PUSHBUTTON "&Help", IDC_PSHHELP,   208,  46,  50,  14, WS_GROUP
+/* ??SD non-16
+    AUTOCHECKBOX "&Read Only", IDC_CHX1, 208,  68,  50,  12,
+                   WS_TABSTOP | WS_GROUP
+*/
+    CONTROL         "&Read Only", IDC_CHX1, "Button", BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP, 208, 68, 50, 12
+    PUSHBUTTON "Net&work...", 0x040d,   208,  114, 50,  14, WS_GROUP
+
+    DEFPUSHBUTTON "OK",  IDOK,      208,   6,  50,  14, WS_GROUP
+    PUSHBUTTON "Cancel", IDCANCEL, 208,  24,  50,  14, WS_GROUP
+    CONTROL         "", IDC_PREVIEW, "Static", SS_BLACKFRAME, 264, 16, 90, 
+                    85
+    CTEXT           "Preview", -1, 264, 6, 90, 9
+    CTEXT           "99 of 99", IDC_PAGE, 291, 116, 36, 9
+    PUSHBUTTON      "<<", IDC_PGUP, 264, 114, 22, 12
+    PUSHBUTTON      ">>", IDC_PGDN, 332, 114, 22, 12
+
+END
