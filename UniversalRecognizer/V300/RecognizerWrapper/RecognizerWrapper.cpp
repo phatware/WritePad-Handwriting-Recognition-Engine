@@ -35,6 +35,8 @@
 #include <math.h>
 #include <stdlib.h>
 
+#include <atomic>
+
 #ifdef MAC_OS_X
 #include <xlocale.h>
 #include <mach/mach.h>
@@ -72,32 +74,33 @@
 #define INTERNAL_RECO_THREAD	1
 #endif // _WIN32
 
-// word corrector for unknown languages
+// word corrector for (unknown) languages
 static const char * g_szDefWords[] = {
     "phatware", "PhatWare",
 };
 
-static const char * g_szDescription = "WritePad(r) Multilingual Handwriting Recognition Engine. Copyright (c) 2001-2016 Stan Miasnikov, PhatWare(r) Corp. All rights reserved.";
+// NOTE: DO NOT CHANGE THE COPYRIGHT NOTICE. Changing the copyright notice below will violate WritePad source code license
+static const char * g_szDescription = "WritePad(r) Multilingual Handwriting Recognition Engine. Copyright (c) 2001-2017 Stan Miasnikov, PhatWare(r) Corp. All rights reserved.";
 
 #define DEFWORDCNT	2
 
-#ifndef MAC_OS_X
-
-inline BOOL OSAtomicTestAndSet( int bit, UInt32 * val )
-{
-    BOOL res = (0 != ((*val) & (0x1 << bit)));
-    (*val) |= (0x1 << bit);
-    return res;
-}
-
-inline BOOL OSAtomicTestAndClear( int bit, UInt32 * val )
-{
-    BOOL res = (0 != ((*val) & (0x1 << bit)));
-    (*val) &= ~(0x1 << bit);
-    return res;
-}
-
-#endif // MAC_OS_X
+//#ifndef MAC_OS_X
+//
+//inline BOOL OSAtomicTestAndSet( int bit, UInt32 * val )
+//{
+//    BOOL res = (0 != ((*val) & (0x1 << bit)));
+//    (*val) |= (0x1 << bit);
+//    return res;
+//}
+//
+//inline BOOL OSAtomicTestAndClear( int bit, UInt32 * val )
+//{
+//    BOOL res = (0 != ((*val) & (0x1 << bit)));
+//    (*val) &= ~(0x1 << bit);
+//    return res;
+//}
+//
+//#endif // MAC_OS_X
 
 static const char * g_pszCapWords[] = {
     ("Monday"),
@@ -126,6 +129,7 @@ static const char * g_szDefUserWords[] = {
     "",
 };
 
+// list of words added to dictionary when switching to Internet mode
 static const char * g_szInternetWords[] = {
     "www",
     "www.",
@@ -464,7 +468,7 @@ protected:
     
     static int getScheduledPriority( pthread_t inThread, int inPriorityKind)
     {
-#ifdef MAC_OS_X		
+#ifdef MAC_OS_X
         thread_basic_info_data_t			threadInfo;
         policy_info_data_t					thePolicyInfo;
         unsigned int						count;
@@ -508,7 +512,7 @@ protected:
                 return thePolicyInfo.rr.base_priority;
                 break;
         }
-#endif // MAC_OS_X	
+#endif // MAC_OS_X
         return 0;
     }
     
@@ -557,17 +561,20 @@ public:
 		m_lastWord = NULL;
         m_cRecQueue = 0;
         memset( letter_shapes, 0, sizeof( letter_shapes ) );
-        m_bResultsReady = 0;
-        m_bRunRecognizer = 0;
+        // m_bResultsReady = 0;
+        // m_bRunRecognizer = 0;
 
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
-        OSAtomicTestAndSet( 1, &m_bRunRecognizer );
+        std::atomic_fetch_and( &m_bResultsReady, 0);
+        std::atomic_fetch_or( &m_bRunRecognizer, 1);
+        // OSAtomicTestAndClear( 1, &m_bResultsReady );
+        // OSAtomicTestAndSet( 1, &m_bRunRecognizer );
 
 #ifdef INTERNAL_RECO_THREAD
 
         m_Thread = NULL;
-        m_bNewStroke = 0;
-        OSAtomicTestAndClear( 1, &m_bNewStroke );
+        // m_bNewStroke = 0;
+        std::atomic_fetch_and( &m_bNewStroke, 0);
+        // OSAtomicTestAndClear( 1, &m_bNewStroke );
 
 #ifndef MAC_OS_X
         m_condStroke = PTHREAD_COND_INITIALIZER;
@@ -608,7 +615,7 @@ public:
         // pthread_mutex_lock( &m_mutexReco );
         // pthread_mutex_unlock( &m_mutexReco );
         int iResult = 0;
-        if ( ! OSAtomicTestAndClear( 1 , &m_bResultsReady ) )
+        if ( ! std::atomic_fetch_and( &m_bResultsReady, 0) )
         {
             if ( timeout != NULL )
                 iResult = pthread_cond_timedwait( &m_condResult, &m_mutexResult, timeout );
@@ -626,8 +633,10 @@ public:
         pthread_mutex_lock( &m_mutexReco );
         pthread_mutex_lock( &m_mutexQueue );
         m_bNewSession = true;
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
-        OSAtomicTestAndClear( 1, &m_bNewStroke );
+        std::atomic_fetch_and( &m_bResultsReady, 0);
+        std::atomic_fetch_and( &m_bNewStroke, 0);
+        // OSAtomicTestAndClear( 1, &m_bResultsReady );
+        // OSAtomicTestAndClear( 1, &m_bNewStroke );
         FreeResults();
         pthread_mutex_unlock( &m_mutexQueue );
         pthread_mutex_unlock( &m_mutexReco );
@@ -665,7 +674,8 @@ public:
         m_pRecQueue[index].pTrace = pTrace;
         m_pRecQueue[index].cTrace = cTrace;
         m_cRecQueue++;
-        OSAtomicTestAndSet( 1, &m_bNewStroke );
+        std::atomic_fetch_and( &m_bNewStroke, 1);
+        // OSAtomicTestAndSet( 1, &m_bNewStroke );
         pthread_cond_signal( &m_condStroke );
         pthread_mutex_unlock( &m_mutexQueue );
         return true;
@@ -705,7 +715,8 @@ public:
         {
             pthread_mutex_lock( &pThis->m_mutexReco );
             //pThis->m_Thread->SetPriority( OpenALThread::kDefaultThreadPriority, false );
-            if ( ! OSAtomicTestAndClear( 1, &pThis->m_bNewStroke ) ) 
+            if ( ! std::atomic_fetch_and( &pThis->m_bNewStroke, 0) )
+            // if ( ! OSAtomicTestAndClear( 1, &pThis->m_bNewStroke ) )
             {
                 pthread_cond_wait( &pThis->m_condStroke, &pThis->m_mutexReco );		/// ??? does not wait, mutex?
             }
@@ -768,7 +779,8 @@ public:
 
     void SynchReset()
     {
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
+        std::atomic_fetch_and( &m_bResultsReady, 0);
+        // OSAtomicTestAndClear( 1, &m_bResultsReady );
         FreeResults();
     }
 
@@ -813,7 +825,8 @@ public:
 #ifdef INTERNAL_RECO_THREAD
         pthread_mutex_lock( &m_mutexResult );
 #endif // INTERNAL_RECO_THREAD
-        OSAtomicTestAndSet( 1, &m_bResultsReady );
+        std::atomic_fetch_or( &m_bResultsReady, 1);
+        // OSAtomicTestAndSet( 1, &m_bResultsReady );
 #ifdef INTERNAL_RECO_THREAD
         pthread_cond_signal( &m_condResult );
         pthread_mutex_unlock( &m_mutexResult );
@@ -1237,7 +1250,8 @@ end:
     
     void FreeResults()
     {
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
+        std::atomic_fetch_and( &m_bResultsReady, 0);
+        // OSAtomicTestAndClear( 1, &m_bResultsReady );
         if ( NULL != m_pWeights )
             delete [] m_pWeights;		
         m_pWeights = NULL;
@@ -1593,7 +1607,8 @@ end:
             // terminate the thread
             m_bRunThread = false;
             pthread_mutex_lock( &m_mutexReco );
-            OSAtomicTestAndSet( 1, &m_bNewStroke );
+            std::atomic_fetch_or( &m_bNewStroke, 1);
+            // OSAtomicTestAndSet( 1, &m_bNewStroke );
             pthread_cond_signal( &m_condStroke );
             pthread_mutex_unlock( &m_mutexReco );
             
@@ -2098,17 +2113,7 @@ end:
                 
                 nWeight = (USHORT)RecoGetAnswers( HW_ALT_WEIGHT, i, j, m_RecCtx ).value;
                 nStrokes = RecoGetAnswers( HW_ALT_NSTR, i, j, m_RecCtx ).value;
-                
-                /* Just how stoned was I????
-                ULONG * strokes_arr = (ULONG *)RecoGetAnswers( HW_ALT_STROKES, i, j, m_RecCtx );
-                ULONG n = 0;
-                for ( int i = 0; i < nStrokes; i++ )
-                {
-                    n = strokes_arr[i];
-                    nStrokes = (int)n;
-                }
-                */
-                
+                                
                 if ( m_nRecMode == RECMODE_WWW )
                 {
                     // make all lower case for addresses
@@ -2252,7 +2257,8 @@ end:
             if ( nNewMode == RECMODE_WWW )
                 CreateInternetDictionary();
             m_nRecMode = nNewMode;
-            OSAtomicTestAndClear( 1, &m_bResultsReady );
+            std::atomic_fetch_and( &m_bResultsReady, 0);
+            // OSAtomicTestAndClear( 1, &m_bResultsReady );
         }
     } 
     int		GetMode() const { return m_nRecMode; }
@@ -2801,7 +2807,8 @@ end:
         // make sure the recognizer is enabled...
         if ( bAsync )
         {
-            OSAtomicTestAndSet( 1, &m_bRunRecognizer );
+            std::atomic_fetch_or( &m_bRunRecognizer, 1);
+            // OSAtomicTestAndSet( 1, &m_bRunRecognizer );
         }
         int nCnt = pInkData->StrokesTotal();
         if ( nCnt < 1 )
@@ -2828,7 +2835,8 @@ end:
         {
             if ( bAsync )
             {
-                if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+                if ( !std::atomic_fetch_or( &m_bRunRecognizer, 1) )
+                // if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
                     goto err;
             }
             UInt32 nStrokeLen = pInkData->GetStrokePointCnt( (int)pStrokes[i].num );
@@ -2865,7 +2873,8 @@ end:
 #endif // INTERNAL_RECO_THREAD
         if ( bAsync )
         {
-            if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+            if ( ! std::atomic_fetch_or( &m_bRunRecognizer, 1) )
+            // if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
                 goto err;
         }
         
@@ -2882,7 +2891,8 @@ end:
 #endif // INTERNAL_RECO_THREAD
         if ( bAsync )
         {
-            if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+            if ( ! std::atomic_fetch_or( &m_bRunRecognizer, 1) )
+            // if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
                 return NULL;
         }
         return GetResult();
@@ -2960,7 +2970,8 @@ end:
         
     void StopAsyncReco()
     {
-        OSAtomicTestAndClear( 1, &m_bRunRecognizer );
+        std::atomic_fetch_and( &m_bRunRecognizer, 0);
+        // OSAtomicTestAndClear( 1, &m_bRunRecognizer );
         ResultsReady( false );
     }
     
@@ -2994,9 +3005,9 @@ private:
     char	*	 m_nCustomNumbers;
 
     // recognition thread support
-    UInt32		 m_bRunRecognizer;
-    UInt32		 m_bResultsReady;
-    int          m_cRecQueue;
+    std::atomic_int		m_bRunRecognizer;
+    std::atomic_int		m_bResultsReady;
+    int                 m_cRecQueue;
 
 #ifdef INTERNAL_RECO_THREAD
     OpenALThread *		m_Thread;
@@ -3007,7 +3018,7 @@ private:
     pthread_mutex_t		m_mutexAsyncReco;
     pthread_mutex_t		m_mutexQueue;
     ASYNC_RECOG_PARAMS  m_pRecQueue[RECQUEUE_MAX_ELEMS];
-    UInt32				m_bNewStroke;
+    std::atomic_int     m_bNewStroke;
 #endif // INTERNAL_RECO_THREAD
     
     unsigned char		letter_shapes[LRN_WEIGHTSBUFFER_SIZE];
