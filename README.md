@@ -1,9 +1,9 @@
 
-#WRITEPAD Handwriting Recognition Engine (HWRE)
+# WRITEPAD Handwriting Recognition Engine (HWRE)
 
 Multilingual, multiplatfrom, self-contained handwriting recognition engine.
 
-###About
+### About
 
 This source code is distributed under the GPL v 3.0 license. In short, this means that ALL modifications and/or derivative works that use all or any portion of source code in the repository must be made public. 
 
@@ -21,7 +21,7 @@ This repository contains the complete source code of WritePad Handwriting Recogn
 * Linux (practically any distribution with ISO C/C++ compiler)
 * Google Android NDK, SDK 4+ (ARM, MIPS, MIPS64, ARM64, i64, i86)
 
-###Building WritePad Engine
+### Building WritePad Engine
 
 Building the handwriting recognition engine on different platforms
 
@@ -62,12 +62,12 @@ Start Visual Studio and open  `libuniversalreco.sln` in the `/UniversalRecognize
 
 Start Visual Studio and open  `WritePadReco.sln` in the `UniversalRecognizer/V300/WindowsStore/WindowsStoreReco` folder. Select the desired build configuration and platform, then choose Build/Build Solution.
 
-###SDK Tools
+### SDK Tools
 
 Additonal information about building and using WritePad SDK tools will be posted here soon.
 
 
-###Notes
+### Notes
 
 _Developer Note_: We regret to inform you that most of the comments and internal development documentation were deemed confidential and have been excluded from this project. Some limited SDK documentation can be found in the Documentation folder.
 
