@@ -1,7 +1,7 @@
 /***************************************************************************************
  *
  *  WRITEPAD(r): Handwriting Recognition Engine (HWRE) and components.
- *  Copyright (c) 2001-2016 PhatWare (r) Corp. All rights reserved.
+ *  Copyright (c) 2001-2017 PhatWare (r) Corp. All rights reserved.
  *
  *  Licensing and other inquires: <developer@phatware.com>
  *  Developer: Stan Miasnikov, et al. (c) PhatWare Corp. <http://www.phatware.com>
@@ -4102,6 +4102,13 @@ int HWR_Capabilities()
 {
     CRecognizerWrapper::RecGetID( &idType );
     return idType.capabilities;
+}
+
+extern "C"
+PHWR_VERSION HWR_Version()
+{
+    static HWR_VERSION  version = { 5, 6, 910, 0 };
+    return &version;
 }
 
 RECO_DATA_EXTERNAL _INT dti_set_external_data( _INT lang, p_CHAR data );
