@@ -2,3 +2,5 @@
 APP_OPTIM 	 := release
 APP_MODULES      := libWritePadRecos WritePadReco
 APP_ABI := all
+APP_STL := c++_static
+

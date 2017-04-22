@@ -8,6 +8,84 @@
 
 /* Begin PBXBuildFile section */
 		363B826F19566CAB00C2FC68 /* letimagestodte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 363B826E19566CAB00C2FC68 /* letimagestodte.cpp */; };
+		367DA68E1E5A34440035B445 /* ImageObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FF317E2336000FF0EAC /* ImageObject.cpp */; };
+		367DA68F1E5A34440035B445 /* InkData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FF517E2336000FF0EAC /* InkData.cpp */; };
+		367DA6901E5A34440035B445 /* InkWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FF717E2336000FF0EAC /* InkWrapper.cpp */; };
+		367DA6911E5A34440035B445 /* PHStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FF817E2336000FF0EAC /* PHStream.cpp */; };
+		367DA6921E5A34440035B445 /* PHStroke.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FFA17E2336000FF0EAC /* PHStroke.cpp */; };
+		367DA6931E5A34440035B445 /* ShapesRec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FFC17E2336000FF0EAC /* ShapesRec.cpp */; };
+		367DA6941E5A34440035B445 /* TextObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FFE17E2336000FF0EAC /* TextObject.cpp */; };
+		367DA6951E5A34440035B445 /* UndoAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC300017E2336000FF0EAC /* UndoAction.cpp */; };
+		367DA6961E5A34480035B445 /* dti_img.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC300417E2336000FF0EAC /* dti_img.cpp */; };
+		367DA6971E5A34480035B445 /* ldb_img.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC301517E2336000FF0EAC /* ldb_img.cpp */; };
+		367DA6981E5A34480035B445 /* snn_img.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC302217E2336000FF0EAC /* snn_img.cpp */; };
+		367DA6991E5A34480035B445 /* trd_img.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC302C17E2336000FF0EAC /* trd_img.cpp */; };
+		367DA69A1E5A34480035B445 /* vprf_img.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC304917E2336000FF0EAC /* vprf_img.cpp */; };
+		367DA69B1E5A34480035B445 /* vsuf_img.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC304C17E2336000FF0EAC /* vsuf_img.cpp */; };
+		367DA69C1E5A34520035B445 /* gestures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30D817E2336000FF0EAC /* gestures.cpp */; };
+		367DA69D1E5A34520035B445 /* PhatCalc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30DA17E2336000FF0EAC /* PhatCalc.cpp */; };
+		367DA69E1E5A34520035B445 /* RecognizerWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30DD17E2336000FF0EAC /* RecognizerWrapper.cpp */; };
+		367DA69F1E5A34520035B445 /* WordFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30DE17E2336000FF0EAC /* WordFile.cpp */; };
+		367DA6A01E5A34520035B445 /* WordLrnFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30E917E2336000FF0EAC /* WordLrnFile.cpp */; };
+		367DA6A11E5A345F0035B445 /* angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309017E2336000FF0EAC /* angle.cpp */; };
+		367DA6A21E5A345F0035B445 /* apostroph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309117E2336000FF0EAC /* apostroph.cpp */; };
+		367DA6A31E5A345F0035B445 /* arcs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309217E2336000FF0EAC /* arcs.cpp */; };
+		367DA6A41E5A345F0035B445 /* bitmaps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309317E2336000FF0EAC /* bitmaps.cpp */; };
+		367DA6A51E5A345F0035B445 /* breaks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309417E2336000FF0EAC /* breaks.cpp */; };
+		367DA6A61E5A345F0035B445 /* calccell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309517E2336000FF0EAC /* calccell.cpp */; };
+		367DA6A71E5A345F0035B445 /* check.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309617E2336000FF0EAC /* check.cpp */; };
+		367DA6A81E5A345F0035B445 /* circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309717E2336000FF0EAC /* circle.cpp */; };
+		367DA6A91E5A345F0035B445 /* connections.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309817E2336000FF0EAC /* connections.cpp */; };
+		367DA6AA1E5A345F0035B445 /* convert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309917E2336000FF0EAC /* convert.cpp */; };
+		367DA6AB1E5A345F0035B445 /* cross.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309A17E2336000FF0EAC /* cross.cpp */; };
+		367DA6AC1E5A345F0035B445 /* cross_geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309B17E2336000FF0EAC /* cross_geometry.cpp */; };
+		367DA6AD1E5A345F0035B445 /* dct_functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309C17E2336000FF0EAC /* dct_functions.cpp */; };
+		367DA6AE1E5A345F0035B445 /* dtiutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309D17E2336000FF0EAC /* dtiutil.cpp */; };
+		367DA6AF1E5A345F0035B445 /* filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC309E17E2336000FF0EAC /* filter.cpp */; };
+		367DA6B01E5A345F0035B445 /* hwrmath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A017E2336000FF0EAC /* hwrmath.cpp */; };
+		367DA6B11E5A345F0035B445 /* hwrmem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A117E2336000FF0EAC /* hwrmem.cpp */; };
+		367DA6B21E5A345F0035B445 /* hwrstr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A317E2336000FF0EAC /* hwrstr.cpp */; };
+		367DA6B31E5A345F0035B445 /* hwrswap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A417E2336000FF0EAC /* hwrswap.cpp */; };
+		367DA6B41E5A345F0035B445 /* hwrctype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30D617E2336000FF0EAC /* hwrctype.cpp */; };
+		367DA6B51E5A345F0035B445 /* langutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A517E2336000FF0EAC /* langutil.cpp */; };
+		367DA6B61E5A345F0035B445 /* ldbutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A617E2336000FF0EAC /* ldbutil.cpp */; };
+		367DA6B71E5A345F0035B445 /* ligstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A817E2336000FF0EAC /* ligstate.cpp */; };
+		367DA6B81E5A345F0035B445 /* link_begin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30A917E2336000FF0EAC /* link_begin.cpp */; };
+		367DA6B91E5A345F0035B445 /* letimagestodte.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 363B826E19566CAB00C2FC68 /* letimagestodte.cpp */; };
+		367DA6BA1E5A345F0035B445 /* link_next.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30AA17E2336000FF0EAC /* link_next.cpp */; };
+		367DA6BB1E5A345F0035B445 /* links.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30AB17E2336000FF0EAC /* links.cpp */; };
+		367DA6BC1E5A345F0035B445 /* low3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30AC17E2336000FF0EAC /* low3.cpp */; };
+		367DA6BD1E5A345F0035B445 /* low_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30AD17E2336000FF0EAC /* low_data.cpp */; };
+		367DA6BF1E5A345F0035B445 /* low_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30B017E2336000FF0EAC /* low_util.cpp */; };
+		367DA6C01E5A345F0035B445 /* luspecl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30B117E2336000FF0EAC /* luspecl.cpp */; };
+		367DA6C11E5A345F0035B445 /* mlp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30B217E2336000FF0EAC /* mlp.cpp */; };
+		367DA6C21E5A345F0035B445 /* newdict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30B517E2336000FF0EAC /* newdict.cpp */; };
+		367DA6C31E5A345F0035B445 /* param.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30B817E2336000FF0EAC /* param.cpp */; };
+		367DA6C41E5A345F0035B445 /* pict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30B917E2336000FF0EAC /* pict.cpp */; };
+		367DA6C51E5A345F0035B445 /* poly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30BA17E2336000FF0EAC /* poly.cpp */; };
+		367DA6C61E5A345F0035B445 /* post_cap_tbl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30BB17E2336000FF0EAC /* post_cap_tbl.cpp */; };
+		367DA6C71E5A345F0035B445 /* post_capital.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30BC17E2336000FF0EAC /* post_capital.cpp */; };
+		367DA6C81E5A345F0035B445 /* precutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30BD17E2336000FF0EAC /* precutil.cpp */; };
+		367DA6C91E5A345F0035B445 /* prep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30BE17E2336000FF0EAC /* prep.cpp */; };
+		367DA6CA1E5A345F0035B445 /* reco.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30BF17E2336000FF0EAC /* reco.cpp */; };
+		367DA6CB1E5A345F0035B445 /* recodict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C017E2336000FF0EAC /* recodict.cpp */; };
+		367DA6CC1E5A345F0035B445 /* recokern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C117E2336000FF0EAC /* recokern.cpp */; };
+		367DA6CD1E5A345F0035B445 /* recolibs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C217E2336000FF0EAC /* recolibs.cpp */; };
+		367DA6CE1E5A345F0035B445 /* recoutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C317E2336000FF0EAC /* recoutil.cpp */; };
+		367DA6CF1E5A345F0035B445 /* sketch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C517E2336000FF0EAC /* sketch.cpp */; };
+		367DA6D01E5A345F0035B445 /* spell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C617E2336000FF0EAC /* spell.cpp */; };
+		367DA6D11E5A345F0035B445 /* stroke.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C717E2336000FF0EAC /* stroke.cpp */; };
+		367DA6D21E5A345F0035B445 /* stroke1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30C817E2336000FF0EAC /* stroke1.cpp */; };
+		367DA6D31E5A345F0035B445 /* tracedata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30CA17E2336000FF0EAC /* tracedata.cpp */; };
+		367DA6D41E5A345F0035B445 /* triadsutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30CB17E2336000FF0EAC /* triadsutil.cpp */; };
+		367DA6D51E5A345F0035B445 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30CC17E2336000FF0EAC /* utils.cpp */; };
+		367DA6D61E5A345F0035B445 /* wordbreaks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30CD17E2336000FF0EAC /* wordbreaks.cpp */; };
+		367DA6D71E5A345F0035B445 /* wordcorrector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30CE17E2336000FF0EAC /* wordcorrector.cpp */; };
+		367DA6D81E5A345F0035B445 /* worddict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30CF17E2336000FF0EAC /* worddict.cpp */; };
+		367DA6D91E5A345F0035B445 /* wordsegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30D017E2336000FF0EAC /* wordsegment.cpp */; };
+		367DA6DA1E5A345F0035B445 /* xrattrib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30D117E2336000FF0EAC /* xrattrib.cpp */; };
+		367DA6DB1E5A345F0035B445 /* xrdict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30D217E2336000FF0EAC /* xrdict.cpp */; };
+		367DA6DC1E5A345F0035B445 /* xrmatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC30D417E2336000FF0EAC /* xrmatrix.cpp */; };
 		36CC2FDC17E2329500FF0EAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CC2FDB17E2329500FF0EAC /* Foundation.framework */; };
 		36CC30EB17E2336000FF0EAC /* ImageObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FF317E2336000FF0EAC /* ImageObject.cpp */; };
 		36CC30EC17E2336000FF0EAC /* InkData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CC2FF517E2336000FF0EAC /* InkData.cpp */; };
@@ -89,6 +167,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		367DA6831E5A33C00035B445 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36CC2FD617E2329500FF0EAC /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +189,7 @@
 
 /* Begin PBXFileReference section */
 		363B826E19566CAB00C2FC68 /* letimagestodte.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = letimagestodte.cpp; sourceTree = "<group>"; };
+		367DA6851E5A33C00035B445 /* libWritePadRecoTV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWritePadRecoTV.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CC2FD817E2329500FF0EAC /* libWritePadReco.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWritePadReco.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CC2FDB17E2329500FF0EAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		36CC2FDF17E2329500FF0EAC /* WritePadReco-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WritePadReco-Prefix.pch"; sourceTree = "<group>"; };
@@ -268,6 +356,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		367DA6821E5A33C00035B445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36CC2FD517E2329500FF0EAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				36CC2FD817E2329500FF0EAC /* libWritePadReco.a */,
+				367DA6851E5A33C00035B445 /* libWritePadRecoTV.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,6 +648,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		367DA6841E5A33C00035B445 /* WritePadRecoTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 367DA68D1E5A33C00035B445 /* Build configuration list for PBXNativeTarget "WritePadRecoTV" */;
+			buildPhases = (
+				367DA6811E5A33C00035B445 /* Sources */,
+				367DA6821E5A33C00035B445 /* Frameworks */,
+				367DA6831E5A33C00035B445 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WritePadRecoTV;
+			productName = WritePadRecoTV;
+			productReference = 367DA6851E5A33C00035B445 /* libWritePadRecoTV.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		36CC2FD717E2329500FF0EAC /* WritePadReco */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36CC2FE617E2329500FF0EAC /* Build configuration list for PBXNativeTarget "WritePadReco" */;
@@ -577,6 +690,13 @@
 			attributes = {
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "PhatWare Corp.";
+				TargetAttributes = {
+					367DA6841E5A33C00035B445 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U97D34BCNV;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 36CC2FD317E2329500FF0EAC /* Build configuration list for PBXProject "WritePadReco" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -591,11 +711,97 @@
 			projectRoot = "";
 			targets = (
 				36CC2FD717E2329500FF0EAC /* WritePadReco */,
+				367DA6841E5A33C00035B445 /* WritePadRecoTV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		367DA6811E5A33C00035B445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				367DA6A71E5A345F0035B445 /* check.cpp in Sources */,
+				367DA68E1E5A34440035B445 /* ImageObject.cpp in Sources */,
+				367DA6C91E5A345F0035B445 /* prep.cpp in Sources */,
+				367DA6AD1E5A345F0035B445 /* dct_functions.cpp in Sources */,
+				367DA6C11E5A345F0035B445 /* mlp.cpp in Sources */,
+				367DA6CD1E5A345F0035B445 /* recolibs.cpp in Sources */,
+				367DA6B41E5A345F0035B445 /* hwrctype.cpp in Sources */,
+				367DA6971E5A34480035B445 /* ldb_img.cpp in Sources */,
+				367DA6921E5A34440035B445 /* PHStroke.cpp in Sources */,
+				367DA6961E5A34480035B445 /* dti_img.cpp in Sources */,
+				367DA6BD1E5A345F0035B445 /* low_data.cpp in Sources */,
+				367DA6B61E5A345F0035B445 /* ldbutil.cpp in Sources */,
+				367DA6B01E5A345F0035B445 /* hwrmath.cpp in Sources */,
+				367DA6D51E5A345F0035B445 /* utils.cpp in Sources */,
+				367DA6BA1E5A345F0035B445 /* link_next.cpp in Sources */,
+				367DA6C61E5A345F0035B445 /* post_cap_tbl.cpp in Sources */,
+				367DA6C71E5A345F0035B445 /* post_capital.cpp in Sources */,
+				367DA6A11E5A345F0035B445 /* angle.cpp in Sources */,
+				367DA6A61E5A345F0035B445 /* calccell.cpp in Sources */,
+				367DA69B1E5A34480035B445 /* vsuf_img.cpp in Sources */,
+				367DA6BC1E5A345F0035B445 /* low3.cpp in Sources */,
+				367DA6C41E5A345F0035B445 /* pict.cpp in Sources */,
+				367DA6D61E5A345F0035B445 /* wordbreaks.cpp in Sources */,
+				367DA6B71E5A345F0035B445 /* ligstate.cpp in Sources */,
+				367DA6CC1E5A345F0035B445 /* recokern.cpp in Sources */,
+				367DA6C81E5A345F0035B445 /* precutil.cpp in Sources */,
+				367DA6AA1E5A345F0035B445 /* convert.cpp in Sources */,
+				367DA6CA1E5A345F0035B445 /* reco.cpp in Sources */,
+				367DA6941E5A34440035B445 /* TextObject.cpp in Sources */,
+				367DA6C21E5A345F0035B445 /* newdict.cpp in Sources */,
+				367DA6911E5A34440035B445 /* PHStream.cpp in Sources */,
+				367DA6B81E5A345F0035B445 /* link_begin.cpp in Sources */,
+				367DA6B91E5A345F0035B445 /* letimagestodte.cpp in Sources */,
+				367DA6D11E5A345F0035B445 /* stroke.cpp in Sources */,
+				367DA6A31E5A345F0035B445 /* arcs.cpp in Sources */,
+				367DA6901E5A34440035B445 /* InkWrapper.cpp in Sources */,
+				367DA6DA1E5A345F0035B445 /* xrattrib.cpp in Sources */,
+				367DA6C01E5A345F0035B445 /* luspecl.cpp in Sources */,
+				367DA68F1E5A34440035B445 /* InkData.cpp in Sources */,
+				367DA69D1E5A34520035B445 /* PhatCalc.cpp in Sources */,
+				367DA6B11E5A345F0035B445 /* hwrmem.cpp in Sources */,
+				367DA6A21E5A345F0035B445 /* apostroph.cpp in Sources */,
+				367DA6CB1E5A345F0035B445 /* recodict.cpp in Sources */,
+				367DA6C51E5A345F0035B445 /* poly.cpp in Sources */,
+				367DA6991E5A34480035B445 /* trd_img.cpp in Sources */,
+				367DA6D01E5A345F0035B445 /* spell.cpp in Sources */,
+				367DA6CF1E5A345F0035B445 /* sketch.cpp in Sources */,
+				367DA6A81E5A345F0035B445 /* circle.cpp in Sources */,
+				367DA6BF1E5A345F0035B445 /* low_util.cpp in Sources */,
+				367DA6A91E5A345F0035B445 /* connections.cpp in Sources */,
+				367DA6A01E5A34520035B445 /* WordLrnFile.cpp in Sources */,
+				367DA6BB1E5A345F0035B445 /* links.cpp in Sources */,
+				367DA6AF1E5A345F0035B445 /* filter.cpp in Sources */,
+				367DA6CE1E5A345F0035B445 /* recoutil.cpp in Sources */,
+				367DA6D41E5A345F0035B445 /* triadsutil.cpp in Sources */,
+				367DA6B21E5A345F0035B445 /* hwrstr.cpp in Sources */,
+				367DA6951E5A34440035B445 /* UndoAction.cpp in Sources */,
+				367DA6B31E5A345F0035B445 /* hwrswap.cpp in Sources */,
+				367DA6AB1E5A345F0035B445 /* cross.cpp in Sources */,
+				367DA69F1E5A34520035B445 /* WordFile.cpp in Sources */,
+				367DA6DB1E5A345F0035B445 /* xrdict.cpp in Sources */,
+				367DA6D31E5A345F0035B445 /* tracedata.cpp in Sources */,
+				367DA6AC1E5A345F0035B445 /* cross_geometry.cpp in Sources */,
+				367DA69A1E5A34480035B445 /* vprf_img.cpp in Sources */,
+				367DA6D71E5A345F0035B445 /* wordcorrector.cpp in Sources */,
+				367DA6D81E5A345F0035B445 /* worddict.cpp in Sources */,
+				367DA6D91E5A345F0035B445 /* wordsegment.cpp in Sources */,
+				367DA6931E5A34440035B445 /* ShapesRec.cpp in Sources */,
+				367DA6A41E5A345F0035B445 /* bitmaps.cpp in Sources */,
+				367DA6B51E5A345F0035B445 /* langutil.cpp in Sources */,
+				367DA6C31E5A345F0035B445 /* param.cpp in Sources */,
+				367DA6A51E5A345F0035B445 /* breaks.cpp in Sources */,
+				367DA6D21E5A345F0035B445 /* stroke1.cpp in Sources */,
+				367DA69E1E5A34520035B445 /* RecognizerWrapper.cpp in Sources */,
+				367DA6DC1E5A345F0035B445 /* xrmatrix.cpp in Sources */,
+				367DA6AE1E5A345F0035B445 /* dtiutil.cpp in Sources */,
+				367DA6981E5A34480035B445 /* snn_img.cpp in Sources */,
+				367DA69C1E5A34520035B445 /* gestures.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		36CC2FD417E2329500FF0EAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,6 +890,52 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		367DA68B1E5A33C00035B445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = U97D34BCNV;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		367DA68C1E5A33C00035B445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = U97D34BCNV;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
 		36CC2FE417E2329500FF0EAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -829,6 +1081,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		367DA68D1E5A33C00035B445 /* Build configuration list for PBXNativeTarget "WritePadRecoTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				367DA68B1E5A33C00035B445 /* Debug */,
+				367DA68C1E5A33C00035B445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		36CC2FD317E2329500FF0EAC /* Build configuration list for PBXProject "WritePadReco" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

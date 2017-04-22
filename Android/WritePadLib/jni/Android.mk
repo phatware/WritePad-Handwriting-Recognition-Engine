@@ -46,9 +46,10 @@ LOCAL_CFLAGS := -I$(LOCAL_PATH)/include -std=gnu99
 
 LOCAL_SRC_FILES := interface.c letimg.c lidata.c
 
-# LOCAL_LDLIBS := -ldl -llog # -lGLESv1_CM 
+### LOCAL_LDLIBS := -ldl -llog # -lGLESv1_CM 
+LOCAL_LDLIBS += -llog
 
 LOCAL_STATIC_LIBRARIES := libWritePadRecos
 
-include $(BUILD_SHARED_LIBRARY)
+include $(PREBUILD_SHARED_LIBRARY)
 

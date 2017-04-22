@@ -20,6 +20,8 @@ DerivedData
 *.DS_Store
 *.xcbkptlist
 *.userprefs
+lib-iphoneos/
+lib-iphonesimulator/
 
 # Built application files
 *.apk
