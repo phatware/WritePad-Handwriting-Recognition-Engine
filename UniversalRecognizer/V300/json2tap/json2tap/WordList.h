@@ -52,6 +52,8 @@
 
 @property (nonatomic) BOOL verbose;
 @property (nonatomic) BOOL singleWord;
+@property (nonatomic) BOOL createWordFile;
+@property (nonatomic) BOOL createCSVFile;
 
 - (id) initWithDictionary:(NSDictionary *)dict;
 - (BOOL) testRecognitionEngine;

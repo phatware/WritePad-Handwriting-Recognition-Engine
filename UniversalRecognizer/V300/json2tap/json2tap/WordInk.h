@@ -49,6 +49,7 @@
 @property (nonatomic) int probability;
 @property (nonatomic) int alternative;
 @property (nonatomic) int words;
+@property (nonatomic) int type;
 
 
 @end
