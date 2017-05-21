@@ -1,7 +1,7 @@
 /***************************************************************************************
  *
  *  WRITEPAD(r): Handwriting Recognition Engine (HWRE) and components.
- *  Copyright (c) 2001-2016 PhatWare (r) Corp. All rights reserved.
+ *  Copyright (c) 2001-2017 PhatWare (r) Corp. All rights reserved.
  *
  *  Licensing and other inquires: <developer@phatware.com>
  *  Developer: Stan Miasnikov, et al. (c) PhatWare Corp. <http://www.phatware.com>
@@ -41,7 +41,15 @@ extern "C"
 {
 #endif
 	
-typedef void * RECOGNIZER_PTR;
+    typedef void * RECOGNIZER_PTR;
+
+    typedef struct _hwr_version {
+        UInt16 nMajor;
+        UInt16 nMinor;
+        UInt16 nBuild;
+        UInt16 reserved;
+    } HWR_VERSION, * PHWR_VERSION;
+
 	
 // #define RecoStringEncoding	    NSUnicodeStringEncoding
 #define RecoStringEncoding		NSWindowsCP1252StringEncoding // NSISOLatin1StringEncoding
@@ -63,6 +71,7 @@ typedef void * RECOGNIZER_PTR;
     const char *    HWR_Description();
     const char *    HWR_ID();
     int             HWR_Capabilities();
+    PHWR_VERSION    HWR_Version();
     BOOL            HWR_IsLanguageSupported( int langID );
     int             HWR_GetSupportedLanguages( int ** languages );
 

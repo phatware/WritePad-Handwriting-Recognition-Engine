@@ -3,6 +3,7 @@ EXPORTS
 	HWR_ID
 	HWR_Description
 	HWR_Capabilities
+	HWR_Version
 	
 	HWR_GetLanguageName
 	HWR_GetLanguageID

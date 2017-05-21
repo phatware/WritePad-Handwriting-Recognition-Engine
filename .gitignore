@@ -23,6 +23,8 @@ DerivedData
 lib-iphoneos/
 lib-iphonesimulator/
 
+Android/WritePadLib/libs/
+
 # Built application files
 *.apk
 *.ap_
