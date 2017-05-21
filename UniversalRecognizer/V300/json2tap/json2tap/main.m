@@ -41,9 +41,17 @@
 #import <stdlib.h>
 #import "WordList.h"
 
-static BOOL processInkData( NSString * filepath, NSString * name, NSString * dictPath, BOOL verbose, BOOL singleWord );
+static BOOL processInkData( NSString * filepath, NSString * name, NSString * dictPath, BOOL verbose, BOOL singleWord, BOOL csvFile, BOOL wordsFile );
 static BOOL isSupportedFile( NSString * name );
 static int enumFiles( NSURL * folderURL, NSMutableArray * files, BOOL recursive );
+
+float overallCharsProb = 0.0;
+int   overallCharsCount = 0;
+float overallNumbersProb = 0.0;
+int   overallNumbersCount = 0;
+float overallPunktProb = 0.0;
+int   overallPunktCount = 0;
+
 
 int main(int argc, const char * argv[])
 {
@@ -55,6 +63,8 @@ int main(int argc, const char * argv[])
         BOOL        recursive = false;
         BOOL        verbose = false;
         BOOL        singleWord = false;
+        BOOL        csvFile = false;
+        BOOL        wordsFile = false;
         
         printf( "WritePad SDK JSON to TAP converter. JSON must be in format of the iOS Handwriting Sampling Wizard.\n" );
         printf( "Copyright (c) 2016 PhatWare Corp. All rights reserved.\n\n" );
@@ -99,6 +109,14 @@ int main(int argc, const char * argv[])
             {
                 singleWord = true;
             }
+            else if ( [arg caseInsensitiveCompare:@"-c"] == NSOrderedSame )
+            {
+                csvFile = true;
+            }
+            else if ( [arg caseInsensitiveCompare:@"-w"] == NSOrderedSame )
+            {
+                wordsFile = true;
+            }
             else
             {
                 goto invalidArguments;
@@ -109,7 +127,7 @@ int main(int argc, const char * argv[])
         {
 invalidArguments:
             printf( "Invalid arguments. Usage:\n"
-                   "json2tap -f <filename> | -p <dirpath> [-r] [-v] [-d <dictionary folder path>]\n\n");
+                   "json2tap -f <filename> | -p <dirpath> [-r] [-v] [-c] [-w] [-1] [-d <dictionary folder path>]\n\n");
             return -1;
         }
 
@@ -122,7 +140,7 @@ invalidArguments:
                 name = [NSString stringWithFormat:@"%@.%@", components[components.count-1],
                         components[components.count-2]];
             }
-            processInkData( fileName, name, dictPath, verbose, singleWord );
+            processInkData( fileName, name, dictPath, verbose, singleWord, csvFile, wordsFile );
         }
         else if ( filePath != nil )
         {
@@ -145,7 +163,7 @@ invalidArguments:
             for ( NSDictionary * fd in files )
             {
                 NSURL * path = fd[@"path"];
-                if ( processInkData( [path path], fd[@"name"], dictPath, verbose, singleWord ) )
+                if ( processInkData( [path path], fd[@"name"], dictPath, verbose, singleWord, csvFile, wordsFile ) )
                 {
                     converted++;
                 }
@@ -163,8 +181,24 @@ invalidArguments:
                         fflush(stdout);
                     }
                 }
+                if ( overallCharsCount > 0 && overallPunktProb > 0 && overallNumbersCount > 0 && (count % 10) == 0 )
+                {
+                    printf( "\nRecognizer quality so far. Characters: %f Numbers: %f Punktuation: %f",
+                           overallCharsProb/overallCharsCount,
+                           overallNumbersProb/overallNumbersCount,
+                           overallPunktProb/overallPunktCount
+                           );
+                }
             }
-            printf( "\nFinished. %ld JSON files processed, %ld files converted to TAP\n\n", count, converted );
+            printf( "\nFinished: %ld JSON files processed, %ld files converted to TAP\n", count, converted );
+            if ( overallCharsProb > 0 && overallPunktProb > 0 && overallNumbersCount > 0 )
+            {
+                printf( "Overall Recognizer quality. Characters: %f Numbers: %f Punktuation: %f\n",
+                       overallCharsProb/overallCharsCount,
+                       overallNumbersProb/overallNumbersCount,
+                       overallPunktProb/overallPunktCount
+                       );
+            }
         }
     }
     return 0;
@@ -245,7 +279,7 @@ static BOOL isSupportedFile( NSString * name )
     return NO;
 }
 
-static BOOL processInkData( NSString * filepath, NSString * name, NSString * dictPath, BOOL verbose, BOOL singleWord )
+static BOOL processInkData( NSString * filepath, NSString * name, NSString * dictPath, BOOL verbose, BOOL singleWord, BOOL csvFile, BOOL wordsFile )
 {
     WordList * words = nil;
     @autoreleasepool
@@ -272,6 +306,8 @@ static BOOL processInkData( NSString * filepath, NSString * name, NSString * dic
         words.filePath = filepath;
         words.verbose = verbose;
         words.singleWord = singleWord;
+        words.createWordFile = wordsFile;
+        words.createCSVFile = csvFile;
     }
     return [words testRecognitionEngine];
 }

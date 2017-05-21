@@ -74,7 +74,9 @@
 #define INTERNAL_RECO_THREAD	1
 #endif // _WIN32
 
-// word corrector for (unknown) languages
+#define DEFAULT_TIMEOUT         20
+
+// word corrector for unknown languages
 static const char * g_szDefWords[] = {
     "phatware", "PhatWare",
 };
@@ -2885,6 +2887,9 @@ end:
         pStrokes = NULL;
         points = NULL;
 #ifdef INTERNAL_RECO_THREAD
+        struct timespec wait;
+        wait.tv_nsec = 0;
+        wait.tv_sec = DEFAULT_TIMEOUT;
         WaitForResult( NULL );
 #else
 
@@ -3159,6 +3164,9 @@ BOOL HWR_Recognize( RECOGNIZER_PTR pRecognizer )
         return false;
     
 #ifdef INTERNAL_RECO_THREAD
+    struct timespec wait;
+    wait.tv_nsec = 0;
+    wait.tv_sec = DEFAULT_TIMEOUT;
     gpRecognizer->WaitForResult( NULL );
 #endif // INTERNAL_RECO_THREAD
 

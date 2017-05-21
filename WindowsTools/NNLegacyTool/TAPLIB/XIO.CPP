@@ -77,7 +77,7 @@ int  XioClose(XIO xFile)
 int  XioRead(XIO xFile, char _far *lpBuff, unsigned int nCnt)
 {
 	size_t     nRet = 0;
-	size_t     iRet = 0;
+	ssize_t     iRet = 0;
 	size_t     iCnt = 0;
 
 	while (1)
@@ -110,7 +110,7 @@ int  XioRead(XIO xFile, char _far *lpBuff, unsigned int nCnt)
 int  XioWrite(XIO xFile, char _far *lpBuff, unsigned int nCnt)
 {
 	size_t nRet = 0;
-	size_t iRet;
+	ssize_t iRet;
 	size_t iCnt;
 
 	while (1)

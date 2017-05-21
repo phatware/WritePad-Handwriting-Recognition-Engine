@@ -73,6 +73,32 @@
                 flags |= FLAG_SINGLEWORDONLY;
             HWR_SetRecognitionFlags( recognizer, flags );
             HWR_SetDefaultShapes( recognizer );
+            
+            switch ( self.type )
+            {
+                case 1 :
+                    HWR_SetRecognitionMode( recognizer, RECMODE_GENERAL );
+                    break;
+                    
+                case 4 :
+                    HWR_SetRecognitionMode( recognizer, RECMODE_CAPS );
+                    break;
+                    
+                case 3 : 
+                    HWR_SetRecognitionMode( recognizer, RECMODE_NUMBERSPURE );
+                    break;
+                    
+                case 2 :
+                {
+                    NSString * punct = @"~`!@#$%^&*()_+:\'\"[]{}|\\<>,.?/;-=";
+                    unichar buffP[200] = {0};
+                    [punct getCharacters:buffP];
+                    unichar buffN[1] = {0};
+                    HWR_SetRecognitionMode( recognizer, RECMODE_NUM );
+                    HWR_SetCustomCharset( recognizer, buffN, buffP);
+                    break;
+                }
+            }
 
             HWR_NewUserDict( recognizer );
             

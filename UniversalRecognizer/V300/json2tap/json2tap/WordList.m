@@ -43,9 +43,18 @@
 #import "RecognizerWrapper.h"
 #import "LanguageManager.h"
 
+#import <math.h>
+
 #import "TAP.H"
 
-#define VER_STRING      "WritePad Tap Converter 1.1"
+extern float overallCharsProb;
+extern int   overallCharsCount;
+extern float overallNumbersProb;
+extern int   overallNumbersCount;
+extern float overallPunktProb;
+extern int   overallPunktCount;
+
+#define VER_STRING      "WritePad Tap Converter 1.2"
 
 static BOOL WriteTap( _HTAP hTap, INK_DATA_PTR ink, p_CHAR text, BOOL bTapFirstEntry );
 
@@ -59,7 +68,7 @@ static BOOL WriteTap( _HTAP hTap, INK_DATA_PTR ink, p_CHAR text, BOOL bTapFirstE
     self.language = dict[@"language"];
     self.sub_language = dict[@"sub_language"];
     self.words = [NSMutableArray array];
-
+    
     NSArray * ws = dict[@"words"];
 
     for ( NSDictionary * w in ws )
@@ -72,6 +81,7 @@ static BOOL WriteTap( _HTAP hTap, INK_DATA_PTR ink, p_CHAR text, BOOL bTapFirstE
             {
                 WordInk * wi = [[WordInk alloc] init];
                 wi.word = w[@"word"];
+                wi.type = [w[@"type"] intValue];
                 wi.ink = inkData;
                 [self.words addObject:wi];
             }
@@ -83,6 +93,10 @@ static BOOL WriteTap( _HTAP hTap, INK_DATA_PTR ink, p_CHAR text, BOOL bTapFirstE
 - (BOOL) testRecognitionEngine
 {
     BOOL        result = false;
+    
+    // save gradient representation
+    static const float epsilon = 0.0001;     // TODO: adjustable
+    static const float gradient_delta = (4.0 * 3.14159265/100.0);   // TODO: adjustable
 
     @autoreleasepool
     {
@@ -132,16 +146,53 @@ static BOOL WriteTap( _HTAP hTap, INK_DATA_PTR ink, p_CHAR text, BOOL bTapFirstE
         NSInteger   count = [self.words count];
         NSInteger   aveProb = 0;
         NSInteger   words = 0;
+        float       charsProb = 0.0, numbersProb = 0.0, punktProb = 0.0;
+        int         charsCount = 0, numbersCount = 0, punktCount = 0;
         
         for ( WordInk * wi in self.words )
         {
             alt += (wi.alternative >= 0) ? 1 : 0;
             words += wi.words;
             aveProb += wi.probability;
+            switch ( wi.type )
+            {
+                case 1 :
+                case 4 :
+                    if ( wi.alternative >= 0 )
+                        charsProb += (1.0 - (0.01 * wi.alternative));
+                    else
+                        charsProb += 0.0;
+                    charsCount ++;
+                    break;
+                    
+                case 3 :
+                    if ( wi.alternative >= 0 )
+                        numbersProb += (1.0 - (0.01 * wi.alternative));
+                    else
+                        numbersProb += 0.0;
+                    numbersCount ++;
+                    break;
+                    
+                case 2 :
+                    if ( wi.alternative >= 0 )
+                        punktProb += (1.0 - (0.01 * wi.alternative));
+                    else
+                        punktProb += 0.0;
+                    punktCount ++;
+                    break;
+            }
+            
+            
         }
         aveProb = aveProb / count;
-        if ( alt > count/3 && alt < count && words >= count )
+        if ( alt >= count/3 && alt < count && words >= count )
         {
+            overallCharsProb += charsProb;
+            overallCharsCount += charsCount;
+            overallNumbersProb += numbersProb;
+            overallNumbersCount += numbersCount;
+            overallPunktProb += punktProb;
+            overallPunktCount += punktCount;
             if ( self.verbose )
             {
                 printf( "Recognizer Test summary: words %ld, detected words %ld, recognized words %ld, average probability %ld\n", count, words, alt, aveProb );
@@ -151,21 +202,60 @@ static BOOL WriteTap( _HTAP hTap, INK_DATA_PTR ink, p_CHAR text, BOOL bTapFirstE
 
             time = [NSDate timeIntervalSinceReferenceDate];
 
-
-            NSString * tapFileName = [self.filePath stringByDeletingPathExtension];
+            NSError *   error = nil;
+            NSString *  tapFileName = [self.filePath stringByDeletingPathExtension];
+            NSString *  csvFile = [tapFileName stringByAppendingPathExtension:@"csv"];
             tapFileName = [tapFileName stringByAppendingPathExtension:@"tap"];
-
-            [[NSFileManager defaultManager] removeItemAtPath:tapFileName error:nil];
-
+            
+            if ( ![[NSFileManager defaultManager] removeItemAtPath:tapFileName error:&error] )
+            {
+                // NSLog( @"removeItemAtPath failed: %@", error.description );
+            }
+            
+            if ( self.createCSVFile && ![[NSFileManager defaultManager] removeItemAtPath:csvFile error:&error] )
+            {
+                // NSLog( @"removeItemAtPath failed: %@", error.description );
+            }
+            
             _HTAP   hTap = TapOpenFile( (p_CHAR)tapFileName.UTF8String, TAP_RDWR );
             if ( hTap != nil )
             {
-                BOOL    bTapFirstEntry = TRUE;
+                BOOL         bTapFirstEntry = TRUE;
                 INK_DATA_PTR inkData = INK_InitData();
+                BOOL         bResult = FALSE;
+                
                 INK_EnableUndo( inkData, false );
-                BOOL    bResult = FALSE;
+
+                NSFileHandle * fileHandle = nil;
+                if ( self.createCSVFile )
+                {
+                    bResult = [[NSFileManager defaultManager] createFileAtPath:csvFile contents:nil  attributes:nil];
+                    fileHandle = [NSFileHandle fileHandleForWritingToURL:[NSURL fileURLWithPath:csvFile] error:&error];
+                }
+                
                 for ( WordInk * wi in self.words )
                 {
+                    NSMutableArray *  components = [[csvFile pathComponents] mutableCopy];
+                    [components removeLastObject];
+                    NSString * name = [wi.word stringByReplacingOccurrencesOfString:@" " withString:@""];
+                    name = [name stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"asdfghjklzxcvbnmqwertyuiop1234567890QWERTYUIOPASDFGHJKLZXCVBNM-_+=(){}[]<>@#$%^"]];
+                    [components addObject:[NSString stringWithFormat:@"%@.dat", name]];
+                    
+                    NSFileHandle * wordHandle = nil;
+                    if ( self.createWordFile )
+                    {
+                        NSString * wordFile = [NSString pathWithComponents:components];
+                        if ( ! [[NSFileManager defaultManager] fileExistsAtPath:wordFile] )
+                        {
+                            bResult = [[NSFileManager defaultManager] createFileAtPath:wordFile contents:nil  attributes:nil];
+                            NSString * word = [NSString stringWithFormat:@"%@\n", wi.word];
+                            word = [word stringByReplacingOccurrencesOfString:@" " withString:@""];
+                            [word writeToFile:wordFile atomically:YES encoding:NSUTF8StringEncoding error:&error];
+                        }
+                        wordHandle = [NSFileHandle fileHandleForWritingToURL:[NSURL fileURLWithPath:wordFile] error:&error];
+                        [wordHandle seekToEndOfFile];
+                    }
+                    
                     void *	pInk = (void *)wi.ink.bytes;
                     long	cbData = wi.ink.length;
                     if ( INK_Serialize( inkData, FALSE, NULL, &pInk, &cbData, TRUE, FALSE) )
@@ -177,15 +267,73 @@ static BOOL WriteTap( _HTAP hTap, INK_DATA_PTR ink, p_CHAR text, BOOL bTapFirstE
                             break;
                         bTapFirstEntry = FALSE;
                     }
+                    
+                    CGPoint * points = NULL;
+                    int strokeCnt = INK_StrokeCount(inkData, FALSE);
+                    NSMutableString * str = [NSMutableString stringWithFormat:@"%@", wi.word];
+                    float grad, g, dx, dy;
+                    int   last_index = 0;
+                    for ( int stroke = 0; stroke < strokeCnt; stroke++ )
+                    {
+                        int len = INK_GetStroke(inkData, stroke, &points, NULL, NULL);
+                        if ( len > 3 )
+                        {
+                            dx = points[1].x - points[0].x;
+                            dy = points[1].y - points[0].y;
+                            last_index = 1;
+                            grad = atanf(dx/(dy+epsilon));
+                            
+                            [str appendFormat:@",%.3f", grad];
+                            for ( int k = 2; k < len; k++ )
+                            {
+                                dx = points[k].x - points[last_index].x;
+                                dy = points[k].y - points[last_index].y;
+                                g = atanf(dx/(dy+epsilon));
+                                if ( fabsf(grad-g) > gradient_delta )
+                                {
+                                    grad = g;
+                                    last_index = k;
+                                    [str appendFormat:@",%.3f", grad];
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // single pixel
+                            grad = -2;
+                            [str appendFormat:@",%.3f", grad];
+                        }
+                        // stroke separator
+                        // strokerep[index++] = 0;
+                    }
+                    
+                    [str appendString:@"\n"];
+                    
+                    // [fileHandle seekToEndOfFile];
+                    if ( fileHandle )
+                        [fileHandle writeData:[str dataUsingEncoding:NSUTF8StringEncoding]];
+                    
+                    NSString * subStr = [str substringFromIndex:[str rangeOfString:@","].location+1];
+                    if ( wordHandle )
+                        [wordHandle writeData:[subStr dataUsingEncoding:NSUTF8StringEncoding]];
+                    
+                    if ( points != NULL )
+                        free( (void *)points );
                     INK_DeleteSelectedStrokes( inkData, TRUE );
+                    if ( wordHandle )
+                        [wordHandle closeFile];
                 }
 
                 INK_FreeData( inkData );
                 TapCloseFile( hTap );
 
+                if ( fileHandle )
+                    [fileHandle closeFile];
+                
                 if ( ! bResult )
                 {
                     [[NSFileManager defaultManager] removeItemAtPath:tapFileName error:nil];
+                    [[NSFileManager defaultManager] removeItemAtPath:csvFile error:nil];
                     printf( "Error while writing to TAP; file %s deleted\n", tapFileName.UTF8String );
                 }
 
