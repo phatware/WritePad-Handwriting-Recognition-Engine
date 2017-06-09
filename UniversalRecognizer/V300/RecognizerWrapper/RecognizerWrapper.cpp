@@ -35,8 +35,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include <atomic>
-
 #ifdef MAC_OS_X
 #include <xlocale.h>
 #include <mach/mach.h>
@@ -86,23 +84,23 @@ static const char * g_szDescription = "WritePad(r) Multilingual Handwriting Reco
 
 #define DEFWORDCNT	2
 
-//#ifndef MAC_OS_X
-//
-//inline BOOL OSAtomicTestAndSet( int bit, UInt32 * val )
-//{
-//    BOOL res = (0 != ((*val) & (0x1 << bit)));
-//    (*val) |= (0x1 << bit);
-//    return res;
-//}
-//
-//inline BOOL OSAtomicTestAndClear( int bit, UInt32 * val )
-//{
-//    BOOL res = (0 != ((*val) & (0x1 << bit)));
-//    (*val) &= ~(0x1 << bit);
-//    return res;
-//}
-//
-//#endif // MAC_OS_X
+#ifndef MAC_OS_X
+
+inline BOOL OSAtomicTestAndSet( int bit, UInt32 * val )
+{
+    BOOL res = (0 != ((*val) & (0x1 << bit)));
+    (*val) |= (0x1 << bit);
+    return res;
+}
+
+inline BOOL OSAtomicTestAndClear( int bit, UInt32 * val )
+{
+    BOOL res = (0 != ((*val) & (0x1 << bit)));
+    (*val) &= ~(0x1 << bit);
+    return res;
+}
+
+#endif // MAC_OS_X
 
 static const char * g_pszCapWords[] = {
     ("Monday"),
@@ -566,17 +564,14 @@ public:
         // m_bResultsReady = 0;
         // m_bRunRecognizer = 0;
 
-        std::atomic_fetch_and( &m_bResultsReady, 0);
-        std::atomic_fetch_or( &m_bRunRecognizer, 1);
-        // OSAtomicTestAndClear( 1, &m_bResultsReady );
-        // OSAtomicTestAndSet( 1, &m_bRunRecognizer );
+        OSAtomicTestAndClear( 1, &m_bResultsReady );
+        OSAtomicTestAndSet( 1, &m_bRunRecognizer );
 
 #ifdef INTERNAL_RECO_THREAD
 
         m_Thread = NULL;
         // m_bNewStroke = 0;
-        std::atomic_fetch_and( &m_bNewStroke, 0);
-        // OSAtomicTestAndClear( 1, &m_bNewStroke );
+		OSAtomicTestAndClear( 1, &m_bNewStroke );
 
 #ifndef MAC_OS_X
         m_condStroke = PTHREAD_COND_INITIALIZER;
@@ -617,7 +612,7 @@ public:
         // pthread_mutex_lock( &m_mutexReco );
         // pthread_mutex_unlock( &m_mutexReco );
         int iResult = 0;
-        if ( ! std::atomic_fetch_and( &m_bResultsReady, 0) )
+        if ( !OSAtomicTestAndClear( 1, &m_bResultsReady ) )
         {
             if ( timeout != NULL )
                 iResult = pthread_cond_timedwait( &m_condResult, &m_mutexResult, timeout );
@@ -635,10 +630,8 @@ public:
         pthread_mutex_lock( &m_mutexReco );
         pthread_mutex_lock( &m_mutexQueue );
         m_bNewSession = true;
-        std::atomic_fetch_and( &m_bResultsReady, 0);
-        std::atomic_fetch_and( &m_bNewStroke, 0);
-        // OSAtomicTestAndClear( 1, &m_bResultsReady );
-        // OSAtomicTestAndClear( 1, &m_bNewStroke );
+        OSAtomicTestAndClear( 1, &m_bResultsReady );
+        OSAtomicTestAndClear( 1, &m_bNewStroke );
         FreeResults();
         pthread_mutex_unlock( &m_mutexQueue );
         pthread_mutex_unlock( &m_mutexReco );
@@ -676,8 +669,7 @@ public:
         m_pRecQueue[index].pTrace = pTrace;
         m_pRecQueue[index].cTrace = cTrace;
         m_cRecQueue++;
-        std::atomic_fetch_and( &m_bNewStroke, 1);
-        // OSAtomicTestAndSet( 1, &m_bNewStroke );
+        OSAtomicTestAndSet( 1, &m_bNewStroke );
         pthread_cond_signal( &m_condStroke );
         pthread_mutex_unlock( &m_mutexQueue );
         return true;
@@ -717,8 +709,7 @@ public:
         {
             pthread_mutex_lock( &pThis->m_mutexReco );
             //pThis->m_Thread->SetPriority( OpenALThread::kDefaultThreadPriority, false );
-            if ( ! std::atomic_fetch_and( &pThis->m_bNewStroke, 0) )
-            // if ( ! OSAtomicTestAndClear( 1, &pThis->m_bNewStroke ) )
+            if ( ! OSAtomicTestAndClear( 1, &pThis->m_bNewStroke ) )
             {
                 pthread_cond_wait( &pThis->m_condStroke, &pThis->m_mutexReco );		/// ??? does not wait, mutex?
             }
@@ -781,8 +772,7 @@ public:
 
     void SynchReset()
     {
-        std::atomic_fetch_and( &m_bResultsReady, 0);
-        // OSAtomicTestAndClear( 1, &m_bResultsReady );
+        OSAtomicTestAndClear( 1, &m_bResultsReady );
         FreeResults();
     }
 
@@ -827,8 +817,7 @@ public:
 #ifdef INTERNAL_RECO_THREAD
         pthread_mutex_lock( &m_mutexResult );
 #endif // INTERNAL_RECO_THREAD
-        std::atomic_fetch_or( &m_bResultsReady, 1);
-        // OSAtomicTestAndSet( 1, &m_bResultsReady );
+        OSAtomicTestAndSet( 1, &m_bResultsReady );
 #ifdef INTERNAL_RECO_THREAD
         pthread_cond_signal( &m_condResult );
         pthread_mutex_unlock( &m_mutexResult );
@@ -1252,8 +1241,7 @@ end:
     
     void FreeResults()
     {
-        std::atomic_fetch_and( &m_bResultsReady, 0);
-        // OSAtomicTestAndClear( 1, &m_bResultsReady );
+        OSAtomicTestAndClear( 1, &m_bResultsReady );
         if ( NULL != m_pWeights )
             delete [] m_pWeights;		
         m_pWeights = NULL;
@@ -1609,8 +1597,7 @@ end:
             // terminate the thread
             m_bRunThread = false;
             pthread_mutex_lock( &m_mutexReco );
-            std::atomic_fetch_or( &m_bNewStroke, 1);
-            // OSAtomicTestAndSet( 1, &m_bNewStroke );
+            OSAtomicTestAndSet( 1, &m_bNewStroke );
             pthread_cond_signal( &m_condStroke );
             pthread_mutex_unlock( &m_mutexReco );
             
@@ -2259,8 +2246,7 @@ end:
             if ( nNewMode == RECMODE_WWW )
                 CreateInternetDictionary();
             m_nRecMode = nNewMode;
-            std::atomic_fetch_and( &m_bResultsReady, 0);
-            // OSAtomicTestAndClear( 1, &m_bResultsReady );
+            OSAtomicTestAndClear( 1, &m_bResultsReady );
         }
     } 
     int		GetMode() const { return m_nRecMode; }
@@ -2809,8 +2795,7 @@ end:
         // make sure the recognizer is enabled...
         if ( bAsync )
         {
-            std::atomic_fetch_or( &m_bRunRecognizer, 1);
-            // OSAtomicTestAndSet( 1, &m_bRunRecognizer );
+            OSAtomicTestAndSet( 1, &m_bRunRecognizer );
         }
         int nCnt = pInkData->StrokesTotal();
         if ( nCnt < 1 )
@@ -2837,8 +2822,7 @@ end:
         {
             if ( bAsync )
             {
-                if ( !std::atomic_fetch_or( &m_bRunRecognizer, 1) )
-                // if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+                if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
                     goto err;
             }
             UInt32 nStrokeLen = pInkData->GetStrokePointCnt( (int)pStrokes[i].num );
@@ -2875,8 +2859,7 @@ end:
 #endif // INTERNAL_RECO_THREAD
         if ( bAsync )
         {
-            if ( ! std::atomic_fetch_or( &m_bRunRecognizer, 1) )
-            // if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+            if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
                 goto err;
         }
         
@@ -2887,17 +2870,16 @@ end:
         pStrokes = NULL;
         points = NULL;
 #ifdef INTERNAL_RECO_THREAD
-        struct timespec wait;
-        wait.tv_nsec = 0;
-        wait.tv_sec = DEFAULT_TIMEOUT;
+        // struct timespec wait;
+        // wait.tv_nsec = 0;
+        // wait.tv_sec = DEFAULT_TIMEOUT;
         WaitForResult( NULL );
 #else
 
 #endif // INTERNAL_RECO_THREAD
         if ( bAsync )
         {
-            if ( ! std::atomic_fetch_or( &m_bRunRecognizer, 1) )
-            // if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+            if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
                 return NULL;
         }
         return GetResult();
@@ -2975,8 +2957,7 @@ end:
         
     void StopAsyncReco()
     {
-        std::atomic_fetch_and( &m_bRunRecognizer, 0);
-        // OSAtomicTestAndClear( 1, &m_bRunRecognizer );
+        OSAtomicTestAndClear( 1, &m_bRunRecognizer );
         ResultsReady( false );
     }
     
@@ -3010,8 +2991,8 @@ private:
     char	*	 m_nCustomNumbers;
 
     // recognition thread support
-    std::atomic_int		m_bRunRecognizer;
-    std::atomic_int		m_bResultsReady;
+    UInt32				m_bRunRecognizer;
+	UInt32				m_bResultsReady;
     int                 m_cRecQueue;
 
 #ifdef INTERNAL_RECO_THREAD
@@ -3023,7 +3004,7 @@ private:
     pthread_mutex_t		m_mutexAsyncReco;
     pthread_mutex_t		m_mutexQueue;
     ASYNC_RECOG_PARAMS  m_pRecQueue[RECQUEUE_MAX_ELEMS];
-    std::atomic_int     m_bNewStroke;
+	UInt32			    m_bNewStroke;
 #endif // INTERNAL_RECO_THREAD
     
     unsigned char		letter_shapes[LRN_WEIGHTSBUFFER_SIZE];
@@ -3164,9 +3145,9 @@ BOOL HWR_Recognize( RECOGNIZER_PTR pRecognizer )
         return false;
     
 #ifdef INTERNAL_RECO_THREAD
-    struct timespec wait;
-    wait.tv_nsec = 0;
-    wait.tv_sec = DEFAULT_TIMEOUT;
+    // struct timespec wait;
+    // wait.tv_nsec = 0;
+    // wait.tv_sec = DEFAULT_TIMEOUT;
     gpRecognizer->WaitForResult( NULL );
 #endif // INTERNAL_RECO_THREAD
 

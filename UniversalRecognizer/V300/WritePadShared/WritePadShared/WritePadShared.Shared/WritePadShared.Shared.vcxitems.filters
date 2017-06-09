@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\InternalTypes.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\PhatCalc.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\PHTemplArray.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\WordFile.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_dan.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_dut.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_enu.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_frn.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_ger.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_itl.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_pbr.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_prt.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\wordlist_spn.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\WordLrnFile.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\include\gestures.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\include\InkWrapper.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\include\langid.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\include\recodefs.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\include\RecognizerApi.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\include\RecognizerWrapper.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\include\recotypes.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\CompressedStroke.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\ImageObject.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\InkData.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\PHStream.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\PHStroke.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\ShapesRec.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\TextObject.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\UndoAction.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\accents.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\ams_mg.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\arcs.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\bastypes.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\bit_mark.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\bitmapco.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\calcmacr.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\const.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\def.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\div_let.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\dscr.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\dti.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\dti_lrn.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\floats.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\forward_dbg.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\glob.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\hwr_dbg.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\hwr_swap.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\hwr_sys.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\ws.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\ws_p.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\xr_attr.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\xr_names.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\xrlv.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\xrlv_p.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\xrwdict.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\xrword.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\zctype.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\vocutilp.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\triads.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\stroke1.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\snn.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\sketch.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\recoutil.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\recokern.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\recodict.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\reco_ver.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\reco.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\pzdict.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\pydict.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\pws.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\precutil.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\post_capital.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\post_cap_tbl.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\polyco.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\langutil.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\ldbtypes.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\ldbutil.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\learn.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\ligstate.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\lk_code.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\low_dbg.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\lowlevel.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\mlp.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\orto.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\ortow.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\include\param.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\trd_imge.cpp">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\trd_imgf.cpp">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\trd_imgg.cpp">
+      <Filter>data</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="code">
+      <UniqueIdentifier>{912a607e-e559-4746-916e-039fa300d7bb}</UniqueIdentifier>
+      <Extensions>c;cpp;cxx</Extensions>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{639f3c9d-e37e-4e65-a2de-4e438e57090c}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx</Extensions>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{05ab7efd-c4fb-404e-b9d0-03dc68dcbd55}</UniqueIdentifier>
+      <Extensions>cpp;</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\gestures.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\PhatCalc.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\RecognizerWrapper.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\WordFile.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\RecognizerWrapper\WordLrnFile.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\ImageObject.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\InkData.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\InkWrapper.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\PHStream.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\PHStroke.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\ShapesRec.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\TextObject.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\InkData\UndoAction.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\angle.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\apostroph.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\arcs.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\bitmaps.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\breaks.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\calccell.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\check.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\circle.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\connections.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\convert.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\cross.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\cross_geometry.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\dct_functions.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\dtiutil.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\filter.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\hwrctype.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\hwrmath.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\hwrmem.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\hwrstr.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\hwrswap.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\langutil.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\ldbutil.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\letimagestodte.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\ligstate.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\links.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\link_begin.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\link_next.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\low3.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\low_data.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\low_dbg.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\low_level.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\low_util.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\luspecl.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\mlp.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\newdict.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\param.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\pict.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\poly.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\post_capital.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\post_cap_tbl.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\precutil.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\prep.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\reco.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\recodict.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\recokern.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\recolibs.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\recoutil.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\sketch.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\spell.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\stroke.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\stroke1.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\tracedata.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\triadsutil.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\utils.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\wordbreaks.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\wordcorrector.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\worddict.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\wordsegment.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\xrattrib.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\xrdict.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\src\xrmatrix.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\dti_img.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\ldb_img.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\snn_img.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\trd_img.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\vprf_img.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\vsuf_img.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\ldb_imge.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\ldb_Imgf.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\ldb_Imgg.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\dti_imgdan.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\dti_imgf.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\dtiimgff.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\dtiimgfg.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\snn_imge.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\snn_imgf.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\snn_imgg.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\snn_imgi.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\vcbsuffe.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\PhatWare\WritePad-Handwriting-Recognition-Engine\UniversalRecognizer\V300\WritePadShared\WritePadShared\WritePadShared.Shared\..\..\..\reco\data\vcbprefe.cpp">
+      <Filter>data</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

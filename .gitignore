@@ -2,6 +2,10 @@
 #
 build/
 obj/
+Debug/
+debug/
+release/
+Release/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -22,7 +26,20 @@ DerivedData
 *.userprefs
 lib-iphoneos/
 lib-iphonesimulator/
-
+*.obj
+*.o
+*.a
+*.so
+*.tlog
+.vs/
+*.exp
+*.lib
+*.dll
+*.pdb
+*.ipdb
+*.user
+*.pri
+*.iobj
 # Built application files
 *.apk
 *.ap_

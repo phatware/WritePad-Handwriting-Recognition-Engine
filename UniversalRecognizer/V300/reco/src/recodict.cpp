@@ -250,7 +250,7 @@ int RecoSpellCheckWord(CUCHR * wrd, UCHR * ans, int buf_len,
 {
 	int i, j, k, l, m, n, ll, u;
 	_UCHAR * ptr;
-	_INT weights[HW_MAX_SPELL_NUM_ALTS];
+	// _INT weights[HW_MAX_SPELL_NUM_ALTS];
 	spc_answer_type u_list, m_list;
 
 #ifdef HW_RECINT_UNICODE 
@@ -363,12 +363,12 @@ int RecoSpellCheckWord(CUCHR * wrd, UCHR * ans, int buf_len,
 		}
 		if (u)
 		{
-			weights[i] = 100 - u_list.weights[j];
+			// weights[i] = 100 - u_list.weights[j];
 			ptr = (p_UCHAR) &u_list.list[j++][0];
 		}
 		if (m)
 		{
-			weights[i] = 100 - m_list.weights[j];
+			// weights[i] = 100 - m_list.weights[j];
 			ptr = (p_UCHAR) &m_list.list[k++][0];
 		}
 
@@ -469,26 +469,28 @@ int HWR_CheckWordInDict(char *inp_word, void *h_dict)
 	{
 		_INT i;
 		_INT sp_len, ep_len;
-		_UCHAR sp[PZDICT_MAX_WORDLEN];
 		_UCHAR ep[PZDICT_MAX_WORDLEN];
 
 		HWRStrCpy((_STR) word, (_STR) inp_word);
 
 		for (i = sp_len = 0; i < len; i++)
+		{
 			if (IsPunct(word[i]))
-				sp[sp_len++] = word[i];
+				sp_len++;
 			else
 				break;
-		sp[sp_len] = 0;
+		}
 
 		if (sp_len == len)
 			goto err;
 
 		for (i = len - 1, ep_len = 0; i >= 0; i--)
+		{
 			if (IsPunct(word[i]))
 				ep[ep_len++] = word[i];
 			else
 				break;
+		}
 		ep[ep_len] = 0;
 		if (ep_len)
 			HWRStrRev((_STR) ep);

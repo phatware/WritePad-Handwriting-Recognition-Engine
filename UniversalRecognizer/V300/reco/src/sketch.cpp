@@ -507,17 +507,13 @@ _VOID UmPostcrossModify(low_type _PTR pLowData)
 		IntMarks.ComUm = (_CHAR) InterMarks(pUmTmpMarks->CrossFeature,
 				(p_BIT_MARK) Int_Com_Um_Marks);
 
-		IntMarks.ElsUm =
-				Int_Els_Cd_Marks[pUmTmpMarks->CrossFeature].single_mark;
+		IntMarks.ElsUm = Int_Els_Cd_Marks[(unsigned int)pUmTmpMarks->CrossFeature].single_mark;
 
-		IntMarks.UmEls =
-				Int_Cd_Els_Marks[pUmTmpMarks->CrossFeature].single_mark;
+		IntMarks.UmEls = Int_Cd_Els_Marks[(unsigned int)pUmTmpMarks->CrossFeature].single_mark;
 
-		IntMarks.DotUm =
-				Int_Cd_Dot_Marks[pUmTmpMarks->CrossFeature].single_mark;
+		IntMarks.DotUm = Int_Cd_Dot_Marks[(unsigned int)pUmTmpMarks->CrossFeature].single_mark;
 
-		IntMarks.UmDot =
-				Int_Dot_Cd_Marks[pUmTmpMarks->CrossFeature].single_mark;
+		IntMarks.UmDot = Int_Dot_Cd_Marks[(unsigned int)pUmTmpMarks->CrossFeature].single_mark;
 
 		GetPositionMark(pLowData, tmpGroupNum, &ExtMarks);
 		pUmTmpMarks->PositionFeature = ExtMarks.PositionFeature;
