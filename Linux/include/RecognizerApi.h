@@ -1,7 +1,7 @@
 /***************************************************************************************
  *
  *  WRITEPAD(r): Handwriting Recognition Engine (HWRE) and components.
- *  Copyright (c) 2001-2016 PhatWare (r) Corp. All rights reserved.
+ *  Copyright (c) 2001-2017 PhatWare (r) Corp. All rights reserved.
  *
  *  Licensing and other inquires: <developer@phatware.com>
  *  Developer: Stan Miasnikov, et al. (c) PhatWare Corp. <http://www.phatware.com>

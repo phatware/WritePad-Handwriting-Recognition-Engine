@@ -1,5 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
+
 #########
 ### Static Library
 #########
@@ -32,24 +33,26 @@ LOCAL_CFLAGS := -DRECODICT -D_EMBEDDED_DEVICE \
 		-I$(LOCAL_PATH)/../../../UniversalRecognizer/V300/include \
 		-Wno-multichar \
 		-std=gnu++11
-		
 
 include jni/filelist.mk
 
 include $(BUILD_STATIC_LIBRARY)
 
+##########################
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := WritePadReco
 
-LOCAL_CFLAGS := -I$(LOCAL_PATH)/include -std=gnu99
+LOCAL_CFLAGS := -I$(LOCAL_PATH)/include  -std=gnu11 
 
 LOCAL_SRC_FILES := interface.c letimg.c lidata.c
 
-### LOCAL_LDLIBS := -ldl -llog # -lGLESv1_CM 
-LOCAL_LDLIBS += -llog
+# LOCAL_LDLIBS := -ldl -llog # -lGLESv1_CM 
+
+LOCAL_LDLIBS += -latomic
 
 LOCAL_STATIC_LIBRARIES := libWritePadRecos
 
-include $(PREBUILD_SHARED_LIBRARY)
+include $(BUILD_SHARED_LIBRARY)
 
