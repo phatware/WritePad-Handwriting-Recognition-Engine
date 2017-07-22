@@ -84,23 +84,19 @@ static const char * g_szDescription = "WritePad(r) Multilingual Handwriting Reco
 
 #define DEFWORDCNT	2
 
-#ifndef MAC_OS_X
-
-inline BOOL OSAtomicTestAndSet( int bit, UInt32 * val )
+inline BOOL _AtomicTestAndSet( int bit, UInt32 * val )
 {
     BOOL res = (0 != ((*val) & (0x1 << bit)));
     (*val) |= (0x1 << bit);
     return res;
 }
 
-inline BOOL OSAtomicTestAndClear( int bit, UInt32 * val )
+inline BOOL _AtomicTestAndClear( int bit, UInt32 * val )
 {
     BOOL res = (0 != ((*val) & (0x1 << bit)));
     (*val) &= ~(0x1 << bit);
     return res;
 }
-
-#endif // MAC_OS_X
 
 static const char * g_pszCapWords[] = {
     ("Monday"),
@@ -564,14 +560,14 @@ public:
         // m_bResultsReady = 0;
         // m_bRunRecognizer = 0;
 
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
-        OSAtomicTestAndSet( 1, &m_bRunRecognizer );
+        _AtomicTestAndClear( 1, &m_bResultsReady );
+        _AtomicTestAndSet( 1, &m_bRunRecognizer );
 
 #ifdef INTERNAL_RECO_THREAD
 
         m_Thread = NULL;
         // m_bNewStroke = 0;
-		OSAtomicTestAndClear( 1, &m_bNewStroke );
+		_AtomicTestAndClear( 1, &m_bNewStroke );
 
 #ifndef MAC_OS_X
         m_condStroke = PTHREAD_COND_INITIALIZER;
@@ -612,7 +608,7 @@ public:
         // pthread_mutex_lock( &m_mutexReco );
         // pthread_mutex_unlock( &m_mutexReco );
         int iResult = 0;
-        if ( !OSAtomicTestAndClear( 1, &m_bResultsReady ) )
+        if ( !_AtomicTestAndClear( 1, &m_bResultsReady ) )
         {
             if ( timeout != NULL )
                 iResult = pthread_cond_timedwait( &m_condResult, &m_mutexResult, timeout );
@@ -630,8 +626,8 @@ public:
         pthread_mutex_lock( &m_mutexReco );
         pthread_mutex_lock( &m_mutexQueue );
         m_bNewSession = true;
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
-        OSAtomicTestAndClear( 1, &m_bNewStroke );
+        _AtomicTestAndClear( 1, &m_bResultsReady );
+        _AtomicTestAndClear( 1, &m_bNewStroke );
         FreeResults();
         pthread_mutex_unlock( &m_mutexQueue );
         pthread_mutex_unlock( &m_mutexReco );
@@ -669,7 +665,7 @@ public:
         m_pRecQueue[index].pTrace = pTrace;
         m_pRecQueue[index].cTrace = cTrace;
         m_cRecQueue++;
-        OSAtomicTestAndSet( 1, &m_bNewStroke );
+        _AtomicTestAndSet( 1, &m_bNewStroke );
         pthread_cond_signal( &m_condStroke );
         pthread_mutex_unlock( &m_mutexQueue );
         return true;
@@ -709,7 +705,7 @@ public:
         {
             pthread_mutex_lock( &pThis->m_mutexReco );
             //pThis->m_Thread->SetPriority( OpenALThread::kDefaultThreadPriority, false );
-            if ( ! OSAtomicTestAndClear( 1, &pThis->m_bNewStroke ) )
+            if ( ! _AtomicTestAndClear( 1, &pThis->m_bNewStroke ) )
             {
                 pthread_cond_wait( &pThis->m_condStroke, &pThis->m_mutexReco );		/// ??? does not wait, mutex?
             }
@@ -772,7 +768,7 @@ public:
 
     void SynchReset()
     {
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
+        _AtomicTestAndClear( 1, &m_bResultsReady );
         FreeResults();
     }
 
@@ -817,7 +813,7 @@ public:
 #ifdef INTERNAL_RECO_THREAD
         pthread_mutex_lock( &m_mutexResult );
 #endif // INTERNAL_RECO_THREAD
-        OSAtomicTestAndSet( 1, &m_bResultsReady );
+        _AtomicTestAndSet( 1, &m_bResultsReady );
 #ifdef INTERNAL_RECO_THREAD
         pthread_cond_signal( &m_condResult );
         pthread_mutex_unlock( &m_mutexResult );
@@ -1241,7 +1237,7 @@ end:
     
     void FreeResults()
     {
-        OSAtomicTestAndClear( 1, &m_bResultsReady );
+        _AtomicTestAndClear( 1, &m_bResultsReady );
         if ( NULL != m_pWeights )
             delete [] m_pWeights;		
         m_pWeights = NULL;
@@ -1597,7 +1593,7 @@ end:
             // terminate the thread
             m_bRunThread = false;
             pthread_mutex_lock( &m_mutexReco );
-            OSAtomicTestAndSet( 1, &m_bNewStroke );
+            _AtomicTestAndSet( 1, &m_bNewStroke );
             pthread_cond_signal( &m_condStroke );
             pthread_mutex_unlock( &m_mutexReco );
             
@@ -2246,7 +2242,7 @@ end:
             if ( nNewMode == RECMODE_WWW )
                 CreateInternetDictionary();
             m_nRecMode = nNewMode;
-            OSAtomicTestAndClear( 1, &m_bResultsReady );
+            _AtomicTestAndClear( 1, &m_bResultsReady );
         }
     } 
     int		GetMode() const { return m_nRecMode; }
@@ -2795,7 +2791,7 @@ end:
         // make sure the recognizer is enabled...
         if ( bAsync )
         {
-            OSAtomicTestAndSet( 1, &m_bRunRecognizer );
+            _AtomicTestAndSet( 1, &m_bRunRecognizer );
         }
         int nCnt = pInkData->StrokesTotal();
         if ( nCnt < 1 )
@@ -2822,7 +2818,7 @@ end:
         {
             if ( bAsync )
             {
-                if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+                if ( ! _AtomicTestAndSet( 1, &m_bRunRecognizer ) )
                     goto err;
             }
             UInt32 nStrokeLen = pInkData->GetStrokePointCnt( (int)pStrokes[i].num );
@@ -2859,7 +2855,7 @@ end:
 #endif // INTERNAL_RECO_THREAD
         if ( bAsync )
         {
-            if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+            if ( ! _AtomicTestAndSet( 1, &m_bRunRecognizer ) )
                 goto err;
         }
         
@@ -2879,7 +2875,7 @@ end:
 #endif // INTERNAL_RECO_THREAD
         if ( bAsync )
         {
-            if ( ! OSAtomicTestAndSet( 1, &m_bRunRecognizer ) )
+            if ( ! _AtomicTestAndSet( 1, &m_bRunRecognizer ) )
                 return NULL;
         }
         return GetResult();
@@ -2957,7 +2953,7 @@ end:
         
     void StopAsyncReco()
     {
-        OSAtomicTestAndClear( 1, &m_bRunRecognizer );
+        _AtomicTestAndClear( 1, &m_bRunRecognizer );
         ResultsReady( false );
     }
     
