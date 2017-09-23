@@ -91,7 +91,7 @@ E_LIG_STATE LIGGetGroupState(
 		return LIG_STATE_UNDEF;
 	}
 
-	i = LIG_BITINDEX(inLetter, inGroup),
+    i = LIG_BITINDEX(inLetter, inGroup);
 	shift = LIG_BITSSHIFT(i);
 	i /= LIG_NUMBITS;
 	return ((E_LIG_STATE)(((*inGStates)[i] >> shift) & LIG_NUM_BIT_GROUP_MASK));

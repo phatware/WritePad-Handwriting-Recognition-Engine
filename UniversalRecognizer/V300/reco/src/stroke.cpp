@@ -2495,7 +2495,7 @@ _VOID glitch_to_sub_max(low_type _PTR D,p_EXTR line_max, _INT n_line_max,
             cur=line_max[i].pspecl;
             prv=cur->prev;
             nxt=cur->next;
-            wrk=line_max[i+1].pspecl,
+            wrk=line_max[i+1].pspecl;
             wprv=wrk->prev;
             wnxt=wrk->next;
             if (non_sub(cur,x,y,thresh)==_FALSE &&

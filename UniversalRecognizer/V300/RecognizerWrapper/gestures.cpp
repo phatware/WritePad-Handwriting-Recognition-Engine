@@ -494,8 +494,10 @@ bypass_spell:
 		float	iCtgBeg, iCtgEnd;
 		if((pTrace[iFar].x - xFirst)>0 && dyEnd>dyBeg*2)
 		{
-			CtgBegMin = -161, CtgBegMax = 17;
-			CtgEndMin = 20, CtgEndMax = 133;
+            CtgBegMin = -161;
+            CtgBegMax = 17;
+            CtgEndMin = 20;
+            CtgEndMax = 133;
 		}
 		
 		iCtgBeg = (xFirst-pTrace[iFar].x)*100/dyBeg;
