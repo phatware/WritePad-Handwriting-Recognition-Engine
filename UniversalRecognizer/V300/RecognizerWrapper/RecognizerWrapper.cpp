@@ -80,7 +80,7 @@ static const char * g_szDefWords[] = {
 };
 
 // NOTE: DO NOT CHANGE THE COPYRIGHT NOTICE. Changing the copyright notice below will violate WritePad source code license
-static const char * g_szDescription = "WritePad(r) Multilingual Handwriting Recognition Engine. Copyright (c) 2001-2017 Stan Miasnikov, PhatWare(r) Corp. All rights reserved.";
+static const char * g_szDescription = "WritePad(r) Multilingual Handwriting Recognition Engine. Copyright (c) 2001-2019 Stan Miasnikov, PhatWare(r) Corp. All rights reserved.";
 
 #define DEFWORDCNT	2
 

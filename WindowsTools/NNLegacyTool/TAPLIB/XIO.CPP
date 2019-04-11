@@ -109,9 +109,9 @@ int  XioRead(XIO xFile, char _far *lpBuff, unsigned int nCnt)
 
 int  XioWrite(XIO xFile, char _far *lpBuff, unsigned int nCnt)
 {
-	size_t nRet = 0;
+	size_t  nRet = 0;
 	ssize_t iRet;
-	size_t iCnt;
+	size_t  iCnt;
 
 	while (1)
 	{
