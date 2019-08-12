@@ -158,8 +158,6 @@ static const char * g_szInternetWords[] = {
     "au",
     "ru",
     ".ru",
-    "wolframalpha",
-    "wolframalpha.com",
     "http",
     "http:",
     "https",
@@ -186,9 +184,11 @@ static const char * g_szInternetWords[] = {
     "www.facebook.com",
     "www.myspace.com",
     "www.apple.com",
-    "www.witter.com",
+    "www.twitter.com",
     "www.linkedin.com",
     "www.bing.com",
+    "wolframalpha",
+    "wolframalpha.com",
     "google.com",
     "yahoo.com",
     "youtube.com",
@@ -196,7 +196,7 @@ static const char * g_szInternetWords[] = {
     "facebook.com",
     "myspace.com",
     "apple.com",
-    "witter.com",
+    "twitter.com",
     "linkedin.com",
     "bing.com",
     "bing",
@@ -208,7 +208,6 @@ static const char * g_szInternetWords[] = {
     "msn",
     "baidu",
     "facebook",
-    "qq",
     "rapidshare",
     "ebay",
     "twitter",
@@ -1000,7 +999,6 @@ public:
     BOOL RecEndOfStrokes()
     {
         BOOL bRes = false;
-        
         if ( m_RecCtx != NULL )
         {
             bRes = !RecoCloseSession( m_RecCtx );
@@ -1008,7 +1006,6 @@ public:
         }
         return bRes;
     }
-    
     
     int IsDicts()
     {
@@ -1022,8 +1019,18 @@ public:
         return result;
     }
     
-    void EnablePhatCalc( BOOL bEnable ) { if ( bEnable ) m_dwFlags |= FLAG_ENABLECALC; else m_dwFlags &= ~FLAG_ENABLECALC; }
-    BOOL IsPhatCalcEnabled() const { return (0 != (m_dwFlags & FLAG_ENABLECALC)); }
+    void EnablePhatCalc( BOOL bEnable )
+    {
+        if ( bEnable )
+            m_dwFlags |= FLAG_ENABLECALC;
+        else
+            m_dwFlags &= ~FLAG_ENABLECALC;
+    }
+    
+    BOOL IsPhatCalcEnabled() const
+    {
+        return (0 != (m_dwFlags & FLAG_ENABLECALC));
+    }
     
     BOOL TestWord( UCHR * pszWord, int nFlags ) const
     {
@@ -1117,7 +1124,6 @@ public:
         {
             return false;
         }
-
         RecSetDefaultShapes();
         
         // initialize async recognition here
@@ -3457,7 +3463,7 @@ extern "C"
 int HWR_EnumUserWords( RECOGNIZER_PTR pRecognizer, PRECO_ONGOTWORD callback, void * pParam )
 {
     int		nTotalWords = 0;
-    if ( NULL != pRecognizer && NULL != callback )
+    if ( NULL != pRecognizer )
     {
         CRecognizerWrapper * gpRecognizer = (CRecognizerWrapper *)pRecognizer;
         nTotalWords = gpRecognizer->EnumUserWords( callback, pParam );

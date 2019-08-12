@@ -1,7 +1,7 @@
 /***************************************************************************************
  *
  *  WRITEPAD(r): Handwriting Recognition Engine (HWRE) and components.
- *  Copyright (c) 2001-2016 PhatWare (r) Corp. All rights reserved.
+ *  Copyright (c) 2001-2019 PhatWare (r) Corp. All rights reserved.
  *
  *  Licensing and other inquires: <developer@phatware.com>
  *  Developer: Stan Miasnikov, et al. (c) PhatWare Corp. <http://www.phatware.com>
@@ -329,7 +329,8 @@ _INT SpellCheckWord(_UCHAR * inp_word, p_spc_answer_type answ, p_VOID hdict, int
         k = ToUpper(word[0]);
         for (j = 0; j < answ->nansw; j ++)
         {
-            if (ToUpper(answ->list[j][sp_len]) == k) answ->list[j][sp_len] = (_UCHAR)k;
+            if (ToUpper(answ->list[j][sp_len]) == k)
+                answ->list[j][sp_len] = (_UCHAR)k;
         }
     }
     
@@ -426,7 +427,11 @@ static _INT CheckByTree(_UCHAR * word, p_spc_answer_type answ, p_VOID hdict)
         
         if (j && (cur->cells[n].stt.l_status > XRWD_MIDWORD))
         {
-            for (j = 0; j < k; j ++) if (HWRStrCmp((_STR)answ->list[j], (_STR)cur->cells[n].word) == 0) break;
+            for (j = 0; j < k; j ++)
+            {
+                if (HWRStrCmp((_STR)answ->list[j], (_STR)cur->cells[n].word) == 0)
+                    break;
+            }
             if (j == k)
             {
                 answ->weights[k] = (_UCHAR)(w);
@@ -486,7 +491,7 @@ static _INT DevelopCell(_UCHAR cur_sym, _INT depth, p_spc_cell_type inp_cell, p_
             cell = *inp_cell;
             cell.stt = *fbp;
             cell.word[cell.wlen++] = fbp->sym;
-            //      cell.status = fbp->l_status;
+            // cell.status = fbp->l_status;
             
             AddCell(w, &cell, nxt);
             

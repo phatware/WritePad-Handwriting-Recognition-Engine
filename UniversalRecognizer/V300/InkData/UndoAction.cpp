@@ -509,7 +509,6 @@ CUndoData::CUndoData( int iType )
 #ifdef TEXT_SUPPORT
 	if ( m_iUndoType == UNDO_TEXT_CHANGED ||  m_iUndoType == UNDO_TEXT_DELETED )
 	{
-		// TODO: 
 	}
 #endif // TEXT_SUPPORT
 }
