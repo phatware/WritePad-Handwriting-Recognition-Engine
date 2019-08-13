@@ -55,7 +55,6 @@
 #define OFF                    0
 
 #define USE_ORTOGRAPH         OFF
-#define USE_CHUNK_PROCESSOR   OFF
 #define USE_POSTPROC          OFF
 
 #define EXTERN_VOCABULARY    OFF
@@ -268,10 +267,8 @@ typedef struct
     
     _SHORT          xrw_mode;            /* Xrws mode v/c/t/b ....         */
     _SHORT          corr_mode;           /* Corr matr modes - s/c ...      */
-    _SHORT          xrw_min_wlen;        /* Min Num let in word to read    */
     _SHORT          xrw_max_wlen;        /* Max Num let in word to read    */
     _SHORT          xrw_tag_size;        /* Number of TAG buffers          */
-    _SHORT          xrw_chr_size;        /* Number of character buffers    */
     _SHORT          bad_distance;        /* CutOff distance of XRW modules */
     
     _SHORT          answer_level;
@@ -281,15 +278,11 @@ typedef struct
     _SHORT          bad_amnesty;
     
     _SHORT          caps_mode;
-    _SHORT          use_len_limits;
-    
-    _SHORT          fly_learn;
+
     _SHORT          use_vars_inf;
     
     _SHORT          lrn_class_level;
     _SHORT          lrn_min_class;
-    _SHORT          lrn_learn_suff;
-    _SHORT          lrn_vocvar_rew;
     
     p_VOID          dtiptr;               /* Handle to Xr database            */
     p_VOID          vocptr[MAX_DICT];     /* Handle to vocabularies           */
@@ -314,16 +307,9 @@ typedef struct
     
     _UCHAR          curv_bord[CB_NUM_VERTEX*2];  /* Curved border of the trace */
     
-    _UCHAR          fl_fil;
-    _UCHAR          fl_post;
-    
     _UCHAR          ws_handle;
     _USHORT         LearningHandleConfig;
-    _USHORT         FakeRecognition;      /* recognize just first point of a tajectory */
-    
-    _UCHAR          fl_chunk;             // CHUNK_PROCESSOR
-    _UCHAR          fl_chunk_let;         // CHUNK_PROCESSOR
-    
+        
     _SHORT         fOrto;                // ORTOGRAPH
     p_VOID          pDB;
     

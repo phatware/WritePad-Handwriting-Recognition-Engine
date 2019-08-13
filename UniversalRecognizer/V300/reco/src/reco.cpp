@@ -321,24 +321,12 @@ int RecoOpenSession( p_RECO_control_type ctrl, RECOCTX context )
     prc->rec_mode = RECM_TEXT;
     prc->low_mode = LMOD_CHECK_PUNCTN | LMOD_BORDER_GENERAL | LMOD_FREE_TEXT;
 
-    prc->ws_handle = (0 != (ctrl->flags & HW_RECFL_STATICSEG)) ? 6 : 0;
+    prc->ws_handle = (0 != (ctrl->flags & HW_RECFL_STATICSEG)) ? 5 : 0;
     // prc->ws_handle      = ((ctrl->sp_vs_q >> 8) & 0xFF); // 6; // 0; // <- auto WS segmentation with learning, was 6;
 
-    //  prc->xrw_min_wlen    = 0;
-    //  prc->xrw_max_wlen    = 0;
-    //  prc->xrw_chr_size    = 0;
-    //  prc->use_len_limits  = 0;
-    //  prc->lrn_learn_suff  = 2;
-    //  prc->lrn_vocvar_rew  = 5;
-    //  prc->fly_learn       = 0;
     prc->use_vars_inf = 1;
+    //  prc->xrw_max_wlen    = 0;
     //  prc->lmod_border_used= 0;
-    //  prc->fl_fil          = 0;
-    //  prc->fl_post         = 0;
-    //  prc->ws_handle       = 6;
-    //  prc->FakeRecognition = 0;
-    //  prc->fl_chunk        = 0;
-    //  prc->fl_chunk_let    = 0;
 
     // ------------------ Modifiers & pointers ----------------------------
 

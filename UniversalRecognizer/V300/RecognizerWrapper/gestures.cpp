@@ -123,7 +123,7 @@ GESTURE_TYPE HWR_CheckGesture( GESTURE_TYPE gtCheck,
                                    int nScale,
 								   int nMinLen )
 {
-    CGPoint * pTrace = (CGPoint *)malloc( (nPoints+1) * sizeof( CGPoint ) );
+    CGPoint * pTrace = (CGPoint *)HWRMemoryAlloc( (nPoints+1) * sizeof( CGPoint ) );
     if ( NULL == pTrace )
         return GEST_NONE; 
 
@@ -132,8 +132,7 @@ GESTURE_TYPE HWR_CheckGesture( GESTURE_TYPE gtCheck,
         pTrace[i] = stroke[i].pt;
     }
 	GESTURE_TYPE result = recognizeGesture( gtCheck, pTrace, nPoints, nScale, nMinLen );
-    free( (void *)pTrace );
-                                
+    HWRMemoryFree( pTrace );
     return result;
 }
 

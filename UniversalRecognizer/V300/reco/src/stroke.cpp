@@ -453,9 +453,6 @@ BORD_U:
     }
     
     if (
-#if USE_CHUNK_PROCESSOR
-        D->rc->fl_chunk==0 &&
-#endif /* USE_CHUNK_PROCESSOR */
         (D->rc->lmod_border_used==LMOD_BORDER_TEXT && sep_let==_TRUE) ||
         D->rc->low_mode & LMOD_SMALL_CAPS )
     {

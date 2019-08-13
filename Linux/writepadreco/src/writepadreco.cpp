@@ -1,7 +1,7 @@
 /***************************************************************************************
  *
  *  WRITEPAD(r): Handwriting Recognition Engine (HWRE) and components.
- *  Copyright (c) 2001-2016 PhatWare (r) Corp. All rights reserved.
+ *  Copyright (c) 2001-2019 PhatWare (r) Corp. All rights reserved.
  *
  *  Licensing and other inquires: <developer@phatware.com>
  *  Developer: Stan Miasnikov, et al. (c) PhatWare Corp. <http://www.phatware.com>
@@ -112,7 +112,7 @@ int main(int argc, const char * argv[])
     if ( buffer != NULL )
     {
     	int res = recognizerInit( LANGUAGE_ENGLISH, NULL );
-    	cout << "recognizerInit: FALGS " << res << endl;
+    	cout << "recognizerInit: FLAGS " << res << endl;
     	recognizeCSVFile( buffer );
     	freeRecognizer();
     	cout << endl << "Task has been completed!" << endl << endl;
@@ -287,42 +287,51 @@ static bool recognizeInkData( INK_DATA_PTR inInkData, int iConfig )
     unsigned int flags = HWR_GetRecognitionFlags( _recognizer );
     flags &= ~FLAG_SINGLEWORDONLY;
     flags &= ~FLAG_SMOOTHSTROKES;
+    UCHR  custpunct[] = { ',', '.', '!', '\'', '?', '\0' };
     // flags |= FLAG_STATICSEGMENT;
-    if ( iConfig == 0 )
+    switch( iConfig )
     {
-        flags &= ~FLAG_SEPLET;
-        flags &= ~FLAG_ONLYDICT;
-        cout << "\n\nRecognition Configuration 1: FLAG_SEPLET - OFF, FLAG_ONLYDICT - OFF\n\n";
-    }
-    else if ( iConfig == 1 )
-    {
-        flags |= FLAG_SEPLET;
-        flags &= ~FLAG_ONLYDICT;
-        cout << "\n\nRecognition Configuration 2: FLAG_SEPLET - ON, FLAG_ONLYDICT - OFF\n\n";
-    }
-    else if ( iConfig == 2 )
-    {
-        flags &= ~FLAG_SEPLET;
-        flags |= FLAG_ONLYDICT;
-        cout << "\n\nRecognition Configuration 3: FLAG_SEPLET - OFF, FLAG_ONLYDICT - ON\n\n";
-    }
-    else if ( iConfig == 3 )
-    {
-        flags |= FLAG_SEPLET;
-        flags |= FLAG_ONLYDICT;
-        cout << "\n\nRecognition Configuration 4: FLAG_SEPLET - ON, FLAG_ONLYDICT - ON\n\n";
-    }
-    else if ( iConfig == 4 )
-    {
-        UCHR  custpunct[] = { ',', '.', '!', '\'', '?', '\0' };
-        flags |= FLAG_SEPLET;
-        flags |= FLAG_ONLYDICT;
-        flags |= FLAG_USECUSTOMPUNCT;
-        HWR_SetCustomCharset( _recognizer, NULL, custpunct );
-        cout << "\n\nRecognition Configuration 5: FLAG_SEPLET - ON, FLAG_ONLYDICT - ON, Custom punctuation.\n\n";
+        case 0 :
+            flags &= ~FLAG_SEPLET;
+            flags &= ~FLAG_ONLYDICT;
+            cout << "\n\nRecognition Configuration 1: FLAG_SEPLET - OFF, FLAG_ONLYDICT - OFF\n\n";
+            break;
+
+        case 1 :
+            flags |= FLAG_SEPLET;
+            flags &= ~FLAG_ONLYDICT;
+            cout << "\n\nRecognition Configuration 2: FLAG_SEPLET - ON, FLAG_ONLYDICT - OFF\n\n";
+            break;
+
+        case 2 :
+            flags &= ~FLAG_SEPLET;
+            flags |= FLAG_ONLYDICT;
+            cout << "\n\nRecognition Configuration 3: FLAG_SEPLET - OFF, FLAG_ONLYDICT - ON\n\n";
+            break;
+
+        case 3 :
+            flags |= FLAG_SEPLET;
+            flags |= FLAG_ONLYDICT;
+            cout << "\n\nRecognition Configuration 4: FLAG_SEPLET - ON, FLAG_ONLYDICT - ON\n\n";
+            break;
+
+        case 4 :
+            flags |= FLAG_SEPLET;
+            flags |= FLAG_ONLYDICT;
+            flags |= FLAG_USECUSTOMPUNCT;
+            HWR_SetCustomCharset( _recognizer, NULL, custpunct );
+            cout << "\n\nRecognition Configuration 5: FLAG_SEPLET - ON, FLAG_ONLYDICT - ON, Custom punctuation.\n\n";
+            break;
+
+        case 5 :
+            flags |= FLAG_ONLYDICT;
+            flags |= FLAG_USECUSTOMPUNCT;
+            flags |= FLAG_STATICSEGMENT;
+            HWR_SetCustomCharset( _recognizer, NULL, custpunct );
+            cout << "\n\nRecognition Configuration 6: FLAG_STATICSEGMENT = ON, FLAG_ONLYDICT - ON, Custom punctuation.\n\n";
+            break;
     }
     HWR_SetRecognitionFlags( _recognizer, flags );
-
 	recognizedText = HWR_RecognizeInkData( _recognizer, inInkData, 0, -1, true, false, false, false );
 	if (recognizedText == NULL || *recognizedText == 0)
 		return false;
@@ -438,7 +447,7 @@ static void recognizeCSVFile( const char * buffer )
         INK_MoveStroke( iData, i, -minX, -minY, &rect, false );
     }
 
-    for ( i = 0; i < 5; i++ )
+    for ( i = 0; i < 6; i++ )
     {
         if ( ! recognizeInkData( iData, i ) )
         	break;
@@ -546,6 +555,7 @@ static void freeRecognizer( void )
             char userDict[MAX_PATH];
             char learner[MAX_PATH];
             char corrector[MAX_PATH];
+
 
             userDict[0] = 0;
             learner[0] = 0;

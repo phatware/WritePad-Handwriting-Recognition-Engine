@@ -2082,7 +2082,7 @@ _INT WS_SegmentWords(_INT finished_x, p_ws_data_type pws_data)
         if (na > 0 && WSAbs(na) > pwsd->sure_level)
             nn = 0;
 
-        if (nn == 0) // Delim zdes!
+        if (nn == 0) // separate words
         {
             pwsd->xwords[num_words].st_gap = (_UCHAR)(start);
             pwsd->xwords[num_words].en_gap = (_UCHAR)(i);
@@ -2213,7 +2213,7 @@ _INT WS_GetWordDist( p_ws_data_type pws_data )
     //--------------------
 
     // word_dist = (37 > 16+pwsd->nn_sl) ? (110+pwsd->nn_n_bsp) : (pwsd->nn_ssp+80);
-    word_dist = ((10 > pwsd->nn_npiks) ? 110 : 79) + ((pwsd->nn_sl * pwsd->nn_n_ssp + pwsd->nn_npiks > 100) ?
+    word_dist = ((10 > pwsd->nn_npiks) ? 105 : 74) + ((pwsd->nn_sl * pwsd->nn_n_ssp + pwsd->nn_npiks > 100) ?
                                                       pwsd->nn_ssp : (pwsd->nn_sl - pwsd->nn_n_ssp + pwsd->nn_npiks));
     word_dist = (inline_dist * word_dist) / 100;
 

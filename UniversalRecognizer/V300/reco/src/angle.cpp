@@ -54,15 +54,15 @@
 #endif                                          
 
 #ifdef  FORMULA
-#define COS_ANGLE   (-60)                     /* level cos of right angles */
-#define LEVEL_DIST  750                       /* level of length hord      */
-#define COS_ANGLE_OLD   (-60)                     /* level cos of right angles */
-#define LEVEL_DIST_OLD  750                       /* level of length hord      */
+#define COS_ANGLE       (-60)                   /* level cos of right angles */
+#define LEVEL_DIST      750                     /* level of length hord      */
+#define COS_ANGLE_OLD   (-60)                   /* level cos of right angles */
+#define LEVEL_DIST_OLD  750                     /* level of length hord      */
 #else
-#define COS_ANGLE   (-60)                        /* level cos of right angles */
-#define LEVEL_DIST  1000                        /* level of length hord      */
-#define COS_ANGLE_OLD   (0)                        /* level cos of right angles */
-#define LEVEL_DIST_OLD  450                        /* level of length hord      */
+#define COS_ANGLE       (-60)                   /* level cos of right angles */
+#define LEVEL_DIST      1000                    /* level of length hord      */
+#define COS_ANGLE_OLD   (0)                     /* level cos of right angles */
+#define LEVEL_DIST_OLD  450                     /* level of length hord      */
 #endif
 
 static _SHORT store_angle( low_type _PTR D, _SHORT num_max_cos, _SHORT base, _SHORT ibeg, _SHORT iend, _SHORT cos );
@@ -72,10 +72,9 @@ static _SHORT angle_direction(_SHORT x0,  _SHORT y0, _SHORT slope);
 /*         This subroutine finds all angles on traject                       */
 /*****************************************************************************/
 
-_SHORT angl(low_type _PTR D)                /*                               */
-/*                               */
-{                                           /*                               */
-	_SHORT i,j,                               /* work indexes                  */
+_SHORT angl(low_type _PTR D)              /*                               */
+{                                         /*                               */
+	_SHORT i,j,                           /* work indexes                  */
 	_PTR flag_wrk,                        /* item address (in flag_array)  */
 	_PTR flag_end,                        /* address of end of flag_array  */
 	dx, dy,                               /* (dx,dy)-vector of hord        */
@@ -86,8 +85,7 @@ _SHORT angl(low_type _PTR D)                /*                               */
 	beg,                                  /* index of beginning angle zone */
 	max_cos = 0,                          /* cos vertex of angle           */
 	num_max_cos=0;                        /* its index                     */
-	/*                               */
-	SPECL near *cur;                          /*  reference to work SPECL item */
+	SPECL near *cur;                      /*  reference to work SPECL item */
 	p_SHORT  buf;  /*CHE*/
 	/*********************************/
 	
@@ -224,7 +222,6 @@ static _SHORT store_angle(low_type _PTR D, _SHORT top, _SHORT base, _SHORT ibeg,
 
 #undef BASE_ANGLE                               
 #undef BASE_DIST                                
-                                                
 
 /*****************************************************************************/
 /*         This subroutine calculate any angle direction                     */
@@ -233,27 +230,17 @@ static _SHORT store_angle(low_type _PTR D, _SHORT top, _SHORT base, _SHORT ibeg,
 static _SHORT angle_direction(_SHORT x0, _SHORT y0, _SHORT slope)      
 {
 	_LONG pf, pb;                                 
-	_SHORT  dir;                                  
-	slope = slope;                                 /* 9-6-94-ecc: eliminate unused-var warning */
+	_SHORT  dir;
+    UNUSED(slope);
 
 	pf= (_LONG)(TG_75)*(_LONG)x0/100 + (_LONG)y0;
 	pb= (_LONG)(TG_75)*(_LONG)x0/100 - (_LONG)y0;
 
 	if (pf > 0)
-	{
-		if (pb > 0)
-			dir=_ANGLE_LEFT_;    /* pf > 0      pd > 0        */
-		else       
-			dir=_ANGLE_UP_;      /* pf > 0      pd < 0        */
-	}                                  
-	else    
-    { 
-		if (pb > 0) 
-			dir=_ANGLE_DOWN_;    /* pf < 0      pd > 0        */
-		else 
-			dir=_ANGLE_RIGHT_;   /* pf < 0      pd < 0        */
-	}                                  
-	return dir;                                    
+        dir = (pb > 0) ? _ANGLE_LEFT_ : _ANGLE_UP_;
+	else
+        dir = (pb > 0) ? _ANGLE_DOWN_ : _ANGLE_RIGHT_;
+	return dir;
 }                                               
 
 

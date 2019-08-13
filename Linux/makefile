@@ -35,8 +35,8 @@ CFLAGS := -std=gnu++11 -O3 -Wall -c
 
 WARNIGNS := -Wno-char-subscripts \
 	    -Wno-missing-braces \
-	    -Wno-unused-but-set-variable \
-	    -Wno-multichar
+	    -Wno-multichar \
+		-Wno-deprecated-register
 
 INCLUDES := -I"$(SRC_FOLDER)/include" \
 	    -I"$(SRC_FOLDER)/InkData" \
