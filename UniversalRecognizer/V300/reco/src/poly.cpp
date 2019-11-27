@@ -138,12 +138,11 @@ _INT GetPolyCo( _INT st, _INT len, p_xrdata_type xrdata, _TRACE trace, p_UCHAR c
         n = 255;
     coeff[PC_NUM_COEFF - 1] = (_UCHAR) n; // Approximation error
 
-    if ( p_sym_trace )
-        HWRMemoryFree( p_sym_trace );
-
     if ( GetSnnBitMap( st, len, xrdata, trace, &coeff[PC_NUM_COEFF], &rect, &parts[0] ) )
         goto err;
 
+    if ( p_sym_trace )
+        HWRMemoryFree( p_sym_trace );
     return 0;
 err:
     if ( p_sym_trace )

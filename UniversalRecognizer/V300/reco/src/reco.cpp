@@ -1180,7 +1180,8 @@ static _INT HWR_RecInit(p_rec_inst_type _PTR ppri, int language )
     *ppri = pri;
 
     return 0;
-    err: if (pri)
+err:
+    if (pri)
         HWRMemoryFree(pri);
     return 1;
 }

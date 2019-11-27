@@ -788,7 +788,8 @@ _SHORT StrElements( low_type _PTR pLowData, SPECL _PTR pcSpecl /*, p_SHORT pHeig
         goto QUIT;
     }
 
-    QUIT: if ( pSpecl0 != _NULL )
+QUIT:
+    if ( pSpecl0 != _NULL )
     {
         HWRMemoryFree( (p_VOID) pSpecl0 );
     }
@@ -873,6 +874,7 @@ _VOID DestroySDS( low_type _PTR pLowData )
         if ( p_cSDS->pSDS != _NULL )
         {
             HWRMemoryFree( (p_VOID) (p_cSDS->pSDS) );
+            p_cSDS->pSDS = _NULL;
         }
 
         p_cSDS->sizeSDS = 0;
