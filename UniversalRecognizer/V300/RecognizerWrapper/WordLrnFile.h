@@ -187,7 +187,7 @@ public:
         return -1;
     }
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
     
     int	AddWord( const char * pWord, USHORT nWeight, BOOL bDictionary )
     {

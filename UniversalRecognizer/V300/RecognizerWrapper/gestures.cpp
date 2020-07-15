@@ -105,9 +105,9 @@
 
 /*****************************************************************************************/
 
-static BOOL	IsMonotonous( CGPoint *  pTrace, int iLeft, int iRight , int iXth, int iYth);
+static _BOOL	IsMonotonous( CGPoint *  pTrace, int iLeft, int iRight , int iXth, int iYth);
 static int	GetFarFromChordIndex ( CGPoint *  pTrace, int iLeft, int iRight );
-static BOOL	GestClosedSquare( CGPoint * pTrace, int cTrace, float *plSquare);
+static _BOOL	GestClosedSquare( CGPoint * pTrace, int cTrace, float *plSquare);
 static GESTURE_TYPE recognizeGesture( GESTURE_TYPE gtCheck, 
                                      CGPoint * pTrace,
                                      int nPoints,
@@ -728,7 +728,7 @@ bypass_cut:
 /*******************************************************************************************/
 		
 //from low_util ???
-static BOOL IsMonotonous( CGPoint * pTrace, int iLeft, int iRight, int iXth, int iYth)
+static _BOOL IsMonotonous( CGPoint * pTrace, int iLeft, int iRight, int iXth, int iYth)
 {
 	float iDX;
 	float iDY;
@@ -786,8 +786,8 @@ static int  GetFarFromChordIndex ( CGPoint *  pTrace, int iLeft, int iRight )
 	float  dxRL, dyRL;
 	float   ldConst;
 	float  ldMostFar, ldCur;
-	BOOL   bIncrEqual;
-	BOOL   bFlatPlato;
+	_BOOL   bIncrEqual;
+	_BOOL   bFlatPlato;
 
       /*                                                  */
       /*                      O <-iRight                  */
@@ -884,7 +884,7 @@ static int  GetFarFromChordIndex ( CGPoint *  pTrace, int iLeft, int iRight )
  *        B
  */
 
-static BOOL  GestClosedSquare( CGPoint * pTrace, int cTrace, float *plSquare)
+static _BOOL  GestClosedSquare( CGPoint * pTrace, int cTrace, float *plSquare)
 {
 	int    i, ip1;
 	float   lSum;

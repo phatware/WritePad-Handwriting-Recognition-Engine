@@ -49,7 +49,7 @@ typedef struct __file_header {
 	DWORD	dwReserved2;
 } FILE_HEADER, * PFILE_HEADER;
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
 #define FILE_VERSION	1007
 #else
 #define FILE_VERSION	1002

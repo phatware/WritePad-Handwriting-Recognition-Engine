@@ -136,7 +136,7 @@ typedef struct
     tr_descr_type p_trh;
 
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
     UCHR uans_buf[w_lim];
 #endif
 } rec_inst_type, _PTR p_rec_inst_type;
@@ -175,7 +175,7 @@ void RecoSetErrorText(CUCHR * pErrorText)
             gError[0] = 0;
         else
         {
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
             UNICODEtoStr( (char *)gError, pErrorText, HW_MAXWORDLEN-1);
 #else
             HWRStrnCpy((_STR) gError, (_STR) pErrorText, HW_MAXWORDLEN - 1);
@@ -919,7 +919,7 @@ RECO_ANSWER RecoGetAnswers(int what, int nw, int na, RECOCTX context)
                             n = i + 1;
                         else
                             n = i; // Move from prev zero
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
                         _INT k;
                         for (k = 0; ptr[n+k] != 0; k ++ )
                             pri->uans_buf[k] = (UCHR)ptr[n+k];

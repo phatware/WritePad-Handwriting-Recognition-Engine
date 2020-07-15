@@ -168,7 +168,7 @@ UCHR *    HWRFloatToStrW( UCHR * s, float n );
 char *    HWRStrDupA( CUCHR * stringIn );
 _INT      HWRStrCaseCmpW( CUCHR * zString1, CUCHR * zString2);
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
 
 UCHR *    HWRStrDupW( CUCHR * stringIn );
 UCHR *    HWRStrDupW( const char * stringIn );

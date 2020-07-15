@@ -91,7 +91,7 @@ BOOL CUndoAction::DoUndo( CInkData *pData, CUndoAction *pRedo )
         CUndoData *pUndo = m_pUndoData[m_nUndoItems-1];
         int iType = pUndo->m_iUndoType;
 		
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 
 		if ( (iType == UNDO_TEXT_DELETED || iType == UNDO_TEXT_CHANGED || iType == UNDO_TEXT_ADDED)&& 
             pUndo->m_arrTextObjects.GetSize() > 0 )
@@ -176,7 +176,7 @@ BOOL CUndoAction::DoUndo( CInkData *pData, CUndoAction *pRedo )
 			return true;
         }
 #endif // TEXT_SUPPORT
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 		pData->m_pCurrentImageObject = NULL;
 		if ( (iType == UNDO_IMAGE_DELETED || iType == UNDO_IMAGE_ADDED || iType == UNDO_IMAGE_CHANGED)&& 
             pUndo->m_arrImageObjects.GetSize() > 0 )
@@ -494,7 +494,7 @@ CUndoData::CUndoData( int iType )
     m_pStrokes = NULL;
     m_pStrokesOld = NULL;
 	m_nObjectIndex = -1;
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
     m_ptTextPos.x = m_ptTextPos.y = 0;
     m_iTextHeight = m_iTextWidth = 10;
 #endif // TEXT_SUPPORT
@@ -506,7 +506,7 @@ CUndoData::CUndoData( int iType )
         if ( m_iUndoType == UNDO_STROKES_MOVED || m_iUndoType == UNDO_STROKES_CHANGED )
             m_pStrokesOld = new PHStrokeArr;
     }
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	if ( m_iUndoType == UNDO_TEXT_CHANGED ||  m_iUndoType == UNDO_TEXT_DELETED )
 	{
 	}
@@ -528,7 +528,7 @@ CUndoData::~CUndoData()
         m_pStrokes = NULL;
     }
 	
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
     m_arrTextObjects.Free();
 #endif // TEXT_SUPPORT
 }
@@ -596,13 +596,13 @@ void CUndoData::AddStroke( PHStroke * pStroke )
 
 BOOL CUndoData::IsEmpty()
 {
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	if ( m_iUndoType == UNDO_TEXT_CHANGED || m_iUndoType == UNDO_TEXT_DELETED )
 		return (m_arrTextObjects.GetSize() == 0);
 	else if ( m_iUndoType == UNDO_TEXT_ADDED  )
 		return (0 > m_nObjectIndex);
 #endif // TEXT_SUPPORT
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	if ( m_iUndoType == UNDO_IMAGE_CHANGED || m_iUndoType == UNDO_IMAGE_DELETED )
 		return (m_arrImageObjects.GetSize() == 0);
 	else if ( m_iUndoType == UNDO_IMAGE_ADDED  )
@@ -611,7 +611,7 @@ BOOL CUndoData::IsEmpty()
     return ( m_iAdded == 0 && (m_pStrokes == NULL || m_pStrokes->GetSize() == 0));
 }
 
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 
 BOOL CUndoAction::UpdateLastType( int iType )
 {
@@ -755,7 +755,7 @@ BOOL CUndoAction::CanUndoForCurrentObject( CTextObject *pTextObject )
 
 #endif // TEXT_SUPPORT
 
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 
 BOOL CUndoAction::AddItem( int iType, CImageObject * pImageObject, int nIndex /* = -1 */, BOOL bClone /* = true */ )
 {

@@ -35,6 +35,7 @@
 #include "reco_ver.h"
 #include "recodefs.h"
 #include "bastypes.h"
+#include "RecognizerApi.h"
 
 typedef int  (__cdecl *info_func_type)(void *);		/* Type of the callback returning parent status */
 
@@ -49,12 +50,6 @@ typedef struct
 	char *	customNumbers;					/* custom numbers */
 	void *	ICB_param;						/* Parameter, which will be passed to InfoCallBack */
 } RECO_control_type, * p_RECO_control_type;
-
-typedef struct
-{
-	int    capabilities;                    /* Bits (HW_CPFL_) describing what type of recognizer it is */
-	_CHAR  id_string[HW_RECID_MAXLEN];      /* Name of the recognizer */
-} RECO_ID_type, * p_RECO_ID_type;
 
 typedef struct
 {
@@ -75,6 +70,11 @@ typedef union _reco_answer
     int value;
 } RECO_ANSWER;
 
+typedef struct
+{
+    int    capabilities;                    /* Bits (HW_CPFL_) describing what type of recognizer it is */
+    _CHAR  id_string[HW_RECID_MAXLEN];      /* Name of the recognizer */
+} RECO_ID_type, * p_RECO_ID_type;
 
 /* ------------------------- Prototypes ------------------------------------- */
 

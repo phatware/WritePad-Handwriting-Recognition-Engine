@@ -138,7 +138,7 @@ int RecoGetDictStatus(int * plen, RECOHDICT h_dict)
 /* ************************************************************************** */
 #ifdef RECODICT
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
 
 int RecoAddWordToDict(CUCHR * word, RECOHDICT * h_dict)
 {
@@ -192,7 +192,7 @@ int RecoAddWordToDict( CUCHR * word, RECOHDICT * h_dict)
 
 int RecoCheckWordInDicts( CUCHR * word, RECOHDICT h_main_dict, RECOHDICT h_user_dict)
 {
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
 	int res = 1;
 	_CHAR wrd[PZDICT_MAX_WORDLEN+4];
 
@@ -221,7 +221,7 @@ int RecoCheckWordInDicts( CUCHR * word, RECOHDICT h_main_dict, RECOHDICT h_user_
 }
 
 #else // RECODICT 
-#ifdef HW_RECINT_UNICODE 
+#if HW_RECINT_UNICODE
 
 int RecoCheckWordInDicts( CUCHR * word, RECOHDICT h_main_dict, RECOHDICT h_user_dict)
 {
@@ -253,7 +253,7 @@ int RecoSpellCheckWord(CUCHR * wrd, UCHR * ans, int buf_len,
 	// _INT weights[HW_MAX_SPELL_NUM_ALTS];
 	spc_answer_type u_list, m_list;
 
-#ifdef HW_RECINT_UNICODE 
+#if HW_RECINT_UNICODE 
 	_UCHAR a[HW_MAX_SPELL_NUM_ALTS*PZDICT_MAX_WORDLEN+HW_MAX_SPELL_NUM_ALTS];
 	_UCHAR * answ = &a[0];
 	_UCHAR word[PZDICT_MAX_WORDLEN+4];
@@ -556,7 +556,7 @@ bool EnumerateWords(PRECO_ONGOTWORD fnCallback, void *pParam, int depth,
 			//we have the next word.  Let's add it to the listbox:
 			if (fnCallback)
 			{
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
                 UCHR * chr = new UCHR[HWRStrLen((char *)szWord)+2];
                 StrToUNICODE( chr, (const char *)szWord, HWRStrLen((char *)szWord)+1);
 				if (!fnCallback((const UCHR *) chr, pParam))

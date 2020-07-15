@@ -184,7 +184,7 @@ public:
 		return NULL;
 	}
     
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
     
 	CWordMap *	AddWord( const char * pWordFrom, const char * pWordTo )
     {

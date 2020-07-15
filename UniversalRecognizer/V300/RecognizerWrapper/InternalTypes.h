@@ -61,7 +61,7 @@
 #define _ITOSTR     HWRIntToStrW
 #define _FTOSTR     HWRFloatToStrW
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
 #define _STRDUP     HWRStrDupW
 #else
 #define _STRDUP     HWRStrDupA

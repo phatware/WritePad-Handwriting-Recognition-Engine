@@ -388,7 +388,7 @@ p_VOID  HWRMemSet(p_VOID pcDest, _UCHAR ucChar, _WORD  wNumber)
  *                                                                         *
  **************************************************************************/
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
 
 UCHR * HWRStrDupW( CUCHR * stringIn )
 {
@@ -426,7 +426,7 @@ char * HWRStrDupA( CUCHR * stringIn )
     char * stringOut = (char *)HWRMemoryAlloc( sizeof( char ) * (length+2) );
     if ( stringOut != NULL )
     {
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
         UNICODEtoStr( stringOut, stringIn, length+1 );
 #else
         HWRStrCpy( stringOut, stringIn );
@@ -603,7 +603,7 @@ UCHR * HWRFloatToStrW( UCHR * s, float n )
     return s;
 }
 
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
 
 #define MAX_XU_CONVERTS 5
 

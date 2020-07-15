@@ -34,10 +34,10 @@
 
 #include "RecognizerApi.h"
 #include "PHStroke.h"
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 #include "ImageObject.h"
 #endif // IMAGE_SUPPORT
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 #include "TextObject.h"
 #endif // TEXT_SUPPORT
 
@@ -75,13 +75,13 @@ public:
     PHStrokeArr *   m_pStrokesOld;
     BOOL            m_bStrokesDetached;
 	int				m_nObjectIndex;
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	POINT			m_ptImagePos;
 	int				m_iImageHeight, m_iImageWidth;
 	BOOL			AddImageObject( int nIndex, CImageObject * pImageObject, BOOL bClone );
     PHImageObjArray  m_arrImageObjects;
 #endif
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	POINT           m_ptTextPos;
     int             m_iTextHeight, m_iTextWidth;
 	
@@ -109,18 +109,18 @@ public:
     void        RemoveLastUndo();
     void        FreeAll();
     void        FreeUnused();
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	BOOL		AddImageObject( int iType, CImageObject * pImageObject, int nIndex = -1, BOOL bClone = true );
 	BOOL		AddItem( int iType, CImageObject * pImageObject, int nIndex = -1, BOOL bClone = true );
 #endif
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	BOOL		UpdateLastType( int iType );
 	BOOL		AddItem( int iType, CTextObject * pTextObject, int nIndex = -1, BOOL bClone = true );
 	BOOL		AddTextObject( int iType, CTextObject * pTextObject, int nIndex = -1, BOOL bClone = true );
     void        FinishMoveTextUndo( CTextObject * pTextObject );
     BOOL        CanUndoForCurrentObject( CTextObject *pto );
 #endif // TEXT_SUPPORT
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 #endif
 	
 protected:

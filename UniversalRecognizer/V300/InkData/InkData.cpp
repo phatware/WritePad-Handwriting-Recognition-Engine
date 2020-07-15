@@ -66,10 +66,10 @@ CInkData::CInkData()
 
 CInkData::~CInkData()
 {
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	FreeText();
 #endif // TEXT_SUPPORT
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	FreeImages();
 #endif // TEXT_SUPPORT
     FreeUndo();
@@ -771,7 +771,7 @@ BOOL CInkData::RemoveSelected( BOOL bDeleteAll /* =false */ )
         }
     }
 	
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	if ( m_pCurrentImageObject != NULL )
 	{
 		int index = GetImageObjectIndex(m_pCurrentImageObject);
@@ -896,7 +896,7 @@ void CInkData::ChangeZOrder( int iDepth, BOOL bFwd )
     int nMoved = 0;
     register PHStroke * pStroke = NULL;
 	
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
     if ( m_pCurrentImageObject != NULL )
 	{ 
 		if(bFwd)
@@ -950,7 +950,7 @@ void CInkData::ChangeZOrder( int iDepth, BOOL bFwd )
                     bUndoStarted = true;
                 }
             }
-#ifdef IMAGE_SUPPORT			
+#if IMAGE_SUPPORT
 			//move all images behind this stroke
 			for(int i = 0; i < GetImageObjectCnt(); i++)
 			{
@@ -1577,10 +1577,10 @@ TRACE_FILE_STATUS CInkData::WritePhatWareInk( CPHStream &phFile, BOOL bIgnoreLas
 	header.m_ucVersion[VER_FLD_LEN] = 0;
 	header.m_uStrokes = nNonEmptyStrokes; // write the uncompressed number, overwrite later if required
 	header.m_Options = 0;	// turned off for text saving
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	header.m_Options |= FHF_TEXTOBJECTS;	// turned on for text saving
 #endif // TEXT_SUPPORT
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	header.m_Options |= FHF_IMAGEOBJECTS;	// turned on for image saving
 	header.m_Options |= FHF_IMAGEROTATION;	// turned on for image rotation support
 #endif // TEXT_SUPPORT
@@ -1784,13 +1784,13 @@ TRACE_FILE_STATUS CInkData::WritePhatWareInk( CPHStream &phFile, BOOL bIgnoreLas
 	}
 	
 	
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	/* Write text edit objects */
 	if ( ! WriteTextElements( phFile ) )
 		goto err;
 #endif // TEXT_SUPPORT
 	
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	/* Write images */
 	if ( ! WriteImages( phFile ) )
 		goto err;
@@ -2076,10 +2076,10 @@ TRACE_FILE_STATUS CInkData::ReadPhatWareInk( CPHStream &phStream, BOOL skipImage
 {
     // Clear the existing point array to get new trace
     FreeStrokes();
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	FreeText();
 #endif // TEXT_SUPPORT
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	FreeImages();
 #endif // TEXT_SUPPORT
 	
@@ -2121,7 +2121,7 @@ TRACE_FILE_STATUS CInkData::ReadPhatWareInk( CPHStream &phStream, BOOL skipImage
         }
 	}
 	
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	// Read Text Elements - only read if the m_Options is set
 	if ( 0 != (FHF_TEXTOBJECTS & header.m_Options) )
 	{
@@ -2129,7 +2129,7 @@ TRACE_FILE_STATUS CInkData::ReadPhatWareInk( CPHStream &phStream, BOOL skipImage
 			return TRFILE_BADFILE;
 	}
 #endif // TEXT_SUPPORT
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
  	if ( 0 != (FHF_IMAGEOBJECTS & header.m_Options) && (!skipImages) )
 	{
 		if ( ! ReadImages( phStream ) )
@@ -2658,7 +2658,7 @@ LPSTRRECT CInkData::GetRecoStrokes( int nFirstStroke, int * pnStrokesCnt, BOOL b
 	return pStrokes;
 }
 
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 
 void CInkData::FreeText( void )
 {
@@ -3002,7 +3002,7 @@ BOOL CInkData::CanUndoForCurrentObject( CTextObject *pto )
 
 #endif // TEXT_SUPPORT
 
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 
 BOOL CInkData::DeleteImageObject( CImageObject * pto )
 {

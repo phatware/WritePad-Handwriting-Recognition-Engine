@@ -117,7 +117,7 @@ typedef unsigned              _BIT;     /*   The bit field.              */
 typedef float                 _FLOAT;   /*   Single precision   floating */
 typedef const char            _CCHAR;   /*   1-byte data type. It can be */
 typedef double                _DOUBLE;  /*   Double precision   floating */
-typedef unsigned int          _BOOL;    /*   The variable of  this  type */
+typedef signed char           _BOOL;    /*   The variable of  this  type */
 
 
 // these are 4 bytes, so they are defined as int, otherwise, does not work properly on arm64

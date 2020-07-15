@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F640D5AD24BC029500DA7710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F640D5AC24BC029500DA7710 /* AppDelegate.swift */; };
+		F640D5AF24BC029500DA7710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F640D5AE24BC029500DA7710 /* ViewController.swift */; };
+		F640D5B124BC029600DA7710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F640D5B024BC029600DA7710 /* Assets.xcassets */; };
+		F640D5B424BC029600DA7710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F640D5B224BC029600DA7710 /* Main.storyboard */; };
+		F640D5C624BC02A500DA7710 /* WritePadMAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F640D5C224BC02A100DA7710 /* WritePadMAC.framework */; };
+		F640D5C724BC02A500DA7710 /* WritePadMAC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F640D5C224BC02A100DA7710 /* WritePadMAC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F640D5D324BC069600DA7710 /* InkData.m in Sources */ = {isa = PBXBuildFile; fileRef = F640D5D224BC069600DA7710 /* InkData.m */; };
+		F6A21D6D24BEC656004143E4 /* Dutch.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6124BEC5F0004143E4 /* Dutch.dct */; };
+		F6A21D6E24BEC65C004143E4 /* Brazilian.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6A24BEC5F0004143E4 /* Brazilian.dct */; };
+		F6A21D6F24BEC65C004143E4 /* German.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6024BEC5F0004143E4 /* German.dct */; };
+		F6A21D7024BEC65C004143E4 /* Italian.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D5F24BEC5F0004143E4 /* Italian.dct */; };
+		F6A21D7124BEC65C004143E4 /* Portuguese.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6324BEC5F0004143E4 /* Portuguese.dct */; };
+		F6A21D7224BEC65C004143E4 /* EnglishUK.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6224BEC5F0004143E4 /* EnglishUK.dct */; };
+		F6A21D7324BEC65C004143E4 /* Spanish.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6524BEC5F0004143E4 /* Spanish.dct */; };
+		F6A21D7424BEC65C004143E4 /* Danish.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6624BEC5F0004143E4 /* Danish.dct */; };
+		F6A21D7524BEC65C004143E4 /* French.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6724BEC5F0004143E4 /* French.dct */; };
+		F6A21D7624BEC65C004143E4 /* Swedish.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6424BEC5F0004143E4 /* Swedish.dct */; };
+		F6A21D7724BEC65C004143E4 /* Indonesian.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6C24BEC5F0004143E4 /* Indonesian.dct */; };
+		F6A21D7824BEC65C004143E4 /* English.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6B24BEC5F0004143E4 /* English.dct */; };
+		F6A21D7924BEC65C004143E4 /* Finnish.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6824BEC5F0004143E4 /* Finnish.dct */; };
+		F6A21D7A24BEC65C004143E4 /* Norwegian.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D5E24BEC5F0004143E4 /* Norwegian.dct */; };
+		F6A21D7B24BEC65C004143E4 /* MedicalUS.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6924BEC5F0004143E4 /* MedicalUS.dct */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F640D5C124BC02A100DA7710 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F640D5BC24BC02A100DA7710 /* WritePadMAC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F640D12B24BB00C800DA7710;
+			remoteInfo = WritePadMAC;
+		};
+		F640D5C324BC02A100DA7710 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F640D5BC24BC02A100DA7710 /* WritePadMAC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F640D13424BB00C800DA7710;
+			remoteInfo = WritePadMACTests;
+		};
+		F640D5C924BC02AC00DA7710 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F640D5BC24BC02A100DA7710 /* WritePadMAC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F640D12A24BB00C800DA7710;
+			remoteInfo = WritePadMAC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F640D5C824BC02A500DA7710 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F640D5C724BC02A500DA7710 /* WritePadMAC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F640D5A924BC029500DA7710 /* WritePadTestMAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WritePadTestMAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F640D5AC24BC029500DA7710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F640D5AE24BC029500DA7710 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F640D5B024BC029600DA7710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F640D5B324BC029600DA7710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F640D5B524BC029600DA7710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F640D5B624BC029600DA7710 /* WritePadTestMAC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WritePadTestMAC.entitlements; sourceTree = "<group>"; };
+		F640D5BC24BC02A100DA7710 /* WritePadMAC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WritePadMAC.xcodeproj; path = ../WritePadMAC/WritePadMAC.xcodeproj; sourceTree = "<group>"; };
+		F640D5CB24BC038F00DA7710 /* WritePadTestMAC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WritePadTestMAC-Bridging-Header.h"; sourceTree = "<group>"; };
+		F640D5D224BC069600DA7710 /* InkData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InkData.m; sourceTree = "<group>"; };
+		F6A21D5E24BEC5F0004143E4 /* Norwegian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Norwegian.dct; path = ../../../../Dictionaries/Norwegian.dct; sourceTree = "<group>"; };
+		F6A21D5F24BEC5F0004143E4 /* Italian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Italian.dct; path = ../../../../Dictionaries/Italian.dct; sourceTree = "<group>"; };
+		F6A21D6024BEC5F0004143E4 /* German.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = German.dct; path = ../../../../Dictionaries/German.dct; sourceTree = "<group>"; };
+		F6A21D6124BEC5F0004143E4 /* Dutch.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Dutch.dct; path = ../../../../Dictionaries/Dutch.dct; sourceTree = "<group>"; };
+		F6A21D6224BEC5F0004143E4 /* EnglishUK.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = EnglishUK.dct; path = ../../../../Dictionaries/EnglishUK.dct; sourceTree = "<group>"; };
+		F6A21D6324BEC5F0004143E4 /* Portuguese.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Portuguese.dct; path = ../../../../Dictionaries/Portuguese.dct; sourceTree = "<group>"; };
+		F6A21D6424BEC5F0004143E4 /* Swedish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Swedish.dct; path = ../../../../Dictionaries/Swedish.dct; sourceTree = "<group>"; };
+		F6A21D6524BEC5F0004143E4 /* Spanish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Spanish.dct; path = ../../../../Dictionaries/Spanish.dct; sourceTree = "<group>"; };
+		F6A21D6624BEC5F0004143E4 /* Danish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Danish.dct; path = ../../../../Dictionaries/Danish.dct; sourceTree = "<group>"; };
+		F6A21D6724BEC5F0004143E4 /* French.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = French.dct; path = ../../../../Dictionaries/French.dct; sourceTree = "<group>"; };
+		F6A21D6824BEC5F0004143E4 /* Finnish.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Finnish.dct; path = ../../../../Dictionaries/Finnish.dct; sourceTree = "<group>"; };
+		F6A21D6924BEC5F0004143E4 /* MedicalUS.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = MedicalUS.dct; path = ../../../../Dictionaries/MedicalUS.dct; sourceTree = "<group>"; };
+		F6A21D6A24BEC5F0004143E4 /* Brazilian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Brazilian.dct; path = ../../../../Dictionaries/Brazilian.dct; sourceTree = "<group>"; };
+		F6A21D6B24BEC5F0004143E4 /* English.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = English.dct; path = ../../../../Dictionaries/English.dct; sourceTree = "<group>"; };
+		F6A21D6C24BEC5F0004143E4 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
+		F6A21D7E24BECEFB004143E4 /* InkData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InkData.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F640D5A624BC029500DA7710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F640D5C624BC02A500DA7710 /* WritePadMAC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F640D5A024BC029500DA7710 = {
+			isa = PBXGroup;
+			children = (
+				F640D5BC24BC02A100DA7710 /* WritePadMAC.xcodeproj */,
+				F640D5AB24BC029500DA7710 /* WritePadTestMAC */,
+				F640D5AA24BC029500DA7710 /* Products */,
+				F640D5C524BC02A500DA7710 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F640D5AA24BC029500DA7710 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F640D5A924BC029500DA7710 /* WritePadTestMAC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F640D5AB24BC029500DA7710 /* WritePadTestMAC */ = {
+			isa = PBXGroup;
+			children = (
+				F6A21D5C24BEC5D3004143E4 /* Dictionaries */,
+				F640D5D224BC069600DA7710 /* InkData.m */,
+				F6A21D7E24BECEFB004143E4 /* InkData.h */,
+				F640D5AC24BC029500DA7710 /* AppDelegate.swift */,
+				F640D5AE24BC029500DA7710 /* ViewController.swift */,
+				F640D5B024BC029600DA7710 /* Assets.xcassets */,
+				F640D5B224BC029600DA7710 /* Main.storyboard */,
+				F640D5B524BC029600DA7710 /* Info.plist */,
+				F640D5B624BC029600DA7710 /* WritePadTestMAC.entitlements */,
+				F640D5CB24BC038F00DA7710 /* WritePadTestMAC-Bridging-Header.h */,
+			);
+			path = WritePadTestMAC;
+			sourceTree = "<group>";
+		};
+		F640D5BD24BC02A100DA7710 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F640D5C224BC02A100DA7710 /* WritePadMAC.framework */,
+				F640D5C424BC02A100DA7710 /* WritePadMACTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F640D5C524BC02A500DA7710 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6A21D5C24BEC5D3004143E4 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				F6A21D6A24BEC5F0004143E4 /* Brazilian.dct */,
+				F6A21D6624BEC5F0004143E4 /* Danish.dct */,
+				F6A21D6124BEC5F0004143E4 /* Dutch.dct */,
+				F6A21D6B24BEC5F0004143E4 /* English.dct */,
+				F6A21D6224BEC5F0004143E4 /* EnglishUK.dct */,
+				F6A21D6824BEC5F0004143E4 /* Finnish.dct */,
+				F6A21D6724BEC5F0004143E4 /* French.dct */,
+				F6A21D6024BEC5F0004143E4 /* German.dct */,
+				F6A21D6C24BEC5F0004143E4 /* Indonesian.dct */,
+				F6A21D5F24BEC5F0004143E4 /* Italian.dct */,
+				F6A21D6924BEC5F0004143E4 /* MedicalUS.dct */,
+				F6A21D5E24BEC5F0004143E4 /* Norwegian.dct */,
+				F6A21D6324BEC5F0004143E4 /* Portuguese.dct */,
+				F6A21D6524BEC5F0004143E4 /* Spanish.dct */,
+				F6A21D6424BEC5F0004143E4 /* Swedish.dct */,
+			);
+			path = Dictionaries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F640D5A824BC029500DA7710 /* WritePadTestMAC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F640D5B924BC029600DA7710 /* Build configuration list for PBXNativeTarget "WritePadTestMAC" */;
+			buildPhases = (
+				F640D5A524BC029500DA7710 /* Sources */,
+				F640D5A624BC029500DA7710 /* Frameworks */,
+				F640D5A724BC029500DA7710 /* Resources */,
+				F640D5C824BC02A500DA7710 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F640D5CA24BC02AC00DA7710 /* PBXTargetDependency */,
+			);
+			name = WritePadTestMAC;
+			productName = WritePadTestMAC;
+			productReference = F640D5A924BC029500DA7710 /* WritePadTestMAC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F640D5A124BC029500DA7710 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					F640D5A824BC029500DA7710 = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+					};
+				};
+			};
+			buildConfigurationList = F640D5A424BC029500DA7710 /* Build configuration list for PBXProject "WritePadTestMAC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F640D5A024BC029500DA7710;
+			productRefGroup = F640D5AA24BC029500DA7710 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F640D5BD24BC02A100DA7710 /* Products */;
+					ProjectRef = F640D5BC24BC02A100DA7710 /* WritePadMAC.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F640D5A824BC029500DA7710 /* WritePadTestMAC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F640D5C224BC02A100DA7710 /* WritePadMAC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WritePadMAC.framework;
+			remoteRef = F640D5C124BC02A100DA7710 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F640D5C424BC02A100DA7710 /* WritePadMACTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WritePadMACTests.xctest;
+			remoteRef = F640D5C324BC02A100DA7710 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F640D5A724BC029500DA7710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A21D7A24BEC65C004143E4 /* Norwegian.dct in Resources */,
+				F6A21D7224BEC65C004143E4 /* EnglishUK.dct in Resources */,
+				F6A21D6F24BEC65C004143E4 /* German.dct in Resources */,
+				F6A21D7424BEC65C004143E4 /* Danish.dct in Resources */,
+				F6A21D7624BEC65C004143E4 /* Swedish.dct in Resources */,
+				F6A21D7B24BEC65C004143E4 /* MedicalUS.dct in Resources */,
+				F6A21D7524BEC65C004143E4 /* French.dct in Resources */,
+				F640D5B124BC029600DA7710 /* Assets.xcassets in Resources */,
+				F6A21D7124BEC65C004143E4 /* Portuguese.dct in Resources */,
+				F640D5B424BC029600DA7710 /* Main.storyboard in Resources */,
+				F6A21D7824BEC65C004143E4 /* English.dct in Resources */,
+				F6A21D6E24BEC65C004143E4 /* Brazilian.dct in Resources */,
+				F6A21D7024BEC65C004143E4 /* Italian.dct in Resources */,
+				F6A21D7724BEC65C004143E4 /* Indonesian.dct in Resources */,
+				F6A21D7324BEC65C004143E4 /* Spanish.dct in Resources */,
+				F6A21D7924BEC65C004143E4 /* Finnish.dct in Resources */,
+				F6A21D6D24BEC656004143E4 /* Dutch.dct in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F640D5A524BC029500DA7710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F640D5D324BC069600DA7710 /* InkData.m in Sources */,
+				F640D5AF24BC029500DA7710 /* ViewController.swift in Sources */,
+				F640D5AD24BC029500DA7710 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F640D5CA24BC02AC00DA7710 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WritePadMAC;
+			targetProxy = F640D5C924BC02AC00DA7710 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F640D5B224BC029600DA7710 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F640D5B324BC029600DA7710 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F640D5B724BC029600DA7710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F640D5B824BC029600DA7710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F640D5BA24BC029600DA7710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WritePadTestMAC/WritePadTestMAC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U97D34BCNV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = WritePadTestMAC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phatware.WritePadTestMAC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WritePadTestMAC/WritePadTestMAC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F640D5BB24BC029600DA7710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = WritePadTestMAC/WritePadTestMAC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U97D34BCNV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = WritePadTestMAC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phatware.WritePadTestMAC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WritePadTestMAC/WritePadTestMAC-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F640D5A424BC029500DA7710 /* Build configuration list for PBXProject "WritePadTestMAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F640D5B724BC029600DA7710 /* Debug */,
+				F640D5B824BC029600DA7710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F640D5B924BC029600DA7710 /* Build configuration list for PBXNativeTarget "WritePadTestMAC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F640D5BA24BC029600DA7710 /* Debug */,
+				F640D5BB24BC029600DA7710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F640D5A124BC029500DA7710 /* Project object */;
+}

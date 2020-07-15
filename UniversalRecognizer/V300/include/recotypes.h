@@ -118,7 +118,6 @@ typedef enum {
     SHAPE_ALL			= 0x00FF
 } SHAPETYPE;
 
-
 typedef UInt16			USHORT;
 typedef unsigned char	UCHAR;
 typedef unsigned short	UNCHAR;
@@ -126,16 +125,9 @@ typedef UNCHAR *		LPUSTR;
 typedef const UNCHAR *	LPCUSTR;
 typedef UInt32			COLORREF;
 
-/// Type to represent a boolean value.
-#if !defined(OBJC_HIDE_64) && TARGET_OS_IPHONE && __LP64__
-typedef bool BOOL;
-#else
+#if !defined(OBJC_BOOL_DEFINED)
 typedef signed char BOOL;
-// BOOL is explicitly signed so @encode(BOOL) == "c" rather than "C"
-// even if -funsigned-char is used.
 #endif
 
-#define IMAGE_SUPPORT	1		// support image storage
-
 #endif // __RecoTypes_h__
- 
+

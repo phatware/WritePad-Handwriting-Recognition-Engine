@@ -719,7 +719,7 @@ public:
                         // pThis->RecognizedStrokes();
                         free( (void *) pTrace );
                     }
-                    else
+                    else if ( !pThis->m_bResultsReady )     // TODO: test FIX...
                     {
                         // last stroke
                         pThis->RecAddWordsStroke( NULL, 0 );
@@ -1400,7 +1400,9 @@ end:
         if ( _STRLEN( szBuff ) > 0 )
         {
 			if ( NULL != m_lastWord )
-				free( (void *)m_lastWord );
+            {
+                free( (void *)m_lastWord );
+            }
 			m_lastWord = _STRDUP( szBuff );
             return m_lastWord;
         }
@@ -1573,6 +1575,63 @@ end:
         return bResult;
     }
     
+    BOOL RecognizeStroke( const CGPoint * pStroke, UInt32 nStrokeCnt )
+    {
+        if ( pStroke == NULL || nStrokeCnt < 1 )
+        {
+#ifdef INTERNAL_RECO_THREAD
+            return AsynchPutStroke( NULL, nStrokeCnt );
+#else
+            return SynchPutStroke( NULL, nStrokeCnt );
+#endif // INTERNAL_RECO_THREAD
+        }
+        else if ( nStrokeCnt > MAX_TRACE_LENGTH )
+            return true;
+        
+        BOOL        bResult = false;
+        BOOL        bSkipStroke = false;
+        
+        LPPOINTS    stroke = new POINTS[nStrokeCnt+1];
+        if ( NULL == stroke )
+            return bResult;
+        
+        for (register UInt32 i = 0; i < nStrokeCnt; i++)
+        {
+            // break very long strokes
+            if ( ((PIX_OFFSET+pStroke[i].x) < 0 || (PIX_OFFSET+pStroke[i].y) < 0 ||
+                  pStroke[i].y > MAX_PIXEL_VALUE || pStroke[i].x > MAX_PIXEL_VALUE) )
+            {
+                bSkipStroke = true;
+                break;
+            }
+            stroke[i].x = (float)(PIX_OFFSET+pStroke[i].x);
+            stroke[i].y = (float)(PIX_OFFSET+pStroke[i].y);
+        }
+        if ( bSkipStroke )
+        {
+            bResult = true;
+        }
+        else
+        {
+            p_RECO_point_type    pTrace = NULL;
+            BOOL    bSmooth = (m_dwFlags & FLAG_SMOOTHSTROKES) ? 1 : 0;
+            if ( (nStrokeCnt = ::FilterTrajectory( (int)nStrokeCnt, stroke, &pTrace, bSmooth )) > 0 && pTrace )
+            {
+#ifdef INTERNAL_RECO_THREAD
+                if ( !(bResult = AsynchPutStroke( pTrace, nStrokeCnt )) )
+                {
+                    free( (void *)pTrace );
+                }
+#else
+                bResult = SynchPutStroke( pTrace, nStrokeCnt );
+                free( (void *)pTrace );
+#endif
+            }
+        }
+        delete [] stroke;
+        return bResult;
+    }
+
     
     static BOOL RecGetID(p_RECO_ID_type pID)
     {
@@ -1911,14 +1970,14 @@ end:
     static int ExportUserWordsCallback( const UCHR * szWord, void * pParam )
     {
         FILE * file = (FILE *)pParam;
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
         char * word = new char[_STRLEN( szWord )+2];
         UNICODEtoStr( word, szWord, _STRLEN( szWord )+1 );
 #else
         char * word = (char *)szWord;
 #endif // HW_RECINT_UNICODE
         int result = (fwrite( word, 1, HWRStrLen( word ), file ) > 0 && fwrite( "\n", 1, 1, file ) > 0) ? 1 : 0;
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
         delete [] word;
 #endif // HW_RECINT_UNICODE
         return result;
@@ -2751,7 +2810,7 @@ end:
         for ( UInt32 i = 0; i < CAPWORD_CNT; i++ )
         {
             // must use case insensitive search can't find stricmp
-#ifdef HW_RECINT_UNICODE
+#if HW_RECINT_UNICODE
             UCHR szUnicode[50] = {0};
             StrToUNICODE( szUnicode, g_pszCapWords[i], 49 );
             if ( _STRCASECMP( szUnicode, pszWord ) == 0 )
@@ -2865,7 +2924,7 @@ end:
                 goto err;
         }
         
-        if ( ! RecognizeStroke( NULL, 0 ) )
+        if ( ! RecognizeStroke( (CGStroke)NULL, 0 ) )
             goto err;
         free( (void *)pStrokes );
         free( (void *)points );
@@ -2891,7 +2950,7 @@ end:
             free( (void *)pStrokes );
         if ( NULL != points )
             free( (void *)points );
-        // RecognizeStroke( NULL, 0 );
+        // RecognizeStroke( (CGStroke)NULL, 0 );
 #ifdef INTERNAL_RECO_THREAD
         AsynchReset();
 #else
@@ -3023,7 +3082,7 @@ static BOOL _CheckWord( const UCHR * pszWord )
     int i;
     for ( i = 0; i < _STRLEN( pszWord ) && i  < HW_MAXWORDLEN; i++ )
     {
-        if ( pszWord[i] <= ' ' || pszWord[i] >= 0xFF )
+        if ( pszWord[i] <= ' ' || pszWord[i] > 0xFE )
             return false;
     }
     if ( i >= HW_MAXWORDLEN )
@@ -3138,12 +3197,21 @@ BOOL HWR_RecognizerAddStroke( RECOGNIZER_PTR pRecognizer, CGStroke pStroke, int 
 }
 
 extern "C"
+BOOL HWR_RecognizerAddPoints( RECOGNIZER_PTR pRecognizer, const CGPoint * points, int nPointCnt )
+{
+    if ( NULL == pRecognizer )
+        return false;
+    CRecognizerWrapper * gpRecognizer = (CRecognizerWrapper *)pRecognizer;
+    return gpRecognizer->RecognizeStroke( points, nPointCnt );
+}
+
+extern "C"
 BOOL HWR_Recognize( RECOGNIZER_PTR pRecognizer )
 {
     if ( NULL == pRecognizer )
         return false;
     CRecognizerWrapper * gpRecognizer = (CRecognizerWrapper *)pRecognizer;
-    if ( ! gpRecognizer->RecognizeStroke( NULL, 0 ) )
+    if ( ! gpRecognizer->RecognizeStroke( (CGStroke)NULL, 0 ) )
         return false;
     
 #ifdef INTERNAL_RECO_THREAD
@@ -3378,7 +3446,7 @@ BOOL HWR_AddUserWordToDict( RECOGNIZER_PTR pRecognizer, const UCHR * pszWord, BO
             i++;
         for ( k = 0; i < _STRLEN( pszWord ) && k < (HW_MAXWORDLEN-1); i++ )
         {
-            if ( pszWord[i] <= ' ' || pszWord[i] >= 0xFF )
+            if ( pszWord[i] <= ' ' || pszWord[i] > 0xFE )
                 return false;
             if ( filter && _STRCHR( separators, pszWord[i] ) != NULL )
                 continue;

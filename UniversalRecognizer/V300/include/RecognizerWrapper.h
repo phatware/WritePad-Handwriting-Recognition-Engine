@@ -85,6 +85,7 @@ RECOGNIZER_PTR  HWR_InitRecognizerFromMemory( const char * inDictionaryMain, con
 
 void			HWR_FreeRecognizer( RECOGNIZER_PTR pRecognizer, const char * inDictionaryCustom, const char * inLearner, const char * inWordList );
 BOOL			HWR_RecognizerAddStroke( RECOGNIZER_PTR pRecognizer, CGStroke pStroke, int nStrokeCnt );
+BOOL            HWR_RecognizerAddPoints( RECOGNIZER_PTR pRecognizer, const CGPoint * points, int nPointCnt );
 BOOL			HWR_Recognize( RECOGNIZER_PTR pRecognizer );
 BOOL			HWR_Reset( RECOGNIZER_PTR pRecognizer );
 const UCHR *    HWR_RecognizeInkData( RECOGNIZER_PTR pRecognizer, INK_DATA_PTR pInkData, int nFirstStroke, int nLastStroke, BOOL bAsync, BOOL bFlipY, BOOL bSort, BOOL bSelOnly  );

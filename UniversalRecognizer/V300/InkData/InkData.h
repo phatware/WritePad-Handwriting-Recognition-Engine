@@ -36,16 +36,13 @@
 
 #include "RecognizerApi.h"
 
-#define IMAGE_SUPPORT		1
-#define TEXT_SUPPORT		1
-
 #include "PHStroke.h"
 #include "PHStream.h"
 #include "UndoAction.h"
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 #include "ImageObject.h"
 #endif // IMAGE_SUPPORT
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 #include "TextObject.h"
 #endif // TEXT_SUPPORT
 
@@ -212,7 +209,7 @@ public:
     CGPoint GetFirstPoint( int nStroke );
     CGPoint GetLastPoint( int nStroke );
 		
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	CImageObject *	AddImageObject( int x, int y, int w, int h, const char * pszFilePath );
 	int				AddImageObject( int x, int y, int w, int h, UInt32 flags, int iZOrder, const void * pBytes, UInt32 cbSize, void * userData, int nImageIndex = -1 );
 	CImageObject *	EnumImageObjects( int & nPos );
@@ -233,7 +230,7 @@ public:
 	int				GetImageObjectIndex( CImageObject * pto );
 #endif
 	
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	int				GetTextObjectCnt() const { return m_arrTextObjects.GetSize(); }
 	void			StopRecordingUndo( int iType );
 	void			FreeText( void );
@@ -270,12 +267,12 @@ protected:
 	TRACE_FILE_STATUS WritePhatWareInk( CPHStream &phFile, BOOL bIgnoreLast, BOOL bSavePressure );
     TRACE_FILE_STATUS ReadPhatWareInk( CPHStream &phStream, BOOL skipImages = false );
 	
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	BOOL	WriteTextElements( CPHStream &phFile );
 	BOOL	ReadTextElements( CPHStream &phStream );
 #endif // TEXT_SUPPORT
 	
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	BOOL	WriteImages( CPHStream &phFile );
 	BOOL	ReadImages( CPHStream &phStream );
 #endif // IMAGE_SUPPORT
@@ -284,7 +281,7 @@ private:
     BOOL			m_bModified;
     BOOL			m_bRecordingUndo;
 	
-#ifdef TEXT_SUPPORT
+#if TEXT_SUPPORT
 	// text support
 	PHTextObjArray	m_arrTextObjects;
 #endif // TEXT_SUPPORT
@@ -296,7 +293,7 @@ private:
 	
 public:
 	
-#ifdef IMAGE_SUPPORT
+#if IMAGE_SUPPORT
 	PHImageObjArray	m_arrImages;
 #endif // IMAGE_SUPPORT
 	
