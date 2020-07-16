@@ -29,6 +29,7 @@
 		F6A21D7924BEC65C004143E4 /* Finnish.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6824BEC5F0004143E4 /* Finnish.dct */; };
 		F6A21D7A24BEC65C004143E4 /* Norwegian.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D5E24BEC5F0004143E4 /* Norwegian.dct */; };
 		F6A21D7B24BEC65C004143E4 /* MedicalUS.dct in Resources */ = {isa = PBXBuildFile; fileRef = F6A21D6924BEC5F0004143E4 /* MedicalUS.dct */; };
+		F6A21D8924BFF7C9004143E4 /* NSInkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D8824BFF7C9004143E4 /* NSInkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		F6A21D6B24BEC5F0004143E4 /* English.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = English.dct; path = ../../../../Dictionaries/English.dct; sourceTree = "<group>"; };
 		F6A21D6C24BEC5F0004143E4 /* Indonesian.dct */ = {isa = PBXFileReference; lastKnownFileType = file; name = Indonesian.dct; path = ../../../../Dictionaries/Indonesian.dct; sourceTree = "<group>"; };
 		F6A21D7E24BECEFB004143E4 /* InkData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InkData.h; sourceTree = "<group>"; };
+		F6A21D8824BFF7C9004143E4 /* NSInkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				F6A21D7E24BECEFB004143E4 /* InkData.h */,
 				F640D5AC24BC029500DA7710 /* AppDelegate.swift */,
 				F640D5AE24BC029500DA7710 /* ViewController.swift */,
+				F6A21D8824BFF7C9004143E4 /* NSInkView.swift */,
 				F640D5B024BC029600DA7710 /* Assets.xcassets */,
 				F640D5B224BC029600DA7710 /* Main.storyboard */,
 				F640D5B524BC029600DA7710 /* Info.plist */,
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A21D8924BFF7C9004143E4 /* NSInkView.swift in Sources */,
 				F640D5D324BC069600DA7710 /* InkData.m in Sources */,
 				F640D5AF24BC029500DA7710 /* ViewController.swift in Sources */,
 				F640D5AD24BC029500DA7710 /* AppDelegate.swift in Sources */,

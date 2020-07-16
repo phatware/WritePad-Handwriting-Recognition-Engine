@@ -18,11 +18,13 @@ static InkDataManager *    gManager;
     INK_DATA_PTR    _inkData;
 }
 
-@end
+@property (nonatomic, readonly) INK_DATA_PTR inkData;
 
+@end
 
 @implementation InkDataManager
 
+@synthesize inkData = _inkData;
 
 + (InkDataManager * _Nonnull) sharedInkManager
 {
@@ -58,6 +60,16 @@ static InkDataManager *    gManager;
     INK_SelectStroke( _inkData, index, select );
 }
 
+- (int) strokeCount
+{
+    return INK_StrokeCount( _inkData, FALSE );
+}
+
+- (BOOL) deleteLastStroke:(int)stroke
+{
+    return INK_DeleteStroke( _inkData, stroke );
+}
+
 - (void) dealloc
 {
     if ( _inkData != NULL )
@@ -69,9 +81,47 @@ static InkDataManager *    gManager;
     return INK_AddStroke( _inkData, stroke, length, width, color );
 }
 
+- (NSArray<NSValue *> *) getStrokePoints:(int)nStroke
+{
+    float       fWidth = 1.0;
+    COLORREF    coloref = 0;
+    CGStroke    points = NULL;
+    int len  = INK_GetStrokeP( _inkData, nStroke, &points, &fWidth, &coloref );
+    if ( len > 0 && points != NULL )
+    {
+        NSMutableArray * arr = [NSMutableArray arrayWithCapacity:len];
+        for ( int i = 0; i < len; i++ )
+        {
+            arr[i] = [NSValue valueWithPoint:points[i].pt];
+        }
+        free( (void *)points );
+        return [NSArray arrayWithArray:arr];
+    }
+    return nil;
+}
+
 - (void) eraseAll
 {
     INK_Erase( _inkData );
+}
+
+- (void) enableUndo:(BOOL)enable
+{
+    INK_EnableUndo( _inkData, enable);
+}
+
+- (CGRect) getDataRect:(BOOL)selectedOnly
+{
+    CGRect rect = CGRectZero;
+    INK_GetDataRect( _inkData, &rect, selectedOnly );
+    return rect;
+}
+
+- (CGRect) getStrokeRect:(int)stroke
+{
+    CGRect rect = CGRectZero;
+    INK_GetStrokeRect( _inkData, -1, &rect, TRUE );
+    return rect;
 }
 
 // Internal function

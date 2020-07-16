@@ -181,6 +181,8 @@
 		F640D51B24BBCE4800DA7710 /* recotypes.h in Headers */ = {isa = PBXBuildFile; fileRef = F640D51424BBCE4800DA7710 /* recotypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F640D51C24BBCE4800DA7710 /* langid.h in Headers */ = {isa = PBXBuildFile; fileRef = F640D51524BBCE4800DA7710 /* langid.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F640D51D24BBCE4800DA7710 /* recodefs.h in Headers */ = {isa = PBXBuildFile; fileRef = F640D51624BBCE4800DA7710 /* recodefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6A21D8224BFD523004143E4 /* InlineRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A21D8024BFD523004143E4 /* InlineRecognizer.m */; };
+		F6A21D8324BFD523004143E4 /* InlineRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = F6A21D8124BFD523004143E4 /* InlineRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -371,6 +373,8 @@
 		F640D51424BBCE4800DA7710 /* recotypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = recotypes.h; path = ../../../../UniversalRecognizer/V300/include/recotypes.h; sourceTree = "<group>"; };
 		F640D51524BBCE4800DA7710 /* langid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langid.h; path = ../../../../UniversalRecognizer/V300/include/langid.h; sourceTree = "<group>"; };
 		F640D51624BBCE4800DA7710 /* recodefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = recodefs.h; path = ../../../../UniversalRecognizer/V300/include/recodefs.h; sourceTree = "<group>"; };
+		F6A21D8024BFD523004143E4 /* InlineRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InlineRecognizer.m; sourceTree = "<group>"; };
+		F6A21D8124BFD523004143E4 /* InlineRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InlineRecognizer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +431,8 @@
 				F640D15624BB010200DA7710 /* NSMutableArray+AddUnique.m */,
 				F640D3D724BBAC2200DA7710 /* InkDataManager.h */,
 				F640D3D824BBAC2200DA7710 /* InkDataManager.m */,
+				F6A21D8124BFD523004143E4 /* InlineRecognizer.h */,
+				F6A21D8024BFD523004143E4 /* InlineRecognizer.m */,
 				F640D15724BB010200DA7710 /* RecognizerManager.h */,
 				F640D15524BB010200DA7710 /* RecognizerManager.m */,
 				F640D12F24BB00C800DA7710 /* Info.plist */,
@@ -675,6 +681,7 @@
 				F640D51C24BBCE4800DA7710 /* langid.h in Headers */,
 				F640D51B24BBCE4800DA7710 /* recotypes.h in Headers */,
 				F640D51924BBCE4800DA7710 /* gestures.h in Headers */,
+				F6A21D8324BFD523004143E4 /* InlineRecognizer.h in Headers */,
 				F640D51D24BBCE4800DA7710 /* recodefs.h in Headers */,
 				F640D4FE24BBCE3300DA7710 /* wordlist_spn.h in Headers */,
 				F640D50124BBCE3300DA7710 /* WordLrnFile.h in Headers */,
@@ -931,6 +938,7 @@
 				F640D4A924BBCE0000DA7710 /* langutil.cpp in Sources */,
 				F640D49B24BBCE0000DA7710 /* ldbutil.cpp in Sources */,
 				F640D49A24BBCE0000DA7710 /* circle.cpp in Sources */,
+				F6A21D8224BFD523004143E4 /* InlineRecognizer.m in Sources */,
 				F640D4DE24BBCE2500DA7710 /* PHStream.cpp in Sources */,
 				F640D4AA24BBCE0000DA7710 /* filter.cpp in Sources */,
 				F640D4B024BBCE0000DA7710 /* bitmaps.cpp in Sources */,

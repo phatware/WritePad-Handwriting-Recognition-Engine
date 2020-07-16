@@ -61,7 +61,7 @@
 - (BOOL) isEnabled;
 - (int) getMode;
 - (void) modifyRecoFlags:(NSUInteger)addFlags deleteFlags:(NSUInteger)delFlags;
-- (NSString * _Nullable) recognizeInkData:(InkDataManager * _Nonnull)inkData background:(BOOL)backgroundReco async:(BOOL)asyncReco selection:(BOOL)selection;
+- (NSString * _Nullable) recognizeInkData:(InkDataManager * _Nonnull)inkData background:(BOOL)backgroundReco async:(BOOL)asyncReco flipY:(BOOL)flip selection:(BOOL)selection;
 - (BOOL) isWordInDictionary:(NSString * _Nonnull)chrWord;
 - (void) enableCalculator:(BOOL)bEnable;
 - (BOOL) addWordToUserDict:(NSString * _Nonnull)strWord save:(BOOL)save filter:(BOOL)filter report:(BOOL)report;

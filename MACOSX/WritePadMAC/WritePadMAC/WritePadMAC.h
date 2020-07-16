@@ -15,6 +15,7 @@
 #import <WritePadMAC/LanguageManager.h>
 #import <WritePadMAC/RecognizerManager.h>
 #import <WritePadMAC/InkDataManager.h>
+#import <WritePadMAC/InlineRecognizer.h>
 
 //! Project version number for WritePadMAC.
 FOUNDATION_EXPORT double WritePadMACVersionNumber;

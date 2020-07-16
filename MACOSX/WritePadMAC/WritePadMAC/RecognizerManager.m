@@ -55,6 +55,8 @@ static RecognizerManager * gManager = nil;
     NSString * _searchWord;
 }
 
+@property (nonatomic, readonly) RECOGNIZER_PTR recognizer;
+
 - (void) initRecognizerForCurrentLanguage;
 - (void) freeRecognizerForCurrentLanguage;
 - (void) releaseSearchRecognizer;
@@ -64,6 +66,8 @@ static RecognizerManager * gManager = nil;
 
 
 @implementation RecognizerManager
+
+@synthesize recognizer = _recognizer;
 
 + (RecognizerManager *) sharedManager
 {
@@ -641,7 +645,7 @@ static NSInteger compareUserWords (id a, id b, void *ctx)
 	}	
 }
 
-- (NSString *) recognizeInkData:(InkDataManager *)inkData background:(BOOL)backgroundReco async:(BOOL)asyncReco selection:(BOOL)selection
+- (NSString *) recognizeInkData:(InkDataManager *)inkData background:(BOOL)backgroundReco async:(BOOL)asyncReco flipY:(BOOL)flip selection:(BOOL)selection
 {
 	const UCHR * pText = NULL;
 	if ( ! [self isEnabled] )
@@ -652,7 +656,7 @@ static NSInteger compareUserWords (id a, id b, void *ctx)
         _canRealoadRecognizer = NO;
 		if ( ! backgroundReco )
 		{
-			pText = HWR_RecognizeInkData( _recognizer, [inkData dataPtr], 0, -1, FALSE, FALSE, FALSE, selection );
+			pText = HWR_RecognizeInkData( _recognizer, [inkData dataPtr], 0, -1, asyncReco, flip, FALSE, selection );
 		}
 		else
 		{

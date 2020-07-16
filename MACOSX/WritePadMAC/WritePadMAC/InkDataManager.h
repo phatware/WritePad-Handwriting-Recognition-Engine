@@ -17,5 +17,10 @@
 - (void) selectStroke:(BOOL)select atIndex:(int)index;
 - (int)  addStroke:(CGStroke _Nonnull)stroke length:(int)length width:(float)width color:(COLORREF)color;
 - (void) eraseAll;
-
+- (void) enableUndo:(BOOL)enable;
+- (CGRect) getDataRect:(BOOL)selectedOnly;
+- (int)  strokeCount;
+- (BOOL) deleteLastStroke:(int)stroke;
+- (CGRect) getStrokeRect:(int)stroke;
+- (NSArray<NSValue *> * _Nullable) getStrokePoints:(int)nStroke;
 @end
