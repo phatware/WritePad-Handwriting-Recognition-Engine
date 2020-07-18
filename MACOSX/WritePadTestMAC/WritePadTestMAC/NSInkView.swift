@@ -119,7 +119,7 @@ class NSInkView: NSView {
     
     fileprivate func renderLine(_ points : CGStroke, pointCount : Int32 ) {
         
-        NSColor.blue.set() // choose color
+        NSColor.init(named: "InkColor", bundle: nil)?.set()
         let figure = NSBezierPath() // container for line(s)
         
         figure.lineCapStyle = .round
@@ -142,7 +142,8 @@ class NSInkView: NSView {
     fileprivate func renderLine(_ points : [NSValue] ) {
         
         if points.count > 0 {
-            NSColor.blue.set() // choose color
+            NSColor.init(named: "InkColor", bundle: nil)?.set()
+            // NSColor.blue.set() // choose color
             let figure = NSBezierPath() // container for line(s)
             
             figure.lineCapStyle = .round
