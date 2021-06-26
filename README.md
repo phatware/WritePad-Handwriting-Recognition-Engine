@@ -5,9 +5,7 @@ Multilingual, multiplatfrom, self-contained handwriting recognition engine.
 
 ### About
 
-This source code is distributed under the GPL v 3.0 license. In short, this means that ALL modifications and/or derivative works that use all or any portion of source code in the repository must be made public. 
-
-If you would like to use this software for commercial purposes, you can purchase the commercial license from PhatWare Corp., which will supersede the GPL license. For detailed information about licensing, please contact **PhatWare Corp.** at developer@phatware.com
+This source code is distributed under the GPL v 3.0 license.
 
 Compiled libraries and sample code are not included with this project. If you are looking for WritePad Handwriting Recognition SDK binaries to integrate with your commercial or a freeware project or for sample code for various platforms, visit the WritePad SDK repository at https://github.com/phatware/WritePadSDK
 
