@@ -32,7 +32,8 @@ LOCAL_CFLAGS := -DRECODICT -D_EMBEDDED_DEVICE \
 		-I$(LOCAL_PATH)/../../../UniversalRecognizer/V300/reco/data \
 		-I$(LOCAL_PATH)/../../../UniversalRecognizer/V300/include \
 		-Wno-multichar \
-		-std=gnu++11
+		-std=gnu++11 \
+		-Wno-deprecated-register
 
 include jni/filelist.mk
 

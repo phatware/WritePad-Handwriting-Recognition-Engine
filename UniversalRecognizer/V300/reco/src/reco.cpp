@@ -165,7 +165,7 @@ static char gError[HW_MAXWORDLEN] = "<--->";
 const _ULONG _PTR GetLDBImgBody(_INT lang, _INT index);
 
 /* *************************************************************** */
-/* *  Get info string and capabilities of the recognizer         * */
+/* *  Set error text                                             * */
 /* *************************************************************** */
 void RecoSetErrorText(CUCHR * pErrorText)
 {
@@ -628,8 +628,7 @@ int RecoRecognize(int npoints, p_RECO_point_type strokes_win,
 
             if (len)
             {
-                if ((num_strokes = CreateInkInfo(p_tr, len, &pri->ink_info))
-                        <= 0)
+                if ((num_strokes = CreateInkInfo(p_tr, len, &pri->ink_info)) <= 0)
                     goto err;
             }
             if (num_strokes <= 0)
@@ -641,8 +640,7 @@ int RecoRecognize(int npoints, p_RECO_point_type strokes_win,
             pri->wsc.num_points = 0;
             if (WordStrokes(_NULL, &pri->wsc, &pri->wsr))
                 goto err;
-            pri->wsr.num_words = pri->wsr.num_finished_words
-                    = pri->wsr.num_finished_strokes = 0;
+            pri->wsr.num_words = pri->wsr.num_finished_words = pri->wsr.num_finished_strokes = 0;
         }
 
         pri->g_stroke_num += cur_nstrokes;
@@ -989,12 +987,12 @@ int RecoGetSetPicturesWeights(int operation, void * buf, RECOCTX context)
             op = DTILRN_SETCURWEIGHTS;
             break;
         default:
-            return -1;
+            return 1;
     }
     
     return GetSetPicturesWeights((_INT) op, (p_VOID) buf, (p_VOID) dp);
 #else
-    return -1;
+    return 1;
 #endif
 }
 
@@ -1687,8 +1685,7 @@ static _INT HWR_RegNewAnsw(p_rec_inst_type pri, _INT er)
                         prws[i].sym = (_UCHAR) ToUpper(prws[i].sym);
                     }
 
-                    if (prws[i].xrd_beg >= parts[n] && prws[i].xrd_beg
-                            < parts[n + 1] && prws[i].sym != ' ')
+                    if (prws[i].xrd_beg >= parts[n] && prws[i].xrd_beg < parts[n + 1] && prws[i].sym != ' ')
                     {
                         answers[j] = prws[i].sym;
                         vars[j++] = prws[i].nvar;
@@ -1704,12 +1701,11 @@ static _INT HWR_RegNewAnsw(p_rec_inst_type pri, _INT er)
             
             answers[j] = 0;
             len = j + 1;
-
-            PostConfirmCapitalLetters(answers, weights, vars, lang );
+            if ( !(pri->flags & HW_RECFL_CAPSONLY) )
+                PostConfirmCapitalLetters(answers, weights, vars, lang );
 
             // this code is here to correct OS_ae_letter and OS_o_crossed letters
-            if ((lang == LANGUAGE_NORWEGIAN || lang == LANGUAGE_DANISH) 
-                && 0 == (pri->flags & HW_RECFL_NUMONLY) )
+            if ((lang == LANGUAGE_NORWEGIAN || lang == LANGUAGE_DANISH) && 0 == (pri->flags & HW_RECFL_NUMONLY) )
             {
                 _UCHAR alt[w_lim*(NUM_RW)+NUM_RW];
                 _UCHAR word1[w_lim+1];
@@ -1738,34 +1734,34 @@ static _INT HWR_RegNewAnsw(p_rec_inst_type pri, _INT er)
                             else if ( res == 2 )
                             {
                                 for ( l = 0; word1[l] != 0; l++ )
-                                alt[j++] = word1[l];
+                                    alt[j++] = word1[l];
                                 if ( (++cnt_rw) >= NUM_RW )
-                                break;
+                                    break;
                                 alt[j++] = PM_ALTSEP;
                                 for ( l = 0; word[l] != 0; l++ )
-                                alt[j++] = word[l];
+                                    alt[j++] = word[l];
                                 if ( (++cnt_rw) >= NUM_RW )
-                                break;
+                                    break;
                             }
                             else
                             {
                                 for ( l = 0; word[l] != 0; l++ )
-                                alt[j++] = word[l];
+                                    alt[j++] = word[l];
                                 if ( (++cnt_rw) >= NUM_RW )
-                                break;
+                                    break;
                                 alt[j++] = PM_ALTSEP;
                                 for ( l = 0; word1[l] != 0; l++ )
-                                alt[j++] = word1[l];
+                                    alt[j++] = word1[l];
                                 if ( (++cnt_rw) >= NUM_RW )
-                                break;
+                                    break;
                             }
                         }
                         else
                         {
                             for ( l = 0; word[l] != 0; l++ )
-                            alt[j++] = word[l];
+                                alt[j++] = word[l];
                             if ( (++cnt_rw) >= NUM_RW )
-                            break;
+                                break;
                         }
                         alt[j] = 0;
                         k = 0;
@@ -1809,7 +1805,7 @@ static _INT HWR_RegNewAnsw(p_rec_inst_type pri, _INT er)
             }
             
             
-            // Ideotic fix for 1/I
+            // Idiotic fix for 1/I
             if ( answers[1] == PM_ALTSEP && (answers[0] == '1' || answers[0] == 'I') && 0 == (pri->flags & HW_RECFL_PURE) )
             {
                 int isi = (NULL != HWRStrChr( (_CSTR)&answers[2], 'i' ));
@@ -1895,8 +1891,7 @@ static _INT HWR_RegNewAnsw(p_rec_inst_type pri, _INT er)
             if (np > 1) // Separate stroke belongings
             {
                 _INT s = 0;
-                _INT sis[WS_MAX_STROKES] =
-                { 0 };
+                _INT sis[WS_MAX_STROKES] = { 0 };
 
                 // Go through xr elems and register strokes
                 for (i = parts[n]; i < parts[n + 1]; i++)

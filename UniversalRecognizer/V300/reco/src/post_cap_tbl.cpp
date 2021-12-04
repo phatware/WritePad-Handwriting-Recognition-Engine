@@ -29,22 +29,6 @@
  *
  **************************************************************************************/
 
-/* ************************************************************************************* */
-/* *    PhatWare WritePad handwriting recognition engine                               * */
-/* *    Copyright (c) 1997-2014 PhatWare(r) Corp. All rights reserved.                 * */
-/* ************************************************************************************* */
-
-/* ************************************************************************************* *
- *
- * File: post_cap_tbl.cpp
- * Post processing capial letters (tables)
- *
- * Unauthorized distribution of this code is prohibited.
- * Contractor/manufacturer is PhatWare Corp.
- * 1314 S. Grand Blvd. Ste. 2-175 Spokane, WA 99202
- *
- * ************************************************************************************* */
-
 #include "post_cap_tbl.h"
 #include "langid.h"
 #include "dti.h"

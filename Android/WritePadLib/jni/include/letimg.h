@@ -32,7 +32,7 @@
 #ifndef __LETIMG_H
 #define __LETIMG_H
 
-#include "RecoTypes.h"
+#include "recotypes.h"
 #include "ligstate.h"
 
 #define LIError		(-1)

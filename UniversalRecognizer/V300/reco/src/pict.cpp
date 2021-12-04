@@ -1928,7 +1928,7 @@ _BOOL LeFiltr( low_type _PTR pLowData, SPECL _PTR pStick, _SHORT iClosest )
         ModWrd0 = 0 | ANY_OCCUARANCE;
         numCExtr0 = SpcElemFirstOccArr( pLowData, &ModWrd0, &gStick, _MAXX );
     }
-    else if ( Y[iEndStick] < Y[iEndStick] )
+    else if ( Y[iEndStick] < Y[iBegStick] )
     {
         gStick.iBeg = pStickGr->iBeg;
         gStick.iEnd = (_SHORT) (pStick->ibeg - 1);
