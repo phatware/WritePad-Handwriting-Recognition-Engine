@@ -51,9 +51,8 @@ LOCAL_SRC_FILES := interface.c letimg.c lidata.c
 
 # LOCAL_LDLIBS := -ldl -llog # -lGLESv1_CM 
 
-LOCAL_LDLIBS += -latomic
+# LOCAL_LDLIBS += -latomic
 
 LOCAL_STATIC_LIBRARIES := libWritePadRecos
 
 include $(BUILD_SHARED_LIBRARY)
-
