@@ -797,7 +797,7 @@ _INT fill_i_point(p_SHORT i_point, low_type _PTR D)
 _BOOL num_bord_correction(p_EXTR extr,p_INT pn_extr,_INT n_allextr,
                           _UCHAR type,_INT med_ampl,p_SHORT bord_d,p_SHORT y, _INT lang )
 {
-    register _INT	i, j;
+    _INT	i, j;
     _UCHAR	OUTSIDE_LINE=ON_LINE, opp_type=EMPTY;
     _BOOL	del=_FALSE;
     p_SPECL cur;

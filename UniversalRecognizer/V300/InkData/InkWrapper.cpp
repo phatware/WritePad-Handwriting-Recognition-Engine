@@ -519,7 +519,7 @@ BOOL INK_MoveStroke( INK_DATA_PTR pData, int nStroke, float xOffset, float yOffs
 	{
 		// move all selected strokes
 		int		nCnt = 0;
-		for ( register int i = 0; i < gpData->StrokesTotal(); i++ )
+		for ( int i = 0; i < gpData->StrokesTotal(); i++ )
 		{
 			if ( gpData->IsStrokeSelected( i ) )
 			{
@@ -875,7 +875,7 @@ BOOL INK_SetStrokeWidthAndColor( INK_DATA_PTR pData, int nStroke, COLORREF color
 	if ( nStroke == -1 )
 	{
 		// 
-		for ( register int i = 0; i < gpData->StrokesTotal(); i++ )
+		for ( int i = 0; i < gpData->StrokesTotal(); i++ )
 		{
 			if ( gpData->IsStrokeSelected( i ) )
 			{

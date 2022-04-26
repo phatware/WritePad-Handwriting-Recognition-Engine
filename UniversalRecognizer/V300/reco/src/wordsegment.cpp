@@ -213,7 +213,7 @@ err:
 
 _INT InitWSData( p_ws_control_type pwsc, p_ws_memory_header_type _PTR ppwmh )
 {
-    register p_ws_data_type pwsd;
+    p_ws_data_type pwsd;
     p_ws_memory_header_type pwmh;
     p_ws_lrn_type lrn;
 
@@ -420,7 +420,7 @@ _INT UnlockWSData( p_ws_control_type pwsc, p_ws_memory_header_type _PTR ppwmh )
 
 _INT InitForNewLine( p_ws_data_type pws_data )
 {
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
 
     // ----------- Recalculate global data ------------------
 
@@ -501,7 +501,7 @@ _INT WordLineStrokes( p_ws_data_type pws_data, p_ws_results_type pwsr )
     _UCHAR finished_strokes[MAX_STROKES];
     _INT word_dist;
     _INT slope;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
     p_word_strokes_array_type w_str = pwsr->pwsa;
     _UCHAR (*sp)[MAX_WORDS][MAX_STROKES][2] = _NULL;
 
@@ -920,7 +920,7 @@ _INT WS_NewLine( p_ws_data_type pws_data )
     _INT horz;
     _INT high, low, min_line;
     _INT new_line = 0;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
 
     horz = HORZ_GET(pwsd->stroke_min_x);
 
@@ -1024,7 +1024,7 @@ _INT WS_NewLine( p_ws_data_type pws_data )
 _INT CheckForSpaceGesture( p_ws_data_type pws_data )
 {
     _INT sx, ex;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
 
     if ( (pwsd->in_flags & WS_FL_SPGESTURE) == 0 )
         goto err;
@@ -1056,7 +1056,7 @@ _INT WS_WriteStrokeHorzValues( p_ws_data_type pws_data )
     _INT i, k;
     _INT horz;
     _INT pos, spos;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
 
     horz = HORZ_GET(pwsd->stroke_min_x);
     spos = pwsd->stroke_wy_pos;
@@ -1706,7 +1706,7 @@ _INT WS_SetLineVars( p_ws_data_type pws_data )
 _INT WS_CalcLineHeight( p_ws_data_type pws_data )
 {
     _INT h, k;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
 
     //without last stroke!!!
 
@@ -2040,7 +2040,7 @@ _INT WS_SegmentWords(_INT finished_x, p_ws_data_type pws_data)
     _INT    i;
     _INT    num_words, start, nn, na = 0;
     float   a,b,c,d,e,f,g;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
 
     num_words = 0;
     start = 0;
@@ -2109,7 +2109,7 @@ _INT WS_GetWordDist( p_ws_data_type pws_data )
     _INT    i;
     _INT    ss, ns, sl, nl, size, sdist, bdist;
     _INT    inline_dist, sw_space, bw_space, word_dist, inword_dist, sep_let_level;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
     _INT    action = 0;
 
     //_UCHAR  ws_handle_limits[2][11] = {//0   1    2    3    4    5   6    7    8    9   10

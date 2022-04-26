@@ -43,7 +43,7 @@ static _BOOL  HWRStrEmpty (_CSTR);
 
 _WORD HWRStrLen(_CSTR pcString)
 {
-    register _CCHAR *p;
+    _CCHAR *p;
     
     p = pcString+1;
     while(*pcString++ != 0);
@@ -54,7 +54,7 @@ _INT HWRStrLenW( CUCHR * pcString)
 {
     if ( NULL == pcString )
         return 0;
-    register CUCHR *p;
+    CUCHR *p;
     
     p = pcString+1;
     while(*pcString++ != 0);
@@ -154,7 +154,7 @@ _INT HWRStrnCmpW( CUCHR * zString1, CUCHR * zString2, _INT wNumber)
 
 _STR  HWRStrCpy (_STR pcString1, _CSTR pcString2)
 {
-    register _CHAR *p;
+    _CHAR *p;
     
     p = pcString1;
     while((*pcString1++=*pcString2++) != 0);
@@ -163,7 +163,7 @@ _STR  HWRStrCpy (_STR pcString1, _CSTR pcString2)
 
 UCHR * HWRStrCpyW( UCHR * pcString1, CUCHR * pcString2)
 {
-    register UCHR *p;
+    UCHR *p;
     
     p = pcString1;
     while((*pcString1++=*pcString2++) != 0);
@@ -179,7 +179,7 @@ UCHR * HWRStrCpyW( UCHR * pcString1, CUCHR * pcString2)
 
 _STR HWRStrCat(_STR pcString1, _CSTR pcString2)
 {
-    register _CHAR *p;
+    _CHAR *p;
     
     p = pcString1-1;
     while(*++p != 0);
@@ -189,7 +189,7 @@ _STR HWRStrCat(_STR pcString1, _CSTR pcString2)
 
 UCHR * HWRStrCatW( UCHR *  pcString1, CUCHR *  pcString2)
 {
-    register UCHR *p;
+    UCHR *p;
     
     p = pcString1-1;
     while(*++p != 0);
@@ -205,7 +205,7 @@ UCHR * HWRStrCatW( UCHR *  pcString1, CUCHR *  pcString2)
 
 _STR  HWRStrnCat (_STR pcString1, _CSTR pcString2, _WORD len)
 {
-    register _CHAR *p;
+    _CHAR *p;
     
     p = pcString1+len;
     while((*p++=*pcString2++) != 0);
@@ -221,7 +221,7 @@ _STR  HWRStrnCat (_STR pcString1, _CSTR pcString2, _WORD len)
 
 _STR    HWRStrRev(_STR zString)
 {
-    register _CHAR *p,*p1;
+    _CHAR *p,*p1;
     int i,c;
     
     p = zString-1;
@@ -246,7 +246,7 @@ _STR    HWRStrRev(_STR zString)
 
 _STR    HWRStrrChr(_STR zString, _INT iChar)
 {
-    register _CHAR *p;
+    _CHAR *p;
     
     zString--;
     p=_NULL;
@@ -266,7 +266,7 @@ _STR    HWRStrrChr(_STR zString, _INT iChar)
 
 _STR HWRStrnCpy(_STR zString1, _CSTR zString2, _WORD wNumber)
 {
-    register _CHAR *p;
+    _CHAR *p;
     
     if(wNumber == 0)
         return(zString1);
@@ -280,7 +280,7 @@ _STR HWRStrnCpy(_STR zString1, _CSTR zString2, _WORD wNumber)
 
 UCHR *  HWRStrnCpyW( UCHR *  zString1, CUCHR *  zString2, _INT wNumber)
 {
-    register UCHR *p;
+    UCHR *p;
     
     if(wNumber == 0)
         return(zString1);

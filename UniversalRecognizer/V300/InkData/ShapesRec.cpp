@@ -77,12 +77,11 @@ CShapesRec::~CShapesRec()
 
 int CShapesRec::TraceToRec( int in_numpts, LPPOINTS in_pt, LPPOINTS out_pt ) const
 {
-	float		xFltPrv, yFltPrv, xPrv, yPrv;
-	int         m_nPointsRec = 1, NumFilteredPoints;
-	float		xToRec, yToRec;
-	register float x,y;
-
-	register int i, j;
+	float   xFltPrv, yFltPrv, xPrv, yPrv;
+	int     m_nPointsRec = 1, NumFilteredPoints;
+	float   xToRec, yToRec;
+    float   x,y;
+    int     i, j;
 
 	x = in_pt[0].x;
 	y = in_pt[0].y;
@@ -145,8 +144,8 @@ SHAPETYPE CShapesRec::RecognizeShape( CGTracePoint * pInStroke, LPPOINTS * ppOut
         return SHAPE_UNKNOWN;
 	
 	UINT	nStrokeCnt = *pnStrokeCnt;
-	LPPOINTS	pTempStr = (LPPOINTS)malloc( sizeof( POINTS ) * (nStrokeCnt+1) );
-	register int i;
+	LPPOINTS    pTempStr = (LPPOINTS)malloc( sizeof( POINTS ) * (nStrokeCnt+1) );
+	int     i;
 	for ( i = 0; i < (int)nStrokeCnt; i++ )
 	{
 		pTempStr[i].x = pInStroke[i].pt.x;
@@ -165,7 +164,7 @@ SHAPETYPE CShapesRec::RecognizeShape( CGPoint * pInStroke, LPPOINTS * ppOutStrok
 	
 	UINT	nStrokeCnt = *pnStrokeCnt;
 	LPPOINTS	pTempStr = (LPPOINTS)malloc( sizeof( POINTS ) * (nStrokeCnt+1) );
-	register int i;
+    int     i;
 	for ( i = 0; i < (int)nStrokeCnt; i++ )
 	{
 		pTempStr[i].x = pInStroke[i].x;
@@ -356,10 +355,10 @@ BOOL CShapesRec::IsConnectedShape( LPPOINTS pStroke, UINT & nStrokeCnt, UINT & n
         // calcualte minimum distance between first and last pixels,
         // if nessesary, exclude some pixels at the beginning and the end of
         // stroke.
-		for ( register int j = 0; j < min( nLastPoint, nMaxPts ); j++ )
+		for ( int j = 0; j < min( nLastPoint, nMaxPts ); j++ )
         {
 		    pt1 = pStroke[j];
-            for ( register int i = nLastPoint - 1; i >= max( 0, (nLastPoint - nMaxPts) ); i-- )
+            for ( int i = nLastPoint - 1; i >= max( 0, (nLastPoint - nMaxPts) ); i-- )
 		    {
 			    pt2 = pStroke[i];
 			    // |(x1+y2)-(x2+y1)| = |x1-x2| + |y2-y1|
@@ -382,7 +381,7 @@ BOOL CShapesRec::IsConnectedShape( LPPOINTS pStroke, UINT & nStrokeCnt, UINT & n
             float y1 = pStroke[nBegPoint].y;
             float x2 = x1;
             float y2 = y1;
-		    for ( register UINT i = nBegPoint+1; i < nEndPoint; i++ )
+		    for ( UINT i = nBegPoint+1; i < nEndPoint; i++ )
             {
                 dsx += (pStroke[i].x - pStroke[i-1].x);
                 dsy += (pStroke[i].y - pStroke[i-1].y);

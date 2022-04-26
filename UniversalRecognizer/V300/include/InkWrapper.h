@@ -122,7 +122,7 @@ extern "C"
 	int				INK_FindStrokeByPoint( INK_DATA_PTR pData, CGPoint thePoint, float proximity );
 	int				INK_SelectStrokesInRect( INK_DATA_PTR pData, CGRect selRect );
 	void			INK_EmptyUndoBuffer( INK_DATA_PTR pData );
-    BOOL             INK_CurveIntersectsStroke( INK_DATA_PTR pData, int nStroke, const CGStroke points, int nPointCount );
+    BOOL            INK_CurveIntersectsStroke( INK_DATA_PTR pData, int nStroke, const CGStroke points, int nPointCount );
 	BOOL			INK_SetStrokeWidthAndColor( INK_DATA_PTR pData, int nStroke, COLORREF color, float fWidth );
     int             INK_DeleteIntersectedStrokes( INK_DATA_PTR pData, const CGStroke points, int nPointCount );
 	BOOL			INK_ResizeStroke( INK_DATA_PTR pData, int nStroke, float x0, float y0, float scalex, float scaley, BOOL bReset, CGRect * pRect, BOOL recordUndo );

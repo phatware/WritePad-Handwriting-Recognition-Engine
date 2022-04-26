@@ -182,7 +182,7 @@ isupper
 #endif /* _FLAT32 */
 (int n) 
 {
-	register unsigned int m = _2UC(n);
+    unsigned int m = _2UC(n);
     if _CHECK_RANGE(m)
 	{
         if ((_xctype[m] & _UPPER) != 0) 
@@ -200,7 +200,7 @@ islower
 #endif /* _FLAT32 */
 (int n) 
 {
-	register unsigned int m = _2UC(n);
+    unsigned int m = _2UC(n);
     if _CHECK_RANGE(m)
 	{
         if ((_xctype[m] & _LOWER) != 0) 
@@ -218,7 +218,7 @@ ispunct
 #endif /* _FLAT32 */
 (int n) 
 {
-	register unsigned int m = _2UC(n);
+    unsigned int m = _2UC(n);
     if _CHECK_RANGE(m)
 	{
         if ((_xctype[m] & _PUNCT) != 0) 
@@ -269,7 +269,7 @@ toupper
 #endif /* _FLAT32 */
 (int n) 
 {
-	register unsigned int m = _2UC(n);
+    unsigned int m = _2UC(n);
 #ifdef _FLAT32
 	if (IsAlpha(n))
 #else
@@ -297,7 +297,7 @@ tolower
 #endif /* _FLAT32 */
 (int n) 
 {
-	register unsigned int m = _2UC(n);
+    unsigned int m = _2UC(n);
 #ifdef _FLAT32
 	if (IsAlpha(n))
 #else
