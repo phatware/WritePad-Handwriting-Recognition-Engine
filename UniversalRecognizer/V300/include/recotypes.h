@@ -100,11 +100,9 @@ typedef CGTracePoint *  CGStroke;
 #define WCF_ALWAYS			0x0002
 #define WCF_DISABLED		0x0004
 
-/* ------------------------- Language ID ------------------------------------- */
-
-#define DEFAULT_PRESSURE        150
-#define MAX_PRESSURE            255
-#define MIN_PRESSURE            5
+#define DEFAULT_PRESSURE    150
+#define MAX_PRESSURE        255
+#define MIN_PRESSURE        5
 
 typedef enum {
     SHAPE_UNKNOWN		= 0,
@@ -127,7 +125,10 @@ typedef const UNCHAR *	LPCUSTR;
 typedef UInt32			COLORREF;
 
 /// Type to represent a boolean value.
-#if !defined(OBJC_HIDE_64) && defined(TARGET_OS_IPHONE) && defined(__LP64__)
+#if defined(TARGET_OS_WATCH)
+typedef bool BOOL;
+#elif !defined(OBJC_HIDE_64) && defined(TARGET_OS_IPHONE) && defined(__LP64__)
+// __bool_true_false_are_defined
 typedef bool BOOL;
 #else
 typedef signed char BOOL;

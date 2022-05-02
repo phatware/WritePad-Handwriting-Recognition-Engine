@@ -32,13 +32,13 @@
 #ifndef BASTYPES_DEFINED      /*   This string suppresses the duplicate  */
 #define BASTYPES_DEFINED
 
-#define  HWR_WINDOWS      1
-#define  HWR_ANSI         9
-#define  HWR_EPOC32       10
+#define  HWR_WINDOWS        1
+#define  HWR_ANSI           9
+#define  HWR_EPOC32         10
 
 #ifdef _OS_LINUX
-#define HWR_ARM 	11
-#define HWR_LINUX	12
+#define HWR_ARM 	        11
+#define HWR_LINUX	        12
 #endif // _OS_LINUX
 
 #if !defined( HWR_SYSTEM )
@@ -244,4 +244,3 @@ typedef _WORD                 _HATOM;
 #endif
 
 #endif  /*  BASTYPES_DEFINED  */
-
