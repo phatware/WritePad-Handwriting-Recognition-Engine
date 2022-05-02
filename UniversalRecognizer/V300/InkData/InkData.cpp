@@ -190,7 +190,7 @@ int CInkData::HasStrokes( BOOL bSelected )
     if ( bSelected )
     {
 		int iSelected = 0;
-        for ( register int i = StrokesTotal() - 1; i >= 0; i-- )
+        for ( int i = StrokesTotal() - 1; i >= 0; i-- )
         {
             if ( IsStrokeSelected(i) )
 				iSelected++;
@@ -299,7 +299,7 @@ int CInkData::SelectStrokesInRect( const LPRECT rect )
 {
 	int nResult = 0;
 	SelectAllStrokes( false );
-	for ( register int i = StrokesTotal()-1; i >= 0; i-- )
+	for ( int i = StrokesTotal()-1; i >= 0; i-- )
 	{
 		if ( IsStrokeInRect( i, rect ) )
 		{
@@ -324,7 +324,7 @@ BOOL CInkData::IsStrokeInRect( int nStroke, const LPRECT rect )
 		PHPoint pt1, pt2;
 		POINTS	pt;
         
-        for ( register int i = 0; i < iCnt; i++ )
+        for ( int i = 0; i < iCnt; i++ )
 		{
 			pt2 = pList->GetAt(i);
 			pt.x = pt2.X(); pt.y = pt2.Y();
@@ -361,7 +361,7 @@ int CInkData::IsPointNearStroke( POINTS point, float proximity )
 {
     if ( proximity <= 0.0 )
         proximity = DIST_TOUCH;
-	for ( register int i = StrokesTotal()-1; i >= 0; i-- )
+	for ( int i = StrokesTotal()-1; i >= 0; i-- )
 	{
 		PHStroke *pStroke = GetStroke(i);
 		if ( NULL != pStroke )
@@ -371,7 +371,7 @@ int CInkData::IsPointNearStroke( POINTS point, float proximity )
 			int     iCnt = pList->GetSize();
 			PHPoint pt1, pt2;
             pt1 = pList->GetAt(0);
-			for ( register int n = 1; n < iCnt; n++ )
+			for ( int n = 1; n < iCnt; n++ )
 			{
                 
                 pt2 = pList->GetAt(n);
@@ -471,7 +471,7 @@ BOOL CInkData::CurveIntersectsStroke( int nStroke, const CGTracePoint * points, 
             r.right = pList->GetAt(0).GetPoint().pt.x + nWidth;
             r.top = pList->GetAt(0).GetPoint().pt.y - nWidth;
             r.bottom = pList->GetAt(0).GetPoint().pt.y + nWidth;
-            for ( register int i = 0; i < nPointCount; i++ )
+            for ( int i = 0; i < nPointCount; i++ )
             {
                 POINT   p = { static_cast<int>(points[i].pt.x), static_cast<int>(points[i].pt.y) };
                 if ( PtInRect( &r, p ) )
@@ -493,7 +493,7 @@ BOOL CInkData::CurveIntersectsStroke( int nStroke, const CGTracePoint * points, 
                 r.right = pList->GetAt(0).GetPoint().pt.x + nWidth;
                 r.top = pList->GetAt(0).GetPoint().pt.y - nWidth;
                 r.bottom = pList->GetAt(0).GetPoint().pt.y + nWidth;
-                for ( register int i = 0; i < nPointCount; i++ )
+                for ( int i = 0; i < nPointCount; i++ )
                 {
                     POINT   p = { static_cast<int>(points[i].pt.x), static_cast<int>(points[i].pt.y) };
                     if ( PtInRect( &r, p ) )
@@ -510,7 +510,7 @@ BOOL CInkData::CurveIntersectsStroke( int nStroke, const CGTracePoint * points, 
         {
             line2.p2 = points[j].pt;
             line1.p1 = pList->GetAt(0).GetPoint().pt;
-            for ( register int n = 1; n < iCnt; n++ )
+            for ( int n = 1; n < iCnt; n++ )
             {
                 line1.p2 = pList->GetAt(n).GetPoint().pt;
                 if ( check_lines( &line1, &line2, &c_point ) )
@@ -611,8 +611,7 @@ BOOL CInkData::MoveStroke( UInt32 uStroke, float xOff, float yOff, LPRECT lpRect
 	
 	pStroke->ResetPosition();
 	
-    register int i = 0;
-	
+    int i = 0;
     for ( i = 0; i < iCnt; i++ )
 	{
 		pt = pList->GetAt(i);
@@ -677,7 +676,7 @@ UInt32 CInkData::ReadOneStroke( UInt32 uStroke, CGTracePoint* pPoints, float& fW
     uPntCnt = pList->GetSize();
     if ( NULL != pPoints )
     {
-	    for( register int i = 0; i < (int)uPntCnt; i++ )
+	    for( int i = 0; i < (int)uPntCnt; i++ )
 	    {
             pPoints[i].pt = pList->GetAt(i).GetPoint().pt;
             pPoints[i].pressure = pList->GetAt(i).GetPoint().pressure;
@@ -703,7 +702,7 @@ int CInkData::ReadOneStroke( UInt32 uStroke, CGTracePoint * pPoints, int * pnPnt
     nPoints = pList->GetSize();
     if ( NULL != pPoints )
     {
-	    for( register int i = 0; i < nPoints; i++ )
+	    for( int i = 0; i < nPoints; i++ )
 	    {
             pPoints[i].pt = pList->GetAt(i).GetPoint().pt;
             pPoints[i].pressure = pList->GetAt(i).GetPoint().pressure;
@@ -733,7 +732,7 @@ int CInkData::ReadOneStroke( UInt32 uStroke, CGPoint * pPoints, int * pnPntCnt, 
     nPoints = pList->GetSize();
     if ( NULL != pPoints )
     {
-	    for( register int i = 0; i < nPoints; i++ )
+	    for( int i = 0; i < nPoints; i++ )
 	    {
 		    pPoints[i] = pList->GetAt(i).GetPoint().pt;
 	    }
@@ -758,7 +757,7 @@ BOOL CInkData::RemoveSelected( BOOL bDeleteAll /* =false */ )
 {
     BOOL bUndoStarted = false;
 	
-    for ( register int i = StrokesTotal() - 1; i >= 0; i-- )
+    for ( int i = StrokesTotal() - 1; i >= 0; i-- )
     {
         if ( bDeleteAll || IsStrokeSelected(i) )
         {
@@ -804,8 +803,8 @@ void CInkData::SelectStroke( int nStroke, BOOL bSelect /* = true */ )
 BOOL CInkData::SelectAllStrokes( BOOL bSelect /* = true */ )
 {
 	BOOL    bResult = false;
-    register PHStroke * pStr = NULL;
-    for ( register int nStroke = 0; nStroke < StrokesTotal(); nStroke++ )
+    PHStroke * pStr = NULL;
+    for ( int nStroke = 0; nStroke < StrokesTotal(); nStroke++ )
     {
         pStr = GetStroke( nStroke );
         if ( pStr ) 
@@ -826,8 +825,8 @@ BOOL CInkData::SelectAllStrokes( BOOL bSelect /* = true */ )
 
 void CInkData::SetStrokesRecognizable( BOOL bSet /* = true */, BOOL bSelectedOnly /* = true */ )
 {
-    register PHStroke * pStr = NULL;
-    for ( register int nStroke = 0; nStroke < StrokesTotal(); nStroke++ )
+    PHStroke * pStr = NULL;
+    for ( int nStroke = 0; nStroke < StrokesTotal(); nStroke++ )
     {
         pStr = GetStroke( nStroke );
         if ( pStr ) 
@@ -859,9 +858,9 @@ BOOL CInkData::IsStrokeRecognizable( int nStroke )
 void CInkData::SetSelColor( COLORREF Color )
 {
     BOOL bUndoStarted = false;
-    register PHStroke *pStroke;
+    PHStroke *pStroke;
 	
-    for ( register int i = StrokesTotal() - 1; i >= 0; i-- )
+    for ( int i = StrokesTotal() - 1; i >= 0; i-- )
     {
         if ( IsStrokeSelected(i) )
         {
@@ -894,7 +893,7 @@ void CInkData::ChangeZOrder( int iDepth, BOOL bFwd )
     BOOL bUndoStarted = false;
     int tot = StrokesTotal();
     int nMoved = 0;
-    register PHStroke * pStroke = NULL;
+    PHStroke * pStroke = NULL;
 	
 #if IMAGE_SUPPORT
     if ( m_pCurrentImageObject != NULL )
@@ -937,7 +936,7 @@ void CInkData::ChangeZOrder( int iDepth, BOOL bFwd )
     {
         if ( iDepth == 0 )  // to the end
         {
-            for ( register int i = 0; i < tot; i++ )
+            for ( int i = 0; i < tot; i++ )
             {
                 pStroke = GetStroke(i);
                 if ( pStroke->IsSelected() )
@@ -966,7 +965,7 @@ void CInkData::ChangeZOrder( int iDepth, BOOL bFwd )
     {
         if ( iDepth == 0 )  // to the end
         {
-            for ( register int i = tot - 1; i >= 0; i-- )
+            for ( int i = tot - 1; i >= 0; i-- )
             {
                 pStroke = GetStroke(i);
                 if ( pStroke->IsSelected() )
@@ -992,9 +991,9 @@ void CInkData::ChangeZOrder( int iDepth, BOOL bFwd )
 void CInkData::SetSelWidth( float fWidth )
 {
     BOOL bUndoStarted = false;
-    register PHStroke *pStroke;
+    PHStroke *pStroke;
 	
-    for ( register int i = StrokesTotal() - 1; i >= 0; i-- )
+    for ( int i = StrokesTotal() - 1; i >= 0; i-- )
     {
         if ( IsStrokeSelected(i) )
         {
@@ -1189,7 +1188,7 @@ int CInkData::WriteRawToStream( CPHStream &phStream, BOOL bSelectedOnly /*=false
     if ( 0 == RawTraceHdr.uStrokeCnt )
         return TRFILE_OK;
 	
-    for ( register int i = 0; i < nTotal; i++ )
+    for ( int i = 0; i < nTotal; i++ )
     {
 		if ( bSelectedOnly && !IsStrokeSelected(i) )
 			continue;
@@ -1254,7 +1253,7 @@ BOOL CInkData::ReadRawFromStream( CPHStream &phStream, float x /* =0 */, float y
     int nFirstStroke = -1;
     RECT rc;
 	
-    for ( register UInt32 i = 0; i < RawTraceHdr.uStrokeCnt; i++ )
+    for ( UInt32 i = 0; i < RawTraceHdr.uStrokeCnt; i++ )
     {
         phStream.Read( &RawStrokeHdr, sizeof(RawStrokeHdr) );
 		
@@ -1295,7 +1294,7 @@ BOOL CInkData::ReadRawFromStream( CPHStream &phStream, float x /* =0 */, float y
     // offset the inserted strokes
     if ( nFirstStroke >= 0 && (x != 0 || y != 0) && (xMin != 0 || yMin != 0) )
     {
-        for ( register UInt32 i = (UInt32)nFirstStroke; i < (UInt32)GetSize(); i++ )
+        for ( UInt32 i = (UInt32)nFirstStroke; i < (UInt32)GetSize(); i++ )
         {
             PHStroke *pStroke = GetStroke(i);
             PHSubStroke *pList = pStroke->GetSubStroke();
@@ -1306,7 +1305,7 @@ BOOL CInkData::ReadRawFromStream( CPHStream &phStream, float x /* =0 */, float y
             if ( iCnt <= 0 )
                 continue;
 			
-            for( register int k = 0; k < iCnt; k++ )
+            for( int k = 0; k < iCnt; k++ )
             {
 		        CGTracePoint pt = pList->GetAt(k).GetPoint();
                 pt.pt.x = pt.pt.x - xMin + x;
@@ -1348,7 +1347,7 @@ BOOL CInkData::CalcTraceRect( LPRECT lpRect, BOOL bSelected /* = false */ )
     UInt32			nStrokeCnt;
     PHSubStroke *	pList = NULL;
     PHStroke *		pStr = NULL;
-    register int	nStroke, i, iCnt;
+    int	            nStroke, i, iCnt;
     float           nWidth;
 	
     lpRect->left = lpRect->top = 32000;
@@ -1424,8 +1423,8 @@ BOOL CInkData::CalcStrokeRect( PHStroke *  pStr, LPRECT lpRect, BOOL bAddWidth /
     }
     else
     {
-		float			yFltPrv, yi, yf, yPrv;
-		register int	i, j, NumFilteredPoints;
+		float   yFltPrv, yi, yf, yPrv;
+        int	    i, j, NumFilteredPoints;
 		yPrv = yFltPrv = pt.y;
         for( i = 1; i < iCnt; i++ )
         {
@@ -1536,7 +1535,7 @@ TRACE_FILE_STATUS CInkData::WritePhatWareInk( CPHStream &phFile, BOOL bIgnoreLas
 	int                 nColors = 0;
 	PHCompTraceHeader   header;
 	PHStroke *          pStroke;
-	register int        i, k;
+    int                 i, k;
     TRACE_FILE_STATUS   nResult = TRFILE_BADFILE;
     int                 nNonEmptyStrokes = 0;
 	PHSubStroke *       pPoints = NULL;
@@ -2503,7 +2502,7 @@ LPSTRRECT CInkData::GetRecoStrokes( int nFirstStroke, int * pnStrokesCnt, BOOL b
 	memset( (void *)pStrokes, 0, nMemSize );
 	
     // 1. calc rectangles and vertial gravity centers for all recognizable strokes
-	register int j, k, i, i0, line;
+    int j, k, i, i0, line;
 	CGFloat h, hAve = 0;
 	for ( j = 0, i = nFirstStroke, k = 0; i < nStrokeCnt; i++ )
 	{
@@ -2879,7 +2878,7 @@ CTextObject *CInkData::RemoveTextObject( int nIndex )
 BOOL CInkData::WriteTextElements(CPHStream &phFile)	
 {
 	int	 iCountSaveElements = m_arrTextObjects.GetSize();
-	register int i;
+    int i;
 	
 	//1. Record number of text edit objects
 	if ( !phFile.Write( (BYTE *)&iCountSaveElements, sizeof(iCountSaveElements) ) )
@@ -2901,8 +2900,8 @@ BOOL CInkData::WriteTextElements(CPHStream &phFile)
 BOOL CInkData::ReadTextElements( CPHStream &phStream )	
 {
 	//1. read number of text objects
-	int  	iCountLoadElements = 0;
-	register int i;
+	int iCountLoadElements = 0;
+    int i;
 	
 	if ( !phStream.Read( &iCountLoadElements, sizeof(iCountLoadElements) ) )
 		return false;
@@ -3146,7 +3145,7 @@ BOOL CInkData::SetImageUserData( int nImageIndex, void * userData )
 BOOL CInkData::ReadImages(CPHStream &phFile )	
 {
 	m_arrImages.Free();
-	register UInt32 i;
+    UInt32 i;
 	UInt32 iCountLoadElements;	
 	if ( !phFile.Read( (BYTE *)&iCountLoadElements, sizeof(iCountLoadElements) ) )
 		return false;
@@ -3168,7 +3167,7 @@ BOOL CInkData::ReadImages(CPHStream &phFile )
 BOOL CInkData::WriteImages(CPHStream &phFile)	
 {
 	int	iCountSaveElements = m_arrImages.GetSize();
-	register int i;
+    int i;
 	
 	//1. Record number of image objects
 	if ( !phFile.Write( (BYTE *)&iCountSaveElements, sizeof(iCountSaveElements) ) )
@@ -3315,12 +3314,12 @@ PHStroke *CInkData::FindStroke( PHStroke *pSample )
 	int nSamplePoints = pSamplePoints ? pSamplePoints->GetSize() : 0;
     int	i, iSample;
     CGPoint	pt1, pt2;
-    register PHStroke * pStr = NULL;
+    PHStroke * pStr = NULL;
     BOOL	bDiff;
     CGFloat	deltaX, deltaY;
 	CGFloat	prevX = 0.0, prevY = 0.0;
 	
-    for ( register int nStroke = 0; nStroke < nCount; nStroke++ )
+    for ( int nStroke = 0; nStroke < nCount; nStroke++ )
     {
         pStr = GetStroke( nStroke );
         if ( pStr )
@@ -3375,10 +3374,10 @@ void CInkData::SortStrokes()
 		return;
     STRRECT *	pStrokes = new STRRECT[nStrokeCnt+1];
 	STRRECT	sRect;
-	register int j, i;
+    int     j, i;
     if ( NULL != pStrokes )
 	{
-		register float	cxi, cxj;
+        float	cxi, cxj;
 		for ( i = 0; i < (int)nStrokeCnt; i++ )
 		{
 			pStrokes[i].num = i;

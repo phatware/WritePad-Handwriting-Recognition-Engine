@@ -192,7 +192,7 @@ int CWordLrnFile::SaveToMemory( char ** ppData, WORD wLanguageID /* = 0*/ )
     *ppData = NULL;
     int nTotalLen = 0;
     CWord * pWM;
-    for ( register int dw = 0; dw < (int)m_words.GetSize(); dw++ )
+    for ( int dw = 0; dw < (int)m_words.GetSize(); dw++ )
     {
         pWM = m_words[dw];
         if ( NULL != pWM )
@@ -224,7 +224,7 @@ int CWordLrnFile::SaveToMemory( char ** ppData, WORD wLanguageID /* = 0*/ )
     if ( fh.dwWordCount > 0 )
     {
         CWord * pWM;
-        for ( register int dw = 0; dw < (int)fh.dwWordCount; dw++ )
+        for ( int dw = 0; dw < (int)fh.dwWordCount; dw++ )
         {
             pWM = m_words[dw];
             if ( NULL != pWM )
@@ -274,7 +274,7 @@ BOOL CWordLrnFile::Save( const char * pszFileName, WORD wLanguageID /* = 0*/ )
     if ( fh.dwWordCount > 0 )
     {
         CWord * pWM;
-        for ( register int dw = 0; dw < (int)fh.dwWordCount; dw++ )
+        for ( int dw = 0; dw < (int)fh.dwWordCount; dw++ )
         {
             if ( NULL != (pWM = m_words[dw]) )
             {
@@ -311,7 +311,7 @@ BOOL CWordLrnFile::LoadFromMemory( const char * pData, WORD wLangID )
     {
         long  nPos = 0;
         CWord * pWM = NULL;
-        for ( register DWORD dw = 0; dw < fh.dwWordCount; dw++ )
+        for ( DWORD dw = 0; dw < fh.dwWordCount; dw++ )
         {
             pWM = new CWord;
             if ( NULL != pWM )
@@ -400,7 +400,7 @@ BOOL CWordLrnFile::Load( const char * pszFileName, WORD wLangID )
     {
         long  nPos = 0;
         CWord * pWM = NULL;
-        for ( register DWORD dw = 0; dw < fh.dwWordCount; dw++ )
+        for ( DWORD dw = 0; dw < fh.dwWordCount; dw++ )
         {
             pWM = new CWord;
             if ( NULL != pWM )
@@ -439,7 +439,7 @@ BOOL CWordLrnFile::ReplaceWord( LPCWSTR pszWord1, USHORT nWeight1, LPCWSTR pszWo
     int     nCnt = pWM->m_links.GetSize();
     DWORD   dw;
 
-    for ( register int i = 0; i < nCnt; i++ )
+    for ( int i = 0; i < nCnt; i++ )
     {
         if ( (WORD)nIndex2 == LOWORD( pWM->m_links[i] ) )
         {
@@ -474,7 +474,7 @@ int CWordLrnFile::AnalizeResult( LPCWSTR pWordList, USHORT * pWeights, LPWSTR pR
 {
     ALTWORD           w;
     PHArray<ALTWORD>  wordlist;
-    register int      n = 0, j = 0, i = 0;
+    int      n = 0, j = 0, i = 0;
     USHORT *          pw = pWeights;
     memset( &w, 0, sizeof( w) );
     BOOL			dict = false;

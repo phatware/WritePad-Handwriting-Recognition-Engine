@@ -119,58 +119,48 @@ static int StrToUNICODE(unsigned short * tstr, const char * str, int cMax) {
 static int UNICODEtoStr(char * str, const unsigned short * tstr, int cMax)
 {
 	register int i, j;
-
+    
 	for (i = 0; i < cMax && tstr[i] != 0; i++)
     {
 		if (tstr[i] < 0xff)
 			str[i] = ((unsigned char) tstr[i]);
 		else
 			str[i] = '?';
-    
-		/* this causes crash when translating to UTF string
-		 if(tstr[i]>=338 && tstr[i]<=376)
-		 {
-		 for (j=0; j<MAX_XU_CONVERTS; j++)
-		 {
-		 if(tstr[i]==_iUnicodes[j])
-		 str[i] = (unsigned char)_iHexes[j];
-		 }
-		 }
-		 */
 	}
 	str[i] = 0;
 	return i;
 }
 
-static const unsigned short * UTF8ToUnicode(const unsigned char *Src) {
+static const unsigned short * UTF8ToUnicode(const unsigned char *Src) 
+{
 	if (Src == NULL || *Src == 0)
 		return NULL;
-
+    
 	int i = 0;
 	int outputlen = 0;
 	int SrcLen = strlen((const char *) Src);
-
+    
 	// unicode will be the same or shorter
 	int DestLen = SrcLen + 2;
 	unsigned short * strDest = (unsigned short *) malloc(DestLen
-			* sizeof(unsigned short));
+                                                         * sizeof(unsigned short));
 	if (NULL == strDest)
 		return NULL;
-
+    
 	for (i = 0; i < SrcLen;) {
 		if (outputlen >= DestLen - 1) {
 			//overflow detected
 			break;
 		}
-
+        
 		else if ((0xe0 & Src[i]) == 0xe0) {
 			strDest[outputlen++] = (unsigned short) ((((int) Src[i] & 0x0f)
-					<< 12) | (((int) Src[i + 1] & 0x3f) << 6) | (Src[i + 2]
-					& 0x3f));
+                                                      << 12) | (((int) Src[i + 1] & 0x3f) << 6) | (Src[i + 2]
+                                                                                                   & 0x3f));
 			i += 3;
 		} else if ((0xc0 & Src[i]) == 0xc0) {
 			strDest[outputlen++] = (unsigned short) (((int) Src[i] & 0x1f) << 6
-					| (Src[i + 1] & 0x3f));
+                                                     | (Src[i + 1] & 0x3f));
 			i += 2;
 		} else {
 			strDest[outputlen++] = (unsigned short) Src[i];
@@ -181,25 +171,27 @@ static const unsigned short * UTF8ToUnicode(const unsigned char *Src) {
 	return strDest;
 }
 
-static const unsigned char * UnicodeToUTF8(const unsigned short *Src) {
+static const char * UnicodeToUTF8(const unsigned short *Src) 
+{
 	if (Src == NULL || *Src == 0)
 		return NULL;
-
+    
 	int i = 0;
 	int outputlen = 0; /*bytes */
 	int SrcLen = u_strlen(Src);
 	int DstLen = 2 + 3 * SrcLen;
-
+    
 	unsigned char * strDest = (unsigned char *) malloc(DstLen);
 	if (NULL == strDest)
 		return NULL;
-
-	for (i = 0; i < SrcLen; i++) {
+    
+	for (i = 0; i < SrcLen; i++)
+	{
 		if (outputlen >= DstLen - 1) {
 			//overflow detected
 			break;
 		}
-
+        
 		if (0x0800 <= Src[i]) {
 			strDest[outputlen++] = (((Src[i] >> 12) & 0x0f) | 0xe0);
 			strDest[outputlen++] = (((Src[i] >> 6) & 0x3f) | 0x80);
@@ -212,9 +204,8 @@ static const unsigned char * UnicodeToUTF8(const unsigned short *Src) {
 		}
 	}
 	strDest[outputlen] = 0;
-	return (const unsigned char *) strDest;
+	return (const char *) strDest;
 }
-
 static jstring StringToJstringA(JNIEnv* env, const char * string)
 {
 	jstring result = NULL;
@@ -336,7 +327,7 @@ static char corrector[MAX_PATH] = {0};
 jint Java_com_phatware_writepad_WritePadAPI_recognizerInit(JNIEnv* env, jobject thiz, jstring jpath, jint languageId, jbyteArray data, jstring pUserDict, jstring pLearner, jstring pCorrector)
 {
     jboolean isCopy = JNI_FALSE;
-	const jbyte * path = (*env)->GetStringUTFChars(env, jpath, &isCopy);
+	const char * path = (*env)->GetStringUTFChars(env, jpath, &isCopy);
 
 	userDict[0] = 0;
 	learner[0] = 0;
@@ -399,7 +390,7 @@ jint Java_com_phatware_writepad_WritePadAPI_recognizerInit(JNIEnv* env, jobject 
 
     if ( dataSize > 0 )
     {
-        result = HWR_SetLetterShapes( _recognizer, pMem );
+        result = HWR_SetLetterShapes( _recognizer, (const unsigned char *)pMem );
     }
     else
     {
@@ -563,7 +554,7 @@ jboolean Java_com_phatware_writepad_WritePadAPI_setDictionaryData(JNIEnv* env, j
 	data = (*env)->GetByteArrayElements(env, buff, &isCopy );
 	if (data != NULL)
     {
-		result = HWR_SetDictionaryData(_recognizer, data, FLAG_MAINDICT);
+		result = HWR_SetDictionaryData(_recognizer, (const char *)data, FLAG_MAINDICT);
 		(*env)->ReleaseByteArrayElements(env, buff, data, JNI_ABORT);
         if ( isCopy == JNI_TRUE )
             (*env)->ReleaseByteArrayElements(env, buff, data, JNI_ABORT);

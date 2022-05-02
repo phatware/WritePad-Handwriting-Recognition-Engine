@@ -32,7 +32,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include "RecognizerWrapper.h"
-#include "RecoTypes.h"
+#include "recotypes.h"
 
 #include "ShapeAPI.h"
 #include "liintern.h"
@@ -42,35 +42,49 @@
 #define LIG_BITSSHIFT(bitindex)		(LIG_NUMBITS - LIG_NUM_BITS_PER_GROUP - bitindex % LIG_NUMBITS)
 
 static const char K_PAIRED_CHARS[][3] = {
-	"«Á",
+	0xc7, 0xe7, 0,
 	"()",
 	"<>",
 	",.",
 	"\"'",
 	"[]",
 	"{}",
-	"´ª",
+	0xab, 0xbb, 0,
 	"/\\",
-	"£•",
-	"Æ©"
+	0xa3, 0xa5, 0,
+	0xaE, 0xa9, 0
 };
 
-static const char K_Y_DEPENDANT_CHARS[] = { 'Y', '›', 0x9f };
+static const char K_Y_DEPENDANT_CHARS[] = {'Y', 0xd0, 0x9f, 0};
+static const char K_A_DEPENDANT_CHARS[] = {'A', 0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0xC5, 0};
+static const char K_E_DEPENDANT_CHARS[] = {'E', 0xC8, 0xC9, 0xCA, 0xCB, 0};
+static const char K_I_DEPENDANT_CHARS[] = {'I', 0xCC, 0xCD, 0xCE, 0xCF, 0};
+static const char K_N_DEPENDANT_CHARS[] = {'N', 0xd1, 0};
+static const char K_O_DEPENDANT_CHARS[] = {'O', 0xD2, 0xD3, 0xD4, 0xD5, 0xD6, 0};
+static const char K_U_DEPENDANT_CHARS[] = {'U', 0xD9, 0xDA, 0xDB, 0xDC, 0};
+static const char K_a_DEPENDANT_CHARS[] = {'a', 0xE0, 0xE1, 0xE2, 0xE3, 0xE4, 0xE5, 0};
+static const char K_e_DEPENDANT_CHARS[] = {'e', 0xE8, 0xE9, 0xEA, 0xEB, 0};
+static const char K_i_DEPENDANT_CHARS[] = {'i', 0xEC, 0xED, 0xEE, 0xEF, 0};
+static const char K_n_DEPENDANT_CHARS[] = {'n', 0xf1, 0};
+static const char K_o_DEPENDANT_CHARS[] = {'o', 0xF2, 0xF3, 0xF4, 0xF5, 0xF6, 0};
+static const char K_u_DEPENDANT_CHARS[] = {'u', 0xF9, 0xFA, 0xFB, 0xFC, 0};
+static const char K_y_DEPENDANT_CHARS[] = {'y', 0xfd, 0xff, 0};
+
 static const char *K_DEPENDANT_CHARS[] = {
-	"A¿¡¬√ƒ≈",
-	"E»… À",
-	"IÃÕŒœ",
-	"N—",
-	"O“”‘’÷",
-	"UŸ⁄€‹",
+	K_A_DEPENDANT_CHARS,
+	K_E_DEPENDANT_CHARS,
+	K_I_DEPENDANT_CHARS,
+	K_N_DEPENDANT_CHARS,
+	K_O_DEPENDANT_CHARS,
+	K_U_DEPENDANT_CHARS,
 	K_Y_DEPENDANT_CHARS,
-	"a‡·‚„‰Â",
-	"eËÈÍÎ",
-	"iÏÌÓÔ",
-	"nÒ",
-	"oÚÛÙıˆ",
-	"u˘˙˚¸",
-	"y˝ˇ"
+	K_a_DEPENDANT_CHARS,
+	K_e_DEPENDANT_CHARS,
+	K_i_DEPENDANT_CHARS,
+	K_n_DEPENDANT_CHARS,
+	K_o_DEPENDANT_CHARS,
+	K_u_DEPENDANT_CHARS,
+	K_y_DEPENDANT_CHARS	
 };
 
 const LIInfoType* 

@@ -32,7 +32,8 @@ LOCAL_CFLAGS := -DRECODICT -D_EMBEDDED_DEVICE \
 		-I$(LOCAL_PATH)/../../../UniversalRecognizer/V300/reco/data \
 		-I$(LOCAL_PATH)/../../../UniversalRecognizer/V300/include \
 		-Wno-multichar \
-		-std=gnu++11
+		-std=gnu++11 \
+		-Wno-deprecated-register
 
 include jni/filelist.mk
 
@@ -50,9 +51,8 @@ LOCAL_SRC_FILES := interface.c letimg.c lidata.c
 
 # LOCAL_LDLIBS := -ldl -llog # -lGLESv1_CM 
 
-LOCAL_LDLIBS += -latomic
+# LOCAL_LDLIBS += -latomic
 
 LOCAL_STATIC_LIBRARIES := libWritePadRecos
 
 include $(BUILD_SHARED_LIBRARY)
-

@@ -313,7 +313,7 @@ size_t CWordList::SaveToMemory( char ** ppData, WORD wLanguageID /* = 0*/ )
 	*ppData = NULL;
 	size_t nTotalLen = 0;
 	CWordMap * pWM;
-	for ( register int dw = 0; dw < m_words.GetSize(); dw++ )
+	for ( int dw = 0; dw < m_words.GetSize(); dw++ )
 	{
 		pWM = m_words[dw];
 		if ( NULL != pWM )
@@ -346,7 +346,7 @@ size_t CWordList::SaveToMemory( char ** ppData, WORD wLanguageID /* = 0*/ )
 	if ( fh.dwWordCount > 0 )
 	{
         CWordMap * pWM;
-		for ( register DWORD dw = 0; dw < fh.dwWordCount; dw++ )
+		for ( DWORD dw = 0; dw < fh.dwWordCount; dw++ )
 		{
 			pWM = m_words[(int)dw];
 			if ( NULL != pWM )
@@ -387,7 +387,7 @@ BOOL CWordList::Save( const char * pszFileName, WORD wLanguageID /* = 0*/ )
 	if ( fh.dwWordCount > 0 )
 	{
         CWordMap * pWM;
-		for ( register int dw = 0; dw < (int)fh.dwWordCount; dw++ )
+		for ( int dw = 0; dw < (int)fh.dwWordCount; dw++ )
 		{
 			pWM = m_words[dw];
 			if ( NULL != pWM )
@@ -427,7 +427,7 @@ BOOL CWordList::LoadFromMemory( const char * pszInBuffer )
 	{
         long   dwPos = 0;
         CWordMap * pWM = NULL;
-		for ( register DWORD dw = 0; dw < fh.dwWordCount; dw++ )
+		for ( DWORD dw = 0; dw < fh.dwWordCount; dw++ )
 		{
 			pWM = new CWordMap;
 			if ( NULL != pWM )
@@ -504,7 +504,7 @@ BOOL CWordList::Load( const char * pszFileName )
 	{
         long   dwPos = 0;
         CWordMap * pWM = NULL;
-		for ( register DWORD dw = 0; dw < fh.dwWordCount; dw++ )
+		for ( DWORD dw = 0; dw < fh.dwWordCount; dw++ )
 		{
 			pWM = new CWordMap;
 			if ( NULL != pWM )
@@ -545,7 +545,7 @@ BOOL CWordList::Export( const char * pszFileName )
 	
     CWordMap *  pWM = NULL;
     BOOL        bResult = false;        
-	for ( register int dw = 0; dw < m_words.GetSize(); dw++ )
+	for ( int dw = 0; dw < m_words.GetSize(); dw++ )
 	{
 		pWM = m_words[dw];
 		if ( NULL != pWM )
@@ -647,7 +647,7 @@ int	CWordList::EnumWordList( RECO_ONGOTWORDLIST callback, void * pParam )
 	if ( m_words.GetSize() > 0 && NULL != callback )
 	{
         CWordMap * pWM;
-		for ( register int dw = 0; dw < m_words.GetSize(); dw++ )
+		for ( int dw = 0; dw < m_words.GetSize(); dw++ )
 		{
 			pWM = m_words[dw];
 			(*callback)( pWM->m_pWordFind, pWM->m_pWordReplace, pWM->m_dwFlags, pParam );

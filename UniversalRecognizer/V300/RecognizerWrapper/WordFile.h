@@ -84,8 +84,8 @@ public:
 
     BOOL CompareWords( LPCWSTR pszStr1, LPCWSTR pszStr2, BOOL bIgnoreCase )
     {
-        register LPCWSTR    p1 = pszStr1;
-        register LPCWSTR    p2 = pszStr2;
+        LPCWSTR    p1 = pszStr1;
+        LPCWSTR    p2 = pszStr2;
         while ( 0!= *p1 && 0!= *p2 )
         {
             if ( bIgnoreCase )
@@ -151,7 +151,7 @@ public:
 	CWordMap *	GetMap( LPCWSTR pWord ) const
 	{
         CWordMap * pWM;
-		for ( register int i = 0; i < m_words.GetSize(); i++ )
+		for ( int i = 0; i < m_words.GetSize(); i++ )
 		{
 			pWM = m_words[i];
 			if ( pWM && (*pWM == pWord) )
@@ -163,7 +163,7 @@ public:
 	CWordMap *	FindMap( CWordMap * p ) const
 	{
         CWordMap * pWM;
-		for ( register int i = 0; i < m_words.GetSize(); i++ )
+		for ( int i = 0; i < m_words.GetSize(); i++ )
 		{
 			pWM = m_words[i];
 			if ( pWM == p )
@@ -231,7 +231,7 @@ public:
 	BOOL RemoveWord( LPCWSTR pWord )
 	{
         CWordMap * pWM;
-		for ( register int i = 0; i < m_words.GetSize(); i++ )
+		for ( int i = 0; i < m_words.GetSize(); i++ )
 		{
 			pWM = m_words[i];
 			if ( pWM && (*pWM == pWord) )

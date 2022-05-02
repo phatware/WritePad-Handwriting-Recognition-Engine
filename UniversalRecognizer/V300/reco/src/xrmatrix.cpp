@@ -1245,7 +1245,7 @@ _INT TCountXrC(p_xrcm_type xrcm)
 /* ************************************************************************* */
 _INT MergeVarResults(p_xrcm_type xrcm)
 {
-    register p_SHORT ol, pl; //, psc;
+    p_SHORT ol, pl; //, psc;
     _INT             i, v;
     _INT             st, en, nv;
     _INT             vs, ve;
@@ -1448,9 +1448,9 @@ _INT SetInpLineByValue(_INT value, _INT st, _INT count, p_xrcm_type xrcm)
 
 _INT SetOutLine(p_SHORT p_line, _INT st, _INT count, p_xrcm_type xrcm)
 {
-    register _INT    i;
-    register p_SHORT ol = &(*xrcm->s_out_line)[st];
-    register p_SHORT pl = p_line;
+    _INT    i;
+    p_SHORT ol = &(*xrcm->s_out_line)[st];
+    p_SHORT pl = p_line;
     
     for (i = 0; i < count; i ++)
         *(ol++) = *(pl++);

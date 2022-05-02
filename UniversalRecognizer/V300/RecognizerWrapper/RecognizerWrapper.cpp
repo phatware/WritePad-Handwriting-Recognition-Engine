@@ -263,7 +263,7 @@ static int TraceToRec( int in_numpts, LPPOINTS in_pt, p_RECO_point_type out_pt )
     float	xFltPrv, yFltPrv, xPrv, yPrv;
     int		m_nPointsRec = 1, NumFilteredPoints;
     float	xToRec, yToRec;
-    register int i, j; //, x, y;
+    int i, j; //, x, y;
     
     xPrv = xFltPrv =(in_pt[0].x*2.0f);
     yPrv = yFltPrv = (in_pt[0].y*2.0f);
@@ -680,7 +680,7 @@ public:
         }
         *ppTrace = m_pRecQueue[0].pTrace;
         *pcTrace = m_pRecQueue[0].cTrace;
-        for ( register int i = 0; i < m_cRecQueue-1; i++ )
+        for ( int i = 0; i < m_cRecQueue-1; i++ )
             memcpy( &m_pRecQueue[i], &m_pRecQueue[i+1], sizeof(m_pRecQueue[i]) );
         m_cRecQueue--;
         if ( m_cRecQueue <= 0 )
@@ -1537,7 +1537,7 @@ end:
         if ( NULL == stroke )
             return bResult;
         
-		for (register UInt32 i = 0; i < nStrokeCnt; i++)
+		for (UInt32 i = 0; i < nStrokeCnt; i++)
         {
             // break very long strokes
             if ( ((PIX_OFFSET+pStroke[i].pt.x) < 0 || (PIX_OFFSET+pStroke[i].pt.y) < 0 || 
@@ -2088,8 +2088,8 @@ end:
         int	*	  pNStrokes = NULL;
         UCHR *    pAlt = NULL;
         UCHR *    pRes = NULL;
-        register int    iWeightLen = 1;
-        register int    i, j;
+        int       iWeightLen = 1;
+        int       i, j;
 		size_t	  iWordStart = 0, iBufLen = 1;
         BOOL	  bSuggestedOnly = false;
         BOOL      bReplaceFromDict = false;

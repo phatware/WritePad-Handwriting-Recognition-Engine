@@ -1078,7 +1078,7 @@ static _BOOL  CheckDArcs( p_SZD_FEATURES pszd )
                             b1stSloped = _FALSE;
                         else
                         {
-                            register _SHORT  dyBox1 = DY_RECT(box1);
+                            _SHORT  dyBox1 = DY_RECT(box1);
                             if  ( bIsCrossed )
                                 b1stSloped = ( dyBox1 < dxBox1 );
                             else
@@ -1094,7 +1094,7 @@ static _BOOL  CheckDArcs( p_SZD_FEATURES pszd )
                             b2ndSloped = _FALSE;
                         else
                         {
-                            register _SHORT  dyBox2 = DY_RECT(box2);
+                            _SHORT  dyBox2 = DY_RECT(box2);
                             if  ( bIsCrossed )
                                 b2ndSloped = ( dyBox2 < dxBox2 );
                             else

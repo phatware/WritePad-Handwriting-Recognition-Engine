@@ -103,7 +103,7 @@ PHStroke::~PHStroke()
 int PHStroke::AddPoints( const PHPoint *pPnt, UInt32 uCnt )
 {
 	int iFirst = m_SubStrList.GetSize();
-    for( register int i = iFirst; i < iFirst + (int)uCnt; i++ )
+    for( int i = iFirst; i < iFirst + (int)uCnt; i++ )
     {
 		m_SubStrList.InsertAt( i, pPnt[i-iFirst], 1 );
     }
@@ -113,7 +113,7 @@ int PHStroke::AddPoints( const PHPoint *pPnt, UInt32 uCnt )
 int PHStroke::AddPoints( const CGTracePoint * points, UInt32 uCnt )
 {
 	int    iFirst = m_SubStrList.GetSize();
-    for ( register int i = iFirst; i < iFirst + (int)uCnt; i++ )
+    for ( int i = iFirst; i < iFirst + (int)uCnt; i++ )
     {
 		m_SubStrList.InsertAt( i, PHPoint( points[i-iFirst].pt, points[i-iFirst].pressure ), 1 );
     }
@@ -123,7 +123,7 @@ int PHStroke::AddPoints( const CGTracePoint * points, UInt32 uCnt )
 int PHStroke::AddPoints( const POINTS *pPnt, UInt32 uCnt, int pressure )
 {
 	int iFirst = m_SubStrList.GetSize();
-    for ( register int i = iFirst; i < iFirst + (int)uCnt; i++ )
+    for ( int i = iFirst; i < iFirst + (int)uCnt; i++ )
 	{
 		m_SubStrList.InsertAt( i, PHPoint(pPnt[i-iFirst], pressure), 1 );
 	}
@@ -133,7 +133,7 @@ int PHStroke::AddPoints( const POINTS *pPnt, UInt32 uCnt, int pressure )
 int PHStroke::AddPoints( const POINT *pPnt, UInt32 uCnt, int pressure )
 {
 	int iFirst = m_SubStrList.GetSize();
-    for ( register int i = iFirst; i < iFirst + (int)uCnt; i++ )
+    for ( int i = iFirst; i < iFirst + (int)uCnt; i++ )
 	{
 		m_SubStrList.InsertAt( i, PHPoint(pPnt[i-iFirst], pressure), 1 );
 	}
@@ -143,7 +143,7 @@ int PHStroke::AddPoints( const POINT *pPnt, UInt32 uCnt, int pressure )
 int PHStroke::AddPoints( const CGPoint *pPnt, UInt32 uCnt, int pressure )
 {
 	int iFirst = m_SubStrList.GetSize();
-    for ( register int i = iFirst; i < iFirst + (int)uCnt; i++ )
+    for ( int i = iFirst; i < iFirst + (int)uCnt; i++ )
 	{
 		m_SubStrList.InsertAt( i, PHPoint(pPnt[i-iFirst], pressure), 1 );
 	}
@@ -157,7 +157,7 @@ int PHStroke::AddPoints( PHStroke * pStroke )
         return 0;
     int    uCnt = pList->GetSize();
 	int    iFirst = m_SubStrList.GetSize();
-    for ( register int i = iFirst; i < iFirst + uCnt; i++ )
+    for ( int i = iFirst; i < iFirst + uCnt; i++ )
 	{
 		m_SubStrList.InsertAt( i, pList->GetAt(i), 1 );
 	}
@@ -166,7 +166,7 @@ int PHStroke::AddPoints( PHStroke * pStroke )
 
 int PHStroke::RemovePoints( const PHPoint Pnt[], UInt32 iFirst, UInt32 uCnt )
 {
-	for( register int i = (int)iFirst; i < (int)(iFirst + uCnt); i++ )
+	for( int i = (int)iFirst; i < (int)(iFirst + uCnt); i++ )
     {
 		m_SubStrList.RemoveAt( i );
     }
@@ -190,9 +190,9 @@ int PHStroke::StoreScaledPoints()
 	
 	m_SubStrList.RemoveAll();
     
-	register int	i;
-	PHPoint			pt;
-	int				iLast = m_ScaledPoints.GetSize();
+    int	    i;
+	PHPoint pt;
+	int     iLast = m_ScaledPoints.GetSize();
 	
 	for ( i = 0; i < iLast; i++ )
     {
@@ -245,8 +245,8 @@ int PHStroke::SetScaledPoints( float x0, float y0, float dscalex, float dscaley,
 			return iLast;
 		}
 		
-		register int i;
-		register float  x, y;
+        int i;
+        float  x, y;
 		PHPoint       pt;
 		
 		m_ScaledPoints.RemoveAll();

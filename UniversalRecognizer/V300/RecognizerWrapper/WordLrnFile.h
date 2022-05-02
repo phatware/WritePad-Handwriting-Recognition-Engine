@@ -86,8 +86,8 @@ public:
 
         BOOL CompareWords( LPCWSTR pszStr1, LPCWSTR pszStr2, BOOL bIgnoreCase = true )
         {
-            register LPCWSTR    p1 = pszStr1;
-            register LPCWSTR    p2 = pszStr2;
+            LPCWSTR    p1 = pszStr1;
+            LPCWSTR    p2 = pszStr2;
             while ( 0!= *p1 && 0!= *p2 )
             {
                 if ( bIgnoreCase )
@@ -152,7 +152,7 @@ public:
     {
         CWord * pWM;
         int     nCnt = m_words.GetSize();
-        for ( register int i = 0; i < nCnt; i++ )
+        for ( int i = 0; i < nCnt; i++ )
         {
             pWM = m_words[i];
             if ( pWM && (*pWM == pWord) )
@@ -165,7 +165,7 @@ public:
     {
         CWord * pWM;
         int     nCnt = m_words.GetSize();
-        for ( register int i = 0; i < nCnt; i++ )
+        for ( int i = 0; i < nCnt; i++ )
         {
             pWM = m_words[i];
             if ( pWM == p )
@@ -178,7 +178,7 @@ public:
     {
         CWord * pWM;
         int     nCnt = m_words.GetSize();
-        for ( register int i = 0; i < nCnt; i++ )
+        for ( int i = 0; i < nCnt; i++ )
         {
             pWM = m_words[i];
             if ( pWM && (*pWM == pWord) )
@@ -226,7 +226,7 @@ public:
     BOOL RemoveWord( LPCWSTR pWord )
     {
         CWord * pWM;
-        for ( register int i = 0; i < m_words.GetSize(); i++ )
+        for ( int i = 0; i < m_words.GetSize(); i++ )
         {
             pWM = m_words[i];
             if ( pWM && (*pWM == pWord) )
@@ -249,7 +249,7 @@ protected:
     WORD        m_nSortOrder;
     void		Free()
     {
-        for ( register int i = 0; i < m_words.GetSize(); i++ )
+        for ( int i = 0; i < m_words.GetSize(); i++ )
         {
             if ( NULL != m_words[i] )
                 delete ( m_words[i] );
