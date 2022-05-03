@@ -181,14 +181,14 @@ err:
 
 _INT FLUpdateStates(p_rc_type rc, const rec_w_type _PTR rw)
 {
-    register _INT                 i, j, v;
-    _INT                 count;
-    _INT                 vex, base_vex;
-    _INT                 mg_vex;
-    _INT                 osym, rsym;
-    _INT                 num_vars;
-    p_dti_descr_type     dp = (p_dti_descr_type)rc->dtiptr;
-    dte_vex_type     _PTR vexbuf = (dte_vex_type _PTR)dp->p_vex;
+    _INT                i, j, v;
+    _INT                count;
+    _INT                vex, base_vex;
+    _INT                mg_vex;
+    _INT                osym, rsym;
+    _INT                num_vars;
+    p_dti_descr_type    dp = (p_dti_descr_type)rc->dtiptr;
+    dte_vex_type        _PTR vexbuf = (dte_vex_type _PTR)dp->p_vex;
 #if DTI_COMPRESSED
     p_dte_var_header_type pvh;
 #else

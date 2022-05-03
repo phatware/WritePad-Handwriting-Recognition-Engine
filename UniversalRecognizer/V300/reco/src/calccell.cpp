@@ -59,9 +59,9 @@ extern void __asm(const char *,...);
 // pointers 'signals' and 'weights' are aligned to 4 byte boundary each.
 
 #define DECLARE_SIGNAL_ITERATION_VARS(insignals, inweights)     \
-register signed long  *ppi     = (signed long*)(insignals);     \
-register signed long  *weights = (signed long*)(inweights);     \
-register signed long  pp, ww
+    signed long  *ppi     = (signed long*)(insignals);          \
+    signed long  *weights = (signed long*)(inweights);          \
+    signed long  pp, ww
 
 #define CELL_SIGNAL_ITERATION(i, v)                             \
     pp = ppi[(i)];                                              \

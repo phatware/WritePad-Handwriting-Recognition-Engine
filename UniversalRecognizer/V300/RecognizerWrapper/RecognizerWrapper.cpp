@@ -1595,7 +1595,7 @@ end:
         if ( NULL == stroke )
             return bResult;
         
-        for (register UInt32 i = 0; i < nStrokeCnt; i++)
+        for (UInt32 i = 0; i < nStrokeCnt; i++)
         {
             // break very long strokes
             if ( ((PIX_OFFSET+pStroke[i].x) < 0 || (PIX_OFFSET+pStroke[i].y) < 0 ||

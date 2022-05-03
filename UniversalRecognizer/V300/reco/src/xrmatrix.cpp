@@ -1577,7 +1577,7 @@ _INT GetFinalWeight(p_xrcm_type xrcm)
     _INT         end;
     p_cline_type mbuf;
     /*  _SHORT  start, max; */
-    /*  register _INT st;   */
+    /*  _INT st;   */
     
     end   = xrcm->v_end;
     mbuf  = xrcm->s_out_line;
@@ -1647,10 +1647,10 @@ _INT  SetWWCLine(_INT ba, p_xrcm_type xrcm)
 
 _INT GetOutLine(p_SHORT p_line, _INT st, _INT count, p_xrcm_type xrcm)
 {
-    register _INT    i;
-    register p_SHORT ol = &(*xrcm->s_out_line)[st];
-    register p_SHORT pl = p_line;
-    _INT     vs, ve;
+    _INT    i;
+    p_SHORT ol = &(*xrcm->s_out_line)[st];
+    p_SHORT pl = p_line;
+    _INT    vs, ve;
     
     vs = xrcm->v_start;
     ve = xrcm->v_end;
@@ -1671,10 +1671,10 @@ _INT GetOutLine(p_SHORT p_line, _INT st, _INT count, p_xrcm_type xrcm)
 
 _INT GetOutTB(_SHORT (_PTR tb)[XRWS_MBUF_SIZE], _INT trace_pos, p_xrcm_type xrcm)
 {
-    register _INT  i;
-    p_SHORT        ol;
-    p_SHORT        pl;
-    _INT           vs, ve, m_st, w;
+    _INT    i;
+    p_SHORT ol;
+    p_SHORT pl;
+    _INT    vs, ve, m_st, w;
     
 #define GOTB_DROPOUT (XRMC_DEF_CORR_VALUE*4) /* Level of previous vect values to WWC_POS val */
     

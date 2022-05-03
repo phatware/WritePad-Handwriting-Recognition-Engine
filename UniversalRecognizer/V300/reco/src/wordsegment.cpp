@@ -1969,7 +1969,7 @@ _INT WS_SegmentWords(_INT finished_x, p_ws_data_type pws_data)
     _INT delt;
     _INT a,b,c,d,e,f,g;
     _INT sure;
-    register p_ws_data_type pwsd = pws_data;
+    p_ws_data_type pwsd = pws_data;
 
     a = pwsd->nn_ssp; // a
     b = pwsd->nn_n_ssp; // b
